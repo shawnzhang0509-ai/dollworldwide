@@ -1,6 +1,7 @@
 const TRADE_ME_BASE_SEARCH_URL = 'https://www.trademe.co.nz/a/marketplace/search';
 const TRADE_ME_R18_ADULT_SEARCH_URL =
-  'https://www.trademe.co.nz/a/marketplace/home-living/lifestyle/r-18-adult/other/search';
+  'https://www.trademe.co.nz/a/marketplace/home-living/lifestyle/r18-adult/other/search';
+const TRADE_ME_R18_ADULT_OTHER_CATEGORY = '0004-3267-8324-8329-';
 
 export const TRADE_ME_SELLER_NAME = 'silvertrust';
 
@@ -22,7 +23,10 @@ export function buildTradeMeSearchUrl({
 }
 
 export function buildTradeMeR18AdultSearchUrl(searchCode: string) {
-  const params = new URLSearchParams({ search_string: searchCode });
+  const params = new URLSearchParams({
+    category: TRADE_ME_R18_ADULT_OTHER_CATEGORY,
+    search_string: searchCode,
+  });
 
   return `${TRADE_ME_R18_ADULT_SEARCH_URL}?${params.toString()}`;
 }
