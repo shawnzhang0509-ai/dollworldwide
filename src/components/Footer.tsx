@@ -27,9 +27,9 @@ export function Footer() {
             <h4 className="text-label text-cream-100 mb-4">Quick Links</h4>
             <div className="flex flex-col gap-2">
               {[
-                { label: 'Collections', href: '#collections' },
-                { label: 'Local Stock', href: '#stock' },
-                { label: 'Gallery', href: '#gallery' },
+                { label: 'Ready Stock', href: '#product' },
+                { label: 'Trade Me Proof', href: '#proof' },
+                { label: 'How It Works', href: '#how-it-works' },
                 { label: 'Contact', href: '#contact' },
               ].map((link) => (
                 <a
