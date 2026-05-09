@@ -15,7 +15,7 @@ const steps = [
   {
     icon: CheckCircle,
     title: 'Confirm Your Order',
-    desc: 'Pick your Divine doll. $999 for standard models. We accept bank transfer, cash on pickup, or Trade Me Pay Now.',
+    desc: 'Choose the $999 model you want from current stock. We accept bank transfer, cash on pickup, or Trade Me Pay Now where available.',
   },
   {
     icon: Package,

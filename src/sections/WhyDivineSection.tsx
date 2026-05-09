@@ -8,20 +8,20 @@ gsap.registerPlugin(ScrollTrigger);
 
 const features = [
   {
-    title: 'All Body Silicone',
-    desc: 'Not silicone-head-TPE-body knock-offs. Full platinum silicone from head to toe — the real deal from QianYou factory.',
+    title: 'Silicone Head + TPE Body',
+    desc: 'This is the value sweet spot: realistic silicone-head detail with a soft TPE body, priced for buyers who want the best deal in NZ.',
   },
   {
-    title: 'Hand-Inspected in NZ',
-    desc: 'Every unit is unboxed and inspected in our Auckland warehouse before it ever reaches you. Zero defects shipped.',
+    title: '$999 Clear Price',
+    desc: 'All current models are $999. No inflated luxury markup, no confusing price ladder, just the strongest ready-stock price we can offer.',
   },
   {
     title: 'NZ Ready Stock',
     desc: 'No 4-week overseas wait. No customs risk. Already here in Auckland. Same-day pickup or next-day delivery nationwide.',
   },
   {
-    title: 'QianYou Factory Direct',
-    desc: 'We source directly from QianYou — one of China\'s top silicone doll manufacturers. No middlemen. Best price guaranteed.',
+    title: 'Real Media Before You Buy',
+    desc: 'Ask for current photos, short videos, Trade Me links, or private Auckland viewing so you can compare actual models before ordering.',
   },
 ];
 
@@ -48,12 +48,12 @@ export function WhyDivineSection() {
   }, [reduced]);
 
   return (
-    <section id="why-divine" className="bg-noir-900 py-[120px]">
+    <section id="why-us" className="bg-noir-900 py-[120px]">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         <SectionHeader
-          label="WHY DIVINE"
-          heading="All Body Silicone. Not a Compromise."
-          subtext="Most 'silicone dolls' on the NZ market are actually silicone-head-TPE-body hybrids — a cheaper combo that feels and looks inferior. Divine is different. Full silicone. Factory direct. Already in Auckland."
+          label="WHY DOLL WORLDWIDE"
+          heading="$999 Ready Stock with the Right Materials."
+          subtext="The offer is simple: silicone head, TPE body, realistic look and feel, real media, Trade Me proof, and Auckland stock at a price that is hard to beat."
           centered
         />
 

@@ -11,27 +11,27 @@ const regions = [
     flag: '🇺🇸',
     label: 'US STOCK',
     products: [
-      { name: 'Indigo', desc: 'US Local Stock — All Body TPE Doll', price: '$1,099', image: '/images/product-indigo.jpg' },
-      { name: 'Verity', desc: 'US Local Stock — 165cm TPE Doll', price: '$1,099', image: '/images/product-verity.jpg' },
-      { name: 'Juniper', desc: 'US Local Stock — 165cm TPE Doll', price: '$1,099', image: '/images/product-juniper.jpg' },
+      { name: 'Indigo', desc: 'US Local Stock — Silicone Head + TPE Body', price: '$999', image: '/images/product-indigo.jpg' },
+      { name: 'Verity', desc: 'US Local Stock — Silicone Head + TPE Body', price: '$999', image: '/images/product-verity.jpg' },
+      { name: 'Juniper', desc: 'US Local Stock — Silicone Head + TPE Body', price: '$999', image: '/images/product-juniper.jpg' },
     ],
   },
   {
     flag: '🇪🇺',
     label: 'EU STOCK',
     products: [
-      { name: 'Ruby', desc: 'EU Local Stock — 153cm TPE Doll', price: '$1,099', image: '/images/collection-divine.jpg' },
-      { name: 'Jessica', desc: 'EU Local Stock — 163cm TPE Doll', price: '$1,599', image: '/images/collection-velvet.jpg' },
-      { name: 'Jenny', desc: 'EU Local Stock — 153cm TPE Doll', price: '$1,599', image: '/images/collection-luxor.jpg' },
+      { name: 'Ruby', desc: 'EU Local Stock — Silicone Head + TPE Body', price: '$999', image: '/images/collection-divine.jpg' },
+      { name: 'Jessica', desc: 'EU Local Stock — Silicone Head + TPE Body', price: '$999', image: '/images/collection-velvet.jpg' },
+      { name: 'Jenny', desc: 'EU Local Stock — Silicone Head + TPE Body', price: '$999', image: '/images/collection-luxor.jpg' },
     ],
   },
   {
     flag: '🇳🇿',
     label: 'NZ STOCK',
     products: [
-      { name: 'Melody', desc: 'NZ Local Stock — 148cm Velvet Doll', price: '$1,329', image: '/images/gallery-2.jpg' },
-      { name: 'Aria', desc: 'NZ Local Stock — 148cm Velvet Doll', price: '$1,329', image: '/images/gallery-3.jpg' },
-      { name: 'Celeste', desc: 'NZ Local Stock — 148cm Velvet Doll', price: '$1,329', image: '/images/gallery-4.jpg' },
+      { name: 'Melody', desc: 'NZ Local Stock — Silicone Head + TPE Body', price: '$999', image: '/images/gallery-2.jpg' },
+      { name: 'Aria', desc: 'NZ Local Stock — Silicone Head + TPE Body', price: '$999', image: '/images/gallery-3.jpg' },
+      { name: 'Celeste', desc: 'NZ Local Stock — Silicone Head + TPE Body', price: '$999', image: '/images/gallery-4.jpg' },
     ],
   },
 ];
@@ -76,7 +76,7 @@ export function LocalStockSection() {
         <SectionHeader
           label="READY TO SHIP"
           heading="Local Stock, Swift Delivery"
-          subtext="Skip the wait. Our US, EU, and NZ warehouses have premium dolls ready for immediate discreet dispatch."
+          subtext="Skip the wait. Current models are priced at $999 with silicone-head detail, soft TPE bodies, and discreet dispatch."
           centered
         />
 

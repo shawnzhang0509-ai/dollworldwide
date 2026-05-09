@@ -17,20 +17,20 @@ const sellingPoints = [
   },
   {
     icon: Truck,
-    title: '10 MODELS',
-    subtitle: 'Pick your favourite. Inspect in person.',
+    title: 'MULTIPLE MODELS',
+    subtitle: 'Photos, specs, and viewing available.',
     color: '#C8503C',
   },
   {
     icon: DollarSign,
-    title: 'FROM $2,559',
-    subtitle: 'Factory direct. Best price in NZ.',
+    title: '$999',
+    subtitle: 'Best price in NZ ready stock.',
     color: '#50A078',
   },
   {
     icon: ShieldCheck,
-    title: 'PLATINUM SILICONE',
-    subtitle: 'Implanted hair. Full body. Real deal.',
+    title: 'REAL MEDIA',
+    subtitle: 'Actual photos and videos available.',
     color: '#8C64B4',
   },
   {
@@ -174,7 +174,7 @@ export function HeroSection() {
       >
         <img
           src="/images/hero-bg.jpg"
-          alt="Divine All Body Silicone Doll"
+          alt="Doll Worldwide Auckland ready stock"
           className="w-full h-full object-cover"
         />
         <div
@@ -199,13 +199,13 @@ export function HeroSection() {
             style={{ transform: 'scaleX(0)' }}
           />
           <h1 className="hero-animate text-display-h1 text-cream-100 mb-4 max-w-[650px] opacity-0">
-            Divine All Body Silicone Doll
+            Silicone Head + TPE Body. $999 Auckland Ready Stock.
           </h1>
           <p className="hero-animate text-body-large text-cream-200 mb-6 max-w-[550px] opacity-0">
-            QianYou factory genuine — full platinum silicone. Already in Auckland. No waiting. No customs risk.
+            Doll Worldwide focuses on the strongest value: realistic silicone-head detail, soft TPE body, real photos, Trade Me proof, and discreet NZ delivery at the best price.
           </p>
           <div className="hero-animate flex flex-wrap gap-3 opacity-0">
-            <SecondaryButton href="#product">See The Collection</SecondaryButton>
+            <SecondaryButton href="#product">See Ready Stock</SecondaryButton>
             <PrimaryButton href="tel:02885146884">Call 028 8514 6884</PrimaryButton>
           </div>
         </div>
