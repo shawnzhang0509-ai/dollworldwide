@@ -41,6 +41,42 @@ const products: Product[] = [
   },
 ];
 
+function ProductCardContent({ product }: { product: Product }) {
+  return (
+    <>
+      <div className="relative aspect-[3/4] overflow-hidden">
+        <img
+          src={product.image}
+          alt={product.name}
+          className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+        />
+        <div className="absolute top-4 left-4">
+          <span className="text-label text-xs bg-gold text-noir-900 px-3 py-1">{product.tag}</span>
+        </div>
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 40%)',
+          }}
+        />
+      </div>
+      <div className="p-6">
+        <h3 className="font-display text-display-h4 text-cream-100 mb-1">{product.name}</h3>
+        <p className="font-body text-sm text-cream-300 mb-3">{product.specs}</p>
+        <div className="flex items-center justify-between">
+          <span className="font-display text-3xl text-gold">{product.price}</span>
+          <span className="font-body text-xs text-cream-300">NZD · From</span>
+        </div>
+        {product.tradeMeSku && (
+          <span className="mt-5 inline-flex w-full items-center justify-center border border-gold px-5 py-3 text-button text-gold transition-all duration-300 group-hover:bg-gold group-hover:text-noir-900">
+            View SKU {product.tradeMeSku} on Trade Me
+          </span>
+        )}
+      </div>
+    </>
+  );
+}
+
 export function ProductSection() {
   const cardsRef = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
@@ -82,42 +118,24 @@ export function ProductSection() {
               ? buildTradeMeSearchUrl({ sku: p.tradeMeSku, productName: p.name })
               : undefined;
 
+            if (tradeMeUrl) {
+              return (
+                <a
+                  key={p.name}
+                  href={tradeMeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`View ${p.name} SKU ${p.tradeMeSku} on Trade Me`}
+                  className="product-card block bg-noir-600 overflow-hidden group focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-noir-700"
+                >
+                  <ProductCardContent product={p} />
+                </a>
+              );
+            }
+
             return (
               <div key={p.name} className="product-card bg-noir-600 overflow-hidden group">
-                <div className="relative aspect-[3/4] overflow-hidden">
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
-                  />
-                  <div className="absolute top-4 left-4">
-                    <span className="text-label text-xs bg-gold text-noir-900 px-3 py-1">{p.tag}</span>
-                  </div>
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      background: 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 40%)',
-                    }}
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="font-display text-display-h4 text-cream-100 mb-1">{p.name}</h3>
-                  <p className="font-body text-sm text-cream-300 mb-3">{p.specs}</p>
-                  <div className="flex items-center justify-between">
-                    <span className="font-display text-3xl text-gold">{p.price}</span>
-                    <span className="font-body text-xs text-cream-300">NZD · From</span>
-                  </div>
-                  {tradeMeUrl && (
-                    <a
-                      href={tradeMeUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-5 inline-flex w-full items-center justify-center border border-gold px-5 py-3 text-button text-gold transition-all duration-300 hover:bg-gold hover:text-noir-900"
-                    >
-                      View SKU {p.tradeMeSku} on Trade Me
-                    </a>
-                  )}
-                </div>
+                <ProductCardContent product={p} />
               </div>
             );
           })}
