@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SecondaryButton } from '@/components/SecondaryButton';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { buildTradeMeR18AdultSearchUrl } from '@/lib/trademe';
 
@@ -9,10 +10,37 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CONTACT_EMAIL = 'dollworldwide2023@gmail.com';
 
-const realLifeViews = [
-  'See naked full body',
-  'See clothed full body',
-  'See head',
+type RealLifeViewId = 'nakedFullBody' | 'clothedFullBody' | 'head';
+
+interface RealLifeView {
+  id: RealLifeViewId;
+  label: string;
+  description: string;
+}
+
+interface MediaAsset {
+  type: 'image' | 'video';
+  src: string;
+  title?: string;
+  poster?: string;
+}
+
+const realLifeViews: RealLifeView[] = [
+  {
+    id: 'nakedFullBody',
+    label: 'See naked full body',
+    description: 'Full-body real-life media for checking shape, proportions, and condition.',
+  },
+  {
+    id: 'clothedFullBody',
+    label: 'See clothed full body',
+    description: 'Styled full-body media for seeing the model in a more natural presentation.',
+  },
+  {
+    id: 'head',
+    label: 'See head',
+    description: 'Close-up face and head detail for makeup, eyes, hairline, and expression.',
+  },
 ];
 
 interface Product {
@@ -23,6 +51,7 @@ interface Product {
   specs: string;
   tradeMeSku?: string;
   tradeMeSearchCode?: string;
+  realLifeMedia?: Partial<Record<RealLifeViewId, MediaAsset[]>>;
 }
 
 const products: Product[] = [
@@ -51,9 +80,14 @@ const products: Product[] = [
   },
 ];
 
-function buildRealLifeRequestUrl(productName: string, viewType: string) {
-  const subject = `${viewType} for ${productName}`;
-  const body = `Hi Doll Worldwide,\n\nPlease send me the real-life media for ${productName}: ${viewType}.\n\nThanks.`;
+interface SelectedRealLifeMedia {
+  product: Product;
+  view: RealLifeView;
+}
+
+function buildRealLifeRequestUrl(productName: string, viewLabel: string) {
+  const subject = `${viewLabel} for ${productName}`;
+  const body = `Hi Doll Worldwide,\n\nPlease send me the real-life media for ${productName}: ${viewLabel}.\n\nThanks.`;
 
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
@@ -70,6 +104,7 @@ interface ProductCardContentProps {
   tradeMeUrl?: string;
   realLifeOpen: boolean;
   onToggleRealLife: () => void;
+  onSelectRealLife: (view: RealLifeView) => void;
 }
 
 function ProductCardContent({
@@ -77,6 +112,7 @@ function ProductCardContent({
   tradeMeUrl,
   realLifeOpen,
   onToggleRealLife,
+  onSelectRealLife,
 }: ProductCardContentProps) {
   return (
     <>
@@ -124,18 +160,19 @@ function ProductCardContent({
         {realLifeOpen && (
           <div className="mt-4 border border-gold/30 bg-noir-900/60 p-3">
             <p className="font-body text-xs text-cream-300 mb-3">
-              Choose what you want to see before buying:
+              Choose what you want to see inside the site:
             </p>
             <div className="grid gap-2">
               {realLifeViews.map((view) => (
-                <a
-                  key={view}
-                  href={buildRealLifeRequestUrl(product.name, view)}
+                <button
+                  key={view.id}
+                  type="button"
+                  onClick={() => onSelectRealLife(view)}
                   className="flex items-center justify-between border border-cream-300/15 px-4 py-2.5 font-body text-sm text-cream-100 transition-colors duration-300 hover:border-gold hover:text-gold"
                 >
-                  <span>{view}</span>
+                  <span>{view.label}</span>
                   <span className="text-gold">→</span>
-                </a>
+                </button>
               ))}
             </div>
           </div>
@@ -145,11 +182,89 @@ function ProductCardContent({
   );
 }
 
+function RealLifeMediaDialog({
+  selected,
+  onClose,
+}: {
+  selected: SelectedRealLifeMedia | null;
+  onClose: () => void;
+}) {
+  const media = selected?.product.realLifeMedia?.[selected.view.id] ?? [];
+
+  return (
+    <Dialog open={Boolean(selected)} onOpenChange={(open) => { if (!open) onClose(); }}>
+      <DialogContent className="border-gold/30 bg-noir-900 text-cream-100 sm:max-w-3xl">
+        {selected && (
+          <>
+            <DialogHeader>
+              <DialogTitle className="font-display text-2xl text-cream-100">
+                {selected.product.name} — {selected.view.label}
+              </DialogTitle>
+              <DialogDescription className="font-body text-cream-300">
+                {selected.view.description}
+              </DialogDescription>
+            </DialogHeader>
+
+            {media.length > 0 ? (
+              <div className="grid gap-4">
+                {media.map((item) => (
+                  <div key={item.src} className="overflow-hidden bg-noir-700">
+                    {item.type === 'video' ? (
+                      <video
+                        src={item.src}
+                        poster={item.poster}
+                        controls
+                        playsInline
+                        className="max-h-[70vh] w-full object-contain"
+                      />
+                    ) : (
+                      <img
+                        src={item.src}
+                        alt={item.title ?? `${selected.product.name} ${selected.view.label}`}
+                        className="max-h-[70vh] w-full object-contain"
+                      />
+                    )}
+                    {item.title && (
+                      <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
+                    )}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="border border-gold/20 bg-noir-700 p-6 text-center">
+                <p className="font-display text-xl text-gold mb-3">Real media opens here.</p>
+                <p className="font-body text-sm text-cream-300 mb-5">
+                  Upload this product&apos;s video or photos and this popup will play them inside the website, without sending buyers to Google Drive or another app.
+                </p>
+                <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
+                  <a
+                    href={buildRealLifeRequestUrl(selected.product.name, selected.view.label)}
+                    className="inline-flex items-center justify-center bg-gold px-5 py-3 text-button text-noir-900 transition-colors hover:bg-gold-light"
+                  >
+                    Request this media
+                  </a>
+                  <a
+                    href="tel:02885146884"
+                    className="inline-flex items-center justify-center border border-gold px-5 py-3 text-button text-gold transition-colors hover:bg-gold hover:text-noir-900"
+                  >
+                    Call 028 8514 6884
+                  </a>
+                </div>
+              </div>
+            )}
+          </>
+        )}
+      </DialogContent>
+    </Dialog>
+  );
+}
+
 export function ProductSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const [openRealLifeProduct, setOpenRealLifeProduct] = useState<string | null>(null);
+  const [selectedRealLifeMedia, setSelectedRealLifeMedia] = useState<SelectedRealLifeMedia | null>(null);
   const reduced = useReducedMotion();
 
   useEffect(() => {
@@ -229,6 +344,7 @@ export function ProductSection() {
                   tradeMeUrl={tradeMeUrl}
                   realLifeOpen={realLifeOpen}
                   onToggleRealLife={() => setOpenRealLifeProduct(realLifeOpen ? null : p.name)}
+                  onSelectRealLife={(view) => setSelectedRealLifeMedia({ product: p, view })}
                 />
               </div>
             );
@@ -242,6 +358,10 @@ export function ProductSection() {
           <SecondaryButton href="tel:02885146884">Call to See Current Stock</SecondaryButton>
         </div>
       </div>
+      <RealLifeMediaDialog
+        selected={selectedRealLifeMedia}
+        onClose={() => setSelectedRealLifeMedia(null)}
+      />
     </section>
   );
 }
