@@ -1,0 +1,156 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 30 18% 94%;
+    --card: 0 0% 7%;
+    --card-foreground: 30 18% 94%;
+    --popover: 0 0% 4%;
+    --popover-foreground: 30 18% 94%;
+    --primary: 43 65% 52%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 30 18% 94%;
+    --muted: 0 0% 10%;
+    --muted-foreground: 25 10% 50%;
+    --accent: 43 65% 52%;
+    --accent-foreground: 0 0% 4%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 12%;
+    --input: 0 0% 12%;
+    --ring: 43 65% 52%;
+    --radius: 0rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  body {
+    @apply bg-noir-900 text-cream-100 font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: rgba(212, 175, 55, 0.3);
+    color: #F5F0EB;
+  }
+}
+
+@layer components {
+  .text-display-h1 {
+    @apply font-display text-[80px] font-light leading-[1.05] tracking-[-0.02em];
+  }
+
+  .text-display-h2 {
+    @apply font-display text-[56px] font-normal leading-[1.1] tracking-[-0.01em];
+  }
+
+  .text-display-h3 {
+    @apply font-display text-[36px] font-normal leading-[1.2];
+  }
+
+  .text-display-h4 {
+    @apply font-display text-[28px] font-medium leading-[1.25];
+  }
+
+  .text-label {
+    @apply font-accent text-[12px] font-semibold leading-[1.4] tracking-[0.15em] uppercase;
+  }
+
+  .text-body-large {
+    @apply font-body text-[18px] font-light leading-[1.7] tracking-[0.01em];
+  }
+
+  .text-nav {
+    @apply font-body text-[13px] font-medium tracking-[0.08em] uppercase;
+  }
+
+  .text-button {
+    @apply font-body text-[13px] font-semibold tracking-[0.1em] uppercase;
+  }
+
+  .shimmer-overlay {
+    position: relative;
+  }
+
+  .shimmer-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(115deg,
+      transparent 30%,
+      rgba(212,175,55,0.08) 45%,
+      rgba(212,175,55,0.15) 50%,
+      rgba(212,175,55,0.08) 55%,
+      transparent 70%
+    );
+    background-size: 200% 100%;
+    animation: shimmer-sweep 8s linear infinite;
+    pointer-events: none;
+  }
+
+  .gold-glow {
+    background: radial-gradient(ellipse at center, rgba(212,175,55,0.06) 0%, transparent 70%);
+    animation: gold-pulse 4s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .will-change-transform {
+    will-change: transform;
+  }
+
+  .will-change-opacity {
+    will-change: opacity;
+  }
+}
+
+/* Responsive typography */
+@media (max-width: 991px) {
+  .text-display-h1 {
+    font-size: 56px;
+  }
+  .text-display-h2 {
+    font-size: 42px;
+  }
+  .text-display-h3 {
+    font-size: 30px;
+  }
+  .text-display-h4 {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .text-display-h1 {
+    font-size: 40px;
+  }
+  .text-display-h2 {
+    font-size: 32px;
+  }
+  .text-display-h3 {
+    font-size: 26px;
+  }
+  .text-display-h4 {
+    font-size: 22px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .shimmer-overlay::after {
+    animation: none;
+  }
+  .gold-glow {
+    animation: none;
+  }
+}
