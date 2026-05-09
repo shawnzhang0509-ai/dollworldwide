@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const collections = [
   {
-    name: 'Divine',
-    label: 'THE DIVINE COLLECTION',
-    description: 'Ethereal beauty with celestial grace. Our most artistic collection.',
+    name: 'Signature Silicone',
+    label: 'READY STOCK HIGHLIGHT',
+    description: 'Premium full-silicone models selected from current Auckland stock.',
     image: '/images/collection-divine.jpg',
     link: '#contact',
   },
@@ -79,9 +79,9 @@ export function CollectionsSection() {
     <section id="collections" className="bg-noir-700 py-[120px]">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         <SectionHeader
-          label="THE COLLECTIONS"
-          heading="Five Distinct Worlds of Beauty"
-          subtext="From ethereal fantasy to timeless elegance, find your perfect companion."
+          label="STOCK HIGHLIGHTS"
+          heading="Different Looks, One Trusted NZ Seller"
+          subtext="Use this area for themed groups, seasonal arrivals, or best-selling styles when more media is available."
           centered
         />
 
