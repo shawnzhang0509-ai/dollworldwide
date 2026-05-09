@@ -3,7 +3,7 @@ import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SecondaryButton } from '@/components/SecondaryButton';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
-import { buildTradeMeSearchUrl } from '@/lib/trademe';
+import { buildTradeMeR18AdultSearchUrl } from '@/lib/trademe';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -14,6 +14,7 @@ interface Product {
   tag: string;
   specs: string;
   tradeMeSku?: string;
+  tradeMeSearchCode?: string;
 }
 
 const products: Product[] = [
@@ -24,6 +25,7 @@ const products: Product[] = [
     tag: 'BEST SELLER',
     specs: '165cm · D-Cup · All Body Silicone · Platinum Grade',
     tradeMeSku: '01',
+    tradeMeSearchCode: 'DWWD01',
   },
   {
     name: 'Divine — Nova',
@@ -67,9 +69,9 @@ function ProductCardContent({ product }: { product: Product }) {
           <span className="font-display text-3xl text-gold">{product.price}</span>
           <span className="font-body text-xs text-cream-300">NZD · From</span>
         </div>
-        {product.tradeMeSku && (
+        {(product.tradeMeSearchCode || product.tradeMeSku) && (
           <span className="mt-5 inline-flex w-full items-center justify-center border border-gold px-5 py-3 text-button text-gold transition-all duration-300 group-hover:bg-gold group-hover:text-noir-900">
-            View SKU {product.tradeMeSku} on Trade Me
+            View {product.tradeMeSearchCode ?? `SKU ${product.tradeMeSku}`} on Trade Me
           </span>
         )}
       </div>
@@ -114,8 +116,8 @@ export function ProductSection() {
 
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {products.map((p) => {
-            const tradeMeUrl = p.tradeMeSku
-              ? buildTradeMeSearchUrl({ sku: p.tradeMeSku, productName: p.name })
+            const tradeMeUrl = p.tradeMeSearchCode
+              ? buildTradeMeR18AdultSearchUrl(p.tradeMeSearchCode)
               : undefined;
 
             if (tradeMeUrl) {
@@ -125,7 +127,7 @@ export function ProductSection() {
                   href={tradeMeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  aria-label={`View ${p.name} SKU ${p.tradeMeSku} on Trade Me`}
+                  aria-label={`View ${p.name} ${p.tradeMeSearchCode} on Trade Me`}
                   className="product-card block bg-noir-600 overflow-hidden group focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-noir-700"
                 >
                   <ProductCardContent product={p} />
