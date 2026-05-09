@@ -39,10 +39,10 @@ export function ContactCTASection() {
         </span>
         <div className="cta-animate w-[60px] h-[1px] bg-gold mx-auto mb-6" />
         <h2 className="cta-animate text-display-h2 text-cream-100 mb-6">
-          Full Silicone. From $2,559. In Stock Now.
+          Current Stock. Real Media. Private Viewing.
         </h2>
         <p className="cta-animate text-body-large text-cream-200 mb-10">
-          Do not settle for silicone-head-TPE-body compromises. Get the real thing — full platinum silicone Divine doll, already in Auckland. Call today to book a private viewing or place your order.
+          Ask for the latest photos, short videos, Trade Me links, or a private Auckland viewing. We can help you compare models and choose what is actually available now.
         </p>
 
         <div className="cta-animate flex flex-wrap justify-center gap-4 mb-8">

@@ -48,12 +48,12 @@ export function WhyDivineSection() {
   }, [reduced]);
 
   return (
-    <section id="why-divine" className="bg-noir-900 py-[120px]">
+    <section id="why-us" className="bg-noir-900 py-[120px]">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         <SectionHeader
-          label="WHY DIVINE"
-          heading="All Body Silicone. Not a Compromise."
-          subtext="Most 'silicone dolls' on the NZ market are actually silicone-head-TPE-body hybrids — a cheaper combo that feels and looks inferior. Divine is different. Full silicone. Factory direct. Already in Auckland."
+          label="WHY DOLL WORLDWIDE"
+          heading="Real Stock. Real Photos. Clear Choices."
+          subtext="The site should feel like a trusted NZ stockroom, not a single product line. We show current models, factory details, real media, Trade Me proof, and simple ways to inspect or order."
           centered
         />
 

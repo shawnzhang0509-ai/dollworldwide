@@ -19,7 +19,7 @@ interface Product {
 
 const products: Product[] = [
   {
-    name: 'Divine — Aria',
+    name: 'Aria',
     image: '/images/divine-aria.jpg',
     price: '$2,559',
     tag: 'BEST SELLER',
@@ -28,14 +28,14 @@ const products: Product[] = [
     tradeMeSearchCode: 'DWWD01',
   },
   {
-    name: 'Divine — Nova',
+    name: 'Nova',
     image: '/images/divine-nova.jpg',
     price: '$2,559',
     tag: 'ELITE',
     specs: '148cm · C-Cup · All Body Silicone · Platinum Grade',
   },
   {
-    name: 'Divine — Celeste',
+    name: 'Celeste',
     image: '/images/divine-celeste.jpg',
     price: '$2,559',
     tag: 'NEW ARRIVAL',
@@ -106,11 +106,11 @@ export function ProductSection() {
     <section id="product" className="bg-noir-700 py-[120px]">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
         <div className="text-center mb-16">
-          <span className="text-label text-gold block mb-4">THE DIVINE COLLECTION</span>
+          <span className="text-label text-gold block mb-4">FEATURED AUCKLAND STOCK</span>
           <div className="w-[60px] h-[1px] bg-gold mx-auto mb-6" />
-          <h2 className="text-display-h2 text-cream-100 mb-4">10 Models. All in Auckland. Ready Today.</h2>
+          <h2 className="text-display-h2 text-cream-100 mb-4">Current Models Ready to View or Ship.</h2>
           <p className="text-body-large text-cream-200 max-w-2xl mx-auto">
-            Every Divine doll is full platinum silicone — head, body, hands, feet. No TPE fillers. No shortcuts. Choose your favourite, inspect in person, or we ship discreetly nationwide.
+            Browse selected models from current stock. Each card can link to the matching Trade Me listing or search code, so renewed listings can still be found when the title marker stays the same.
           </p>
         </div>
 
@@ -145,9 +145,9 @@ export function ProductSection() {
 
         <div className="text-center mt-12">
           <p className="font-body text-sm text-cream-300 mb-4">
-            Plus 7 more models: Hailey, Freya, Elysia, Selene, Amara, Stella, Kira. Call to see full catalogue.
+            More models and real media are available on request. Call to see the latest photos, videos, and full catalogue.
           </p>
-          <SecondaryButton href="tel:02885146884">Call to See All 10 Models</SecondaryButton>
+          <SecondaryButton href="tel:02885146884">Call to See Current Stock</SecondaryButton>
         </div>
       </div>
     </section>

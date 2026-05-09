@@ -43,7 +43,7 @@ export function TrademeProofSection() {
           <div className="w-[60px] h-[1px] bg-gold mx-auto mb-6" />
           <h2 className="text-display-h2 text-cream-100 mb-4">Sold on Trade Me. Trusted by NZ Buyers.</h2>
           <p className="text-body-large text-cream-200 max-w-2xl mx-auto">
-            We do not just talk. We sell. Every month, Kiwis across the country buy our Divine all-silicone dolls on Trade Me and get them delivered discreetly to their door. Here is the proof.
+            We do not just talk. We sell. Kiwis buy from Doll Worldwide on Trade Me, view current listings, and receive discreet delivery from Auckland stock. Here is the proof.
           </p>
         </div>
 
