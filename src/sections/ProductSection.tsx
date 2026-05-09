@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SecondaryButton } from '@/components/SecondaryButton';
@@ -6,6 +6,14 @@ import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { buildTradeMeR18AdultSearchUrl } from '@/lib/trademe';
 
 gsap.registerPlugin(ScrollTrigger);
+
+const CONTACT_EMAIL = 'dollworldwide2023@gmail.com';
+
+const realLifeViews = [
+  'See naked full body',
+  'See clothed full body',
+  'See head',
+];
 
 interface Product {
   name: string;
@@ -43,7 +51,33 @@ const products: Product[] = [
   },
 ];
 
-function ProductCardContent({ product }: { product: Product }) {
+function buildRealLifeRequestUrl(productName: string, viewType: string) {
+  const subject = `${viewType} for ${productName}`;
+  const body = `Hi Doll Worldwide,\n\nPlease send me the real-life media for ${productName}: ${viewType}.\n\nThanks.`;
+
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+function buildTradeMeRequestUrl(productName: string) {
+  const subject = `Trade Me link for ${productName}`;
+  const body = `Hi Doll Worldwide,\n\nPlease send me the current Trade Me listing for ${productName}.\n\nThanks.`;
+
+  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+interface ProductCardContentProps {
+  product: Product;
+  tradeMeUrl?: string;
+  realLifeOpen: boolean;
+  onToggleRealLife: () => void;
+}
+
+function ProductCardContent({
+  product,
+  tradeMeUrl,
+  realLifeOpen,
+  onToggleRealLife,
+}: ProductCardContentProps) {
   return (
     <>
       <div className="relative aspect-[3/4] overflow-hidden">
@@ -69,10 +103,42 @@ function ProductCardContent({ product }: { product: Product }) {
           <span className="font-display text-3xl text-gold">{product.price}</span>
           <span className="font-body text-xs text-cream-300">NZD</span>
         </div>
-        {(product.tradeMeSearchCode || product.tradeMeSku) && (
-          <span className="mt-5 inline-flex w-full items-center justify-center border border-gold px-5 py-3 text-button text-gold transition-all duration-300 group-hover:bg-gold group-hover:text-noir-900">
-            View {product.tradeMeSearchCode ?? `SKU ${product.tradeMeSku}`} on Trade Me
-          </span>
+        <div className="mt-5 grid grid-cols-1 gap-3">
+          <a
+            href={tradeMeUrl ?? buildTradeMeRequestUrl(product.name)}
+            target={tradeMeUrl ? '_blank' : undefined}
+            rel={tradeMeUrl ? 'noopener noreferrer' : undefined}
+            className="inline-flex w-full items-center justify-center bg-gold px-5 py-3 text-button text-noir-900 transition-all duration-300 hover:bg-gold-light"
+          >
+            Trade Me
+          </a>
+          <button
+            type="button"
+            onClick={onToggleRealLife}
+            aria-expanded={realLifeOpen}
+            className="inline-flex w-full items-center justify-center border border-gold px-5 py-3 text-button text-gold transition-all duration-300 hover:bg-gold hover:text-noir-900"
+          >
+            See me in real life
+          </button>
+        </div>
+        {realLifeOpen && (
+          <div className="mt-4 border border-gold/30 bg-noir-900/60 p-3">
+            <p className="font-body text-xs text-cream-300 mb-3">
+              Choose what you want to see before buying:
+            </p>
+            <div className="grid gap-2">
+              {realLifeViews.map((view) => (
+                <a
+                  key={view}
+                  href={buildRealLifeRequestUrl(product.name, view)}
+                  className="flex items-center justify-between border border-cream-300/15 px-4 py-2.5 font-body text-sm text-cream-100 transition-colors duration-300 hover:border-gold hover:text-gold"
+                >
+                  <span>{view}</span>
+                  <span className="text-gold">→</span>
+                </a>
+              ))}
+            </div>
+          </div>
         )}
       </div>
     </>
@@ -83,6 +149,7 @@ export function ProductSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
+  const [openRealLifeProduct, setOpenRealLifeProduct] = useState<string | null>(null);
   const reduced = useReducedMotion();
 
   useEffect(() => {
@@ -153,24 +220,16 @@ export function ProductSection() {
               ? buildTradeMeR18AdultSearchUrl(p.tradeMeSearchCode)
               : undefined;
 
-            if (tradeMeUrl) {
-              return (
-                <a
-                  key={p.name}
-                  href={tradeMeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`View ${p.name} ${p.tradeMeSearchCode} on Trade Me`}
-                  className="product-card block bg-noir-600 overflow-hidden group will-change-transform focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-noir-700"
-                >
-                  <ProductCardContent product={p} />
-                </a>
-              );
-            }
+            const realLifeOpen = openRealLifeProduct === p.name;
 
             return (
               <div key={p.name} className="product-card bg-noir-600 overflow-hidden group will-change-transform">
-                <ProductCardContent product={p} />
+                <ProductCardContent
+                  product={p}
+                  tradeMeUrl={tradeMeUrl}
+                  realLifeOpen={realLifeOpen}
+                  onToggleRealLife={() => setOpenRealLifeProduct(realLifeOpen ? null : p.name)}
+                />
               </div>
             );
           })}
