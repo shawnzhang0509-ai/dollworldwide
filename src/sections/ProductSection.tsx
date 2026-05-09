@@ -14,6 +14,7 @@ interface Product {
   tag: string;
   specs: string;
   tradeMeSku?: string;
+  tradeMeListingUrl?: string;
 }
 
 const products: Product[] = [
@@ -24,6 +25,8 @@ const products: Product[] = [
     tag: 'BEST SELLER',
     specs: '165cm · D-Cup · All Body Silicone · Platinum Grade',
     tradeMeSku: '01',
+    tradeMeListingUrl:
+      'https://www.trademe.co.nz/a/marketplace/home-living/lifestyle/r-18-adult/other/listing/5926461124',
   },
   {
     name: 'Divine — Nova',
@@ -114,9 +117,9 @@ export function ProductSection() {
 
         <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {products.map((p) => {
-            const tradeMeUrl = p.tradeMeSku
+            const tradeMeUrl = p.tradeMeListingUrl ?? (p.tradeMeSku
               ? buildTradeMeSearchUrl({ sku: p.tradeMeSku, productName: p.name })
-              : undefined;
+              : undefined);
 
             if (tradeMeUrl) {
               return (
