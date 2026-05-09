@@ -71,7 +71,8 @@ export function HeroSection() {
         .to(items[1], { opacity: 1, scaleX: 1, duration: 0.8, ease: 'power2.out' }, '-=0.3')
         .to(items[2], { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out' }, '-=0.4')
         .to(items[3], { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5')
-        .to(items[4], { opacity: 1, y: 0, duration: 0.6, stagger: 0.15, ease: 'power2.out' }, '-=0.3');
+        .to(items[4], { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
+        .to(items[5], { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3');
     }
 
     // ====== 5-CARD SEQUENTIAL EXPLOSION ======
@@ -201,8 +202,11 @@ export function HeroSection() {
           <h1 className="hero-animate text-display-h1 text-cream-100 mb-4 max-w-[650px] opacity-0">
             Silicone Head + TPE Body. $999 Auckland Ready Stock.
           </h1>
-          <p className="hero-animate text-body-large text-cream-200 mb-6 max-w-[550px] opacity-0">
+          <p className="hero-animate text-body-large text-cream-200 mb-4 max-w-[550px] opacity-0">
             Doll Worldwide focuses on the strongest value: realistic silicone-head detail, soft TPE body, real photos, Trade Me proof, and discreet NZ delivery at the best price.
+          </p>
+          <p className="hero-animate text-label text-cream-200/90 mb-6 max-w-[620px] opacity-0">
+            Why us: $999 clear price · Real media before you buy · Auckland pickup or discreet nationwide shipping
           </p>
           <div className="hero-animate flex flex-wrap gap-3 opacity-0">
             <SecondaryButton href="#product">See Ready Stock</SecondaryButton>

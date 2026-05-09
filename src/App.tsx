@@ -3,7 +3,6 @@ import { AgeVerificationGate } from '@/components/AgeVerificationGate';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { HeroSection } from '@/sections/HeroSection';
-import { WhyDivineSection } from '@/sections/WhyDivineSection';
 import { ProductSection } from '@/sections/ProductSection';
 import { GallerySection } from '@/sections/GallerySection';
 import { TrademeProofSection } from '@/sections/TrademeProofSection';
@@ -19,7 +18,6 @@ function App() {
       <Navbar />
       <main>
         <HeroSection />
-        <WhyDivineSection />
         <ProductSection />
         <GallerySection />
         <TrademeProofSection />

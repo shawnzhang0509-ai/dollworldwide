@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react';
 import gsap from 'gsap';
 
 const navLinks = [
-  { label: 'Why Us', href: '#why-us' },
   { label: 'Ready Stock', href: '#product' },
   { label: 'Real Media', href: '#gallery' },
   { label: 'Proof', href: '#proof' },

@@ -80,32 +80,65 @@ function ProductCardContent({ product }: { product: Product }) {
 }
 
 export function ProductSection() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
 
   useEffect(() => {
-    if (!cardsRef.current || reduced) return;
+    if (!sectionRef.current || !headerRef.current || !cardsRef.current || reduced) return;
+    const header = headerRef.current;
     const cards = cardsRef.current.querySelectorAll('.product-card');
-    gsap.set(cards, { opacity: 0, y: 60, scale: 1.02 });
-    gsap.to(cards, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 1,
-      stagger: 0.2,
-      ease: 'power3.out',
+    const images = cardsRef.current.querySelectorAll('.product-card img');
+
+    gsap.set(header, { opacity: 0, y: 36 });
+    gsap.set(cards, {
+      opacity: 0,
+      y: 110,
+      scale: 0.88,
+      rotateX: 14,
+      filter: 'blur(12px)',
+      transformOrigin: 'center bottom',
+    });
+    gsap.set(images, { scale: 1.12 });
+
+    const tl = gsap.timeline({
       scrollTrigger: {
-        trigger: cardsRef.current,
-        start: 'top 80%',
+        trigger: sectionRef.current,
+        start: 'top 76%',
         toggleActions: 'play none none none',
       },
     });
+
+    tl.to(header, {
+      opacity: 1,
+      y: 0,
+      duration: 0.75,
+      ease: 'power3.out',
+    })
+      .to(cards, {
+        opacity: 1,
+        y: 0,
+        scale: 1,
+        rotateX: 0,
+        filter: 'blur(0px)',
+        duration: 1.15,
+        stagger: 0.18,
+        ease: 'expo.out',
+      }, '-=0.25')
+      .to(images, {
+        scale: 1,
+        duration: 1.25,
+        stagger: 0.18,
+        ease: 'power3.out',
+      }, '<');
   }, [reduced]);
 
   return (
-    <section id="product" className="bg-noir-700 py-[120px]">
-      <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-        <div className="text-center mb-16">
+    <section id="product" ref={sectionRef} className="relative bg-noir-700 py-[110px] md:py-[120px] overflow-hidden">
+      <div className="absolute inset-x-0 top-0 h-[280px] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.12),transparent_68%)] pointer-events-none" />
+      <div className="relative max-w-[1280px] mx-auto px-6 md:px-10">
+        <div ref={headerRef} className="text-center mb-16">
           <span className="text-label text-gold block mb-4">FEATURED AUCKLAND STOCK</span>
           <div className="w-[60px] h-[1px] bg-gold mx-auto mb-6" />
           <h2 className="text-display-h2 text-cream-100 mb-4">$999 Models Ready to View or Ship.</h2>
@@ -114,7 +147,7 @@ export function ProductSection() {
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ perspective: '1200px' }}>
           {products.map((p) => {
             const tradeMeUrl = p.tradeMeSearchCode
               ? buildTradeMeR18AdultSearchUrl(p.tradeMeSearchCode)
@@ -128,7 +161,7 @@ export function ProductSection() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={`View ${p.name} ${p.tradeMeSearchCode} on Trade Me`}
-                  className="product-card block bg-noir-600 overflow-hidden group focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-noir-700"
+                  className="product-card block bg-noir-600 overflow-hidden group will-change-transform focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-noir-700"
                 >
                   <ProductCardContent product={p} />
                 </a>
@@ -136,7 +169,7 @@ export function ProductSection() {
             }
 
             return (
-              <div key={p.name} className="product-card bg-noir-600 overflow-hidden group">
+              <div key={p.name} className="product-card bg-noir-600 overflow-hidden group will-change-transform">
                 <ProductCardContent product={p} />
               </div>
             );
