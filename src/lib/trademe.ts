@@ -1,6 +1,6 @@
 const TRADE_ME_BASE_SEARCH_URL = 'https://www.trademe.co.nz/a/marketplace/search';
 const TRADE_ME_R18_ADULT_SEARCH_URL =
-  'https://www.trademe.co.nz/a/marketplace/home-living/lifestyle/r-18-adult/search';
+  'https://www.trademe.co.nz/a/marketplace/home-living/lifestyle/r-18-adult/other/search';
 
 export const TRADE_ME_SELLER_NAME = 'silvertrust';
 
