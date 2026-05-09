@@ -90,7 +90,7 @@ export function CraftsmanshipSection() {
           Where Art Meets Intimacy
         </h2>
         <p className="craft-animate text-body-large text-cream-200 mb-16">
-          Every Doll Worldwide creation begins in our partner workshops, where master artisans sculpt, mold, and paint each piece by hand. From the internal skeleton engineering to the final makeup application, hundreds of hours of meticulous work go into ensuring your companion is as lifelike as humanly possible. We use only medical-grade TPE and platinum silicone — materials chosen for their safety, durability, and remarkably realistic skin-like texture.
+          Every Doll Worldwide model is selected for practical value: realistic silicone-head detail, a soft TPE body, poseable internal skeleton, and current stock pricing at $999. The goal is simple — the best look and feel for the price, with real media available before you buy.
         </p>
 
         {/* Stats */}

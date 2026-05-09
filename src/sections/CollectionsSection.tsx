@@ -8,9 +8,9 @@ gsap.registerPlugin(ScrollTrigger);
 
 const collections = [
   {
-    name: 'Signature Silicone',
+    name: 'Best Value Models',
     label: 'READY STOCK HIGHLIGHT',
-    description: 'Premium full-silicone models selected from current Auckland stock.',
+    description: 'Silicone-head + TPE-body models selected from current Auckland stock at $999.',
     image: '/images/collection-divine.jpg',
     link: '#contact',
   },

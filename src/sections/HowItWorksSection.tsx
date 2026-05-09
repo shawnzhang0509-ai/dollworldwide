@@ -15,7 +15,7 @@ const steps = [
   {
     icon: CheckCircle,
     title: 'Confirm Your Order',
-    desc: 'Choose the model you want from current stock. We accept bank transfer, cash on pickup, or Trade Me Pay Now where available.',
+    desc: 'Choose the $999 model you want from current stock. We accept bank transfer, cash on pickup, or Trade Me Pay Now where available.',
   },
   {
     icon: Package,

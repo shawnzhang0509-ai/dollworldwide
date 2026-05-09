@@ -6,9 +6,9 @@ import { useReducedMotion } from '@/hooks/useReducedMotion';
 gsap.registerPlugin(ScrollTrigger);
 
 const proofs = [
-  { image: '/images/trademe-1.jpg', label: 'Sold Jan 2026 · $2,559' },
-  { image: '/images/trademe-2.jpg', label: 'Sold Dec 2025 · $2,559' },
-  { image: '/images/trademe-3.jpg', label: 'Sold Nov 2025 · $2,559' },
+  { image: '/images/trademe-1.jpg', label: 'Sold Jan 2026 · $999' },
+  { image: '/images/trademe-2.jpg', label: 'Sold Dec 2025 · $999' },
+  { image: '/images/trademe-3.jpg', label: 'Sold Nov 2025 · $999' },
   { image: '/images/trademe-4.jpg', label: '$15,000+ sold this quarter' },
 ];
 
@@ -43,7 +43,7 @@ export function TrademeProofSection() {
           <div className="w-[60px] h-[1px] bg-gold mx-auto mb-6" />
           <h2 className="text-display-h2 text-cream-100 mb-4">Sold on Trade Me. Trusted by NZ Buyers.</h2>
           <p className="text-body-large text-cream-200 max-w-2xl mx-auto">
-            We do not just talk. We sell. Kiwis buy from Doll Worldwide on Trade Me, view current listings, and receive discreet delivery from Auckland stock. Here is the proof.
+            We do not just talk. We sell $999 ready-stock models on Trade Me, with real listings, NZ buyers, and discreet delivery from Auckland stock. Here is the proof.
           </p>
         </div>
 

@@ -23,8 +23,8 @@ const sellingPoints = [
   },
   {
     icon: DollarSign,
-    title: 'FROM $2,559',
-    subtitle: 'Factory direct. Best price in NZ.',
+    title: '$999',
+    subtitle: 'Best price in NZ ready stock.',
     color: '#50A078',
   },
   {
@@ -199,10 +199,10 @@ export function HeroSection() {
             style={{ transform: 'scaleX(0)' }}
           />
           <h1 className="hero-animate text-display-h1 text-cream-100 mb-4 max-w-[650px] opacity-0">
-            Auckland Ready Stock. Real Photos. Fast Delivery.
+            Silicone Head + TPE Body. $999 Auckland Ready Stock.
           </h1>
           <p className="hero-animate text-body-large text-cream-200 mb-6 max-w-[550px] opacity-0">
-            Doll Worldwide brings premium companion dolls to NZ buyers with verified Trade Me sales, discreet shipping, and current stock you can inspect before you buy.
+            Doll Worldwide focuses on the strongest value: realistic silicone-head detail, soft TPE body, real photos, Trade Me proof, and discreet NZ delivery at the best price.
           </p>
           <div className="hero-animate flex flex-wrap gap-3 opacity-0">
             <SecondaryButton href="#product">See Ready Stock</SecondaryButton>

@@ -21,25 +21,25 @@ const products: Product[] = [
   {
     name: 'Aria',
     image: '/images/divine-aria.jpg',
-    price: '$2,559',
+    price: '$999',
     tag: 'BEST SELLER',
-    specs: '165cm · D-Cup · All Body Silicone · Platinum Grade',
+    specs: '165cm · D-Cup · Silicone Head · TPE Body',
     tradeMeSku: '01',
     tradeMeSearchCode: 'DWWD01',
   },
   {
     name: 'Nova',
     image: '/images/divine-nova.jpg',
-    price: '$2,559',
+    price: '$999',
     tag: 'ELITE',
-    specs: '148cm · C-Cup · All Body Silicone · Platinum Grade',
+    specs: '148cm · C-Cup · Silicone Head · TPE Body',
   },
   {
     name: 'Celeste',
     image: '/images/divine-celeste.jpg',
-    price: '$2,559',
+    price: '$999',
     tag: 'NEW ARRIVAL',
-    specs: '165cm · E-Cup · All Body Silicone · Platinum Grade',
+    specs: '165cm · E-Cup · Silicone Head · TPE Body',
   },
 ];
 
@@ -67,7 +67,7 @@ function ProductCardContent({ product }: { product: Product }) {
         <p className="font-body text-sm text-cream-300 mb-3">{product.specs}</p>
         <div className="flex items-center justify-between">
           <span className="font-display text-3xl text-gold">{product.price}</span>
-          <span className="font-body text-xs text-cream-300">NZD · From</span>
+          <span className="font-body text-xs text-cream-300">NZD</span>
         </div>
         {(product.tradeMeSearchCode || product.tradeMeSku) && (
           <span className="mt-5 inline-flex w-full items-center justify-center border border-gold px-5 py-3 text-button text-gold transition-all duration-300 group-hover:bg-gold group-hover:text-noir-900">
@@ -108,9 +108,9 @@ export function ProductSection() {
         <div className="text-center mb-16">
           <span className="text-label text-gold block mb-4">FEATURED AUCKLAND STOCK</span>
           <div className="w-[60px] h-[1px] bg-gold mx-auto mb-6" />
-          <h2 className="text-display-h2 text-cream-100 mb-4">Current Models Ready to View or Ship.</h2>
+          <h2 className="text-display-h2 text-cream-100 mb-4">$999 Models Ready to View or Ship.</h2>
           <p className="text-body-large text-cream-200 max-w-2xl mx-auto">
-            Browse selected models from current stock. Each card can link to the matching Trade Me listing or search code, so renewed listings can still be found when the title marker stays the same.
+            Browse selected silicone-head + TPE-body models from current stock. Each card can link to the matching Trade Me listing or search code, so renewed listings can still be found when the title marker stays the same.
           </p>
         </div>
 
