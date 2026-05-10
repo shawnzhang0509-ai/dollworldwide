@@ -52,6 +52,8 @@ function ProductCardContent({
   onToggleRealLife,
   onSelectRealLife,
 }: ProductCardContentProps) {
+  const isFlagship = product.tier === 'flagship';
+
   return (
     <>
       <div className="relative aspect-[3/4] overflow-hidden">
@@ -61,28 +63,46 @@ function ProductCardContent({
           className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
         />
         <div className="absolute top-4 left-4">
-          <span className="text-label text-xs bg-gold text-noir-900 px-3 py-1">{product.tag}</span>
+          <span className={`text-label text-xs px-3 py-1 ${
+            isFlagship ? 'bg-noir-900 text-gold border border-gold' : 'bg-gold text-noir-900'
+          }`}>
+            {product.tag}
+          </span>
         </div>
+        {isFlagship && (
+          <div className="absolute right-[-46px] top-7 rotate-45 bg-gold px-12 py-2 text-center shadow-lg">
+            <span className="text-label text-[10px] text-noir-900">PREMIUM</span>
+          </div>
+        )}
         <div
           className="absolute inset-0"
           style={{
-            background: 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 40%)',
+            background: isFlagship
+              ? 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.35) 42%, rgba(212,175,55,0.16) 100%)'
+              : 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 40%)',
           }}
         />
       </div>
-      <div className="p-6">
+      <div className={`p-6 ${isFlagship ? 'bg-[linear-gradient(135deg,rgba(31,24,9,0.98),rgba(10,10,10,0.98))]' : ''}`}>
+        {isFlagship && (
+          <p className="text-label text-gold mb-2">FULL SILICONE SPECIAL EDITION</p>
+        )}
         <h3 className="font-display text-display-h4 text-cream-100 mb-1">{product.name}</h3>
         <p className="font-body text-sm text-cream-300 mb-3">{product.specs}</p>
         <div className="flex items-center justify-between">
-          <span className="font-display text-3xl text-gold">{product.price}</span>
-          <span className="font-body text-xs text-cream-300">NZD</span>
+          <span className={`font-display text-gold ${isFlagship ? 'text-4xl' : 'text-3xl'}`}>{product.price}</span>
+          <span className="font-body text-xs text-cream-300">{isFlagship ? 'NZD · Flagship' : 'NZD'}</span>
         </div>
         <div className="mt-5 grid grid-cols-1 gap-3">
           <a
             href={tradeMeUrl ?? buildTradeMeRequestUrl(product.name)}
             target={tradeMeUrl ? '_blank' : undefined}
             rel={tradeMeUrl ? 'noopener noreferrer' : undefined}
-            className="inline-flex w-full items-center justify-center bg-gold px-5 py-3 text-button text-noir-900 transition-all duration-300 hover:bg-gold-light"
+            className={`inline-flex w-full items-center justify-center px-5 py-3 text-button transition-all duration-300 ${
+              isFlagship
+                ? 'bg-gold text-noir-900 shadow-[0_0_24px_rgba(212,175,55,0.22)] hover:bg-gold-light'
+                : 'bg-gold text-noir-900 hover:bg-gold-light'
+            }`}
           >
             Trade Me
           </a>
@@ -90,13 +110,17 @@ function ProductCardContent({
             type="button"
             onClick={onToggleRealLife}
             aria-expanded={realLifeOpen}
-            className="inline-flex w-full items-center justify-center border border-gold px-5 py-3 text-button text-gold transition-all duration-300 hover:bg-gold hover:text-noir-900"
+            className={`inline-flex w-full items-center justify-center border px-5 py-3 text-button transition-all duration-300 ${
+              isFlagship
+                ? 'border-gold bg-gold/10 text-gold hover:bg-gold hover:text-noir-900'
+                : 'border-gold text-gold hover:bg-gold hover:text-noir-900'
+            }`}
           >
             See me in real life
           </button>
         </div>
         {realLifeOpen && (
-          <div className="mt-4 border border-gold/30 bg-noir-900/60 p-3">
+          <div className={`mt-4 border p-3 ${isFlagship ? 'border-gold/50 bg-noir-900/80' : 'border-gold/30 bg-noir-900/60'}`}>
             <p className="font-body text-xs text-cream-300 mb-3">
               Choose what you want to see inside the site:
             </p>
@@ -215,9 +239,20 @@ export function ProductGrid({ products, gridRef, className = 'grid grid-cols-1 m
             ? buildTradeMeR18AdultSearchUrl(product.tradeMeSearchCode)
             : undefined;
           const realLifeOpen = openRealLifeProduct === product.id;
+          const isFlagship = product.tier === 'flagship';
 
           return (
-            <div key={product.id} className="product-card bg-noir-600 overflow-hidden group will-change-transform">
+            <div
+              key={product.id}
+              className={`product-card relative overflow-hidden group will-change-transform ${
+                isFlagship
+                  ? 'border border-gold/70 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.22),rgba(24,18,8,0.98)_38%,rgba(10,10,10,1)_100%)] shadow-[0_24px_80px_rgba(212,175,55,0.16)]'
+                  : 'bg-noir-600'
+              }`}
+            >
+              {isFlagship && (
+                <div className="pointer-events-none absolute inset-0 z-10 border border-gold/30" />
+              )}
               <ProductCardContent
                 product={product}
                 tradeMeUrl={tradeMeUrl}
@@ -306,13 +341,13 @@ export function ProductSection() {
         </div>
 
         {flagshipProducts.length > 0 && (
-          <div className="mb-10">
+          <div className="mb-12 rounded-none border border-gold/25 bg-[linear-gradient(135deg,rgba(212,175,55,0.08),rgba(10,10,10,0)_42%)] p-4 md:p-6">
             <div className="mb-5 flex items-end justify-between gap-4">
               <div>
                 <span className="text-label text-gold block mb-2">FLAGSHIP MODEL</span>
                 <h3 className="font-display text-display-h3 text-cream-100">Premium full-silicone option</h3>
               </div>
-              <span className="hidden sm:block font-body text-sm text-cream-300">Separate from the $999 best-value range</span>
+              <span className="hidden sm:block border border-gold/40 px-4 py-2 text-label text-gold">Not part of the $999 range</span>
             </div>
             <ProductGrid
               products={flagshipProducts}
