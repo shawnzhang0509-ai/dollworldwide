@@ -1,84 +1,22 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type RefObject } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { PrimaryButton } from '@/components/PrimaryButton';
 import { SecondaryButton } from '@/components/SecondaryButton';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import {
+  flagshipProducts,
+  homepageValueProducts,
+  realLifeViews,
+  type Product,
+  type RealLifeView,
+} from '@/data/products';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { buildTradeMeR18AdultSearchUrl } from '@/lib/trademe';
 
 gsap.registerPlugin(ScrollTrigger);
 
 const CONTACT_EMAIL = 'dollworldwide2023@gmail.com';
-
-type RealLifeViewId = 'nakedFullBody' | 'clothedFullBody' | 'head';
-
-interface RealLifeView {
-  id: RealLifeViewId;
-  label: string;
-  description: string;
-}
-
-interface MediaAsset {
-  type: 'image' | 'video';
-  src: string;
-  title?: string;
-  poster?: string;
-}
-
-const realLifeViews: RealLifeView[] = [
-  {
-    id: 'nakedFullBody',
-    label: 'See naked full body',
-    description: 'Full-body real-life media for checking shape, proportions, and condition.',
-  },
-  {
-    id: 'clothedFullBody',
-    label: 'See clothed full body',
-    description: 'Styled full-body media for seeing the model in a more natural presentation.',
-  },
-  {
-    id: 'head',
-    label: 'See head',
-    description: 'Close-up face and head detail for makeup, eyes, hairline, and expression.',
-  },
-];
-
-interface Product {
-  name: string;
-  image: string;
-  price: string;
-  tag: string;
-  specs: string;
-  tradeMeSku?: string;
-  tradeMeSearchCode?: string;
-  realLifeMedia?: Partial<Record<RealLifeViewId, MediaAsset[]>>;
-}
-
-const products: Product[] = [
-  {
-    name: 'Aria',
-    image: '/images/divine-aria.jpg',
-    price: '$999',
-    tag: 'BEST SELLER',
-    specs: '165cm · D-Cup · Silicone Head · TPE Body',
-    tradeMeSku: '01',
-    tradeMeSearchCode: 'DWWD01',
-  },
-  {
-    name: 'Nova',
-    image: '/images/divine-nova.jpg',
-    price: '$999',
-    tag: 'ELITE',
-    specs: '148cm · C-Cup · Silicone Head · TPE Body',
-  },
-  {
-    name: 'Celeste',
-    image: '/images/divine-celeste.jpg',
-    price: '$999',
-    tag: 'NEW ARRIVAL',
-    specs: '165cm · E-Cup · Silicone Head · TPE Body',
-  },
-];
 
 interface SelectedRealLifeMedia {
   product: Product;
@@ -259,12 +197,50 @@ function RealLifeMediaDialog({
   );
 }
 
+interface ProductGridProps {
+  products: Product[];
+  gridRef?: RefObject<HTMLDivElement | null>;
+  className?: string;
+}
+
+export function ProductGrid({ products, gridRef, className = 'grid grid-cols-1 md:grid-cols-3 gap-6' }: ProductGridProps) {
+  const [openRealLifeProduct, setOpenRealLifeProduct] = useState<string | null>(null);
+  const [selectedRealLifeMedia, setSelectedRealLifeMedia] = useState<SelectedRealLifeMedia | null>(null);
+
+  return (
+    <>
+      <div ref={gridRef} className={className} style={{ perspective: '1200px' }}>
+        {products.map((product) => {
+          const tradeMeUrl = product.tradeMeSearchCode
+            ? buildTradeMeR18AdultSearchUrl(product.tradeMeSearchCode)
+            : undefined;
+          const realLifeOpen = openRealLifeProduct === product.id;
+
+          return (
+            <div key={product.id} className="product-card bg-noir-600 overflow-hidden group will-change-transform">
+              <ProductCardContent
+                product={product}
+                tradeMeUrl={tradeMeUrl}
+                realLifeOpen={realLifeOpen}
+                onToggleRealLife={() => setOpenRealLifeProduct(realLifeOpen ? null : product.id)}
+                onSelectRealLife={(view) => setSelectedRealLifeMedia({ product, view })}
+              />
+            </div>
+          );
+        })}
+      </div>
+      <RealLifeMediaDialog
+        selected={selectedRealLifeMedia}
+        onClose={() => setSelectedRealLifeMedia(null)}
+      />
+    </>
+  );
+}
+
 export function ProductSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const headerRef = useRef<HTMLDivElement>(null);
   const cardsRef = useRef<HTMLDivElement>(null);
-  const [openRealLifeProduct, setOpenRealLifeProduct] = useState<string | null>(null);
-  const [selectedRealLifeMedia, setSelectedRealLifeMedia] = useState<SelectedRealLifeMedia | null>(null);
   const reduced = useReducedMotion();
 
   useEffect(() => {
@@ -329,39 +305,34 @@ export function ProductSection() {
           </p>
         </div>
 
-        <div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-3 gap-6" style={{ perspective: '1200px' }}>
-          {products.map((p) => {
-            const tradeMeUrl = p.tradeMeSearchCode
-              ? buildTradeMeR18AdultSearchUrl(p.tradeMeSearchCode)
-              : undefined;
-
-            const realLifeOpen = openRealLifeProduct === p.name;
-
-            return (
-              <div key={p.name} className="product-card bg-noir-600 overflow-hidden group will-change-transform">
-                <ProductCardContent
-                  product={p}
-                  tradeMeUrl={tradeMeUrl}
-                  realLifeOpen={realLifeOpen}
-                  onToggleRealLife={() => setOpenRealLifeProduct(realLifeOpen ? null : p.name)}
-                  onSelectRealLife={(view) => setSelectedRealLifeMedia({ product: p, view })}
-                />
+        {flagshipProducts.length > 0 && (
+          <div className="mb-10">
+            <div className="mb-5 flex items-end justify-between gap-4">
+              <div>
+                <span className="text-label text-gold block mb-2">FLAGSHIP MODEL</span>
+                <h3 className="font-display text-display-h3 text-cream-100">Premium full-silicone option</h3>
               </div>
-            );
-          })}
-        </div>
+              <span className="hidden sm:block font-body text-sm text-cream-300">Separate from the $999 best-value range</span>
+            </div>
+            <ProductGrid
+              products={flagshipProducts}
+              className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.72fr)] gap-6"
+            />
+          </div>
+        )}
+
+        <ProductGrid products={homepageValueProducts} gridRef={cardsRef} />
 
         <div className="text-center mt-12">
           <p className="font-body text-sm text-cream-300 mb-4">
             More models and real media are available on request. Call to see the latest photos, videos, and full catalogue.
           </p>
-          <SecondaryButton href="tel:02885146884">Call to See Current Stock</SecondaryButton>
+          <div className="flex flex-wrap justify-center gap-4">
+            <SecondaryButton href="/models">View All Models</SecondaryButton>
+            <PrimaryButton href="tel:02885146884">Call to See Current Stock</PrimaryButton>
+          </div>
         </div>
       </div>
-      <RealLifeMediaDialog
-        selected={selectedRealLifeMedia}
-        onClose={() => setSelectedRealLifeMedia(null)}
-      />
     </section>
   );
 }

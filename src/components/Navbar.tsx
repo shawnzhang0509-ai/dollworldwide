@@ -3,6 +3,7 @@ import gsap from 'gsap';
 
 const navLinks = [
   { label: 'Ready Stock', href: '#product' },
+  { label: 'All Models', href: '/models' },
   { label: 'Proof', href: '#proof' },
   { label: 'How It Works', href: '#how-it-works' },
   { label: 'Contact', href: '#contact' },
@@ -44,10 +45,16 @@ export function Navbar() {
   }, [mobileOpen]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('#')) return;
+
     e.preventDefault();
     setMobileOpen(false);
     const target = document.querySelector(href);
-    if (target) target.scrollIntoView({ behavior: 'smooth' });
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = `/${href}`;
+    }
   };
 
   return (
@@ -58,7 +65,7 @@ export function Navbar() {
         }`}
       >
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-10 flex items-center justify-between">
-          <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="font-display text-2xl text-gold tracking-wide">
+          <a href="/" className="font-display text-2xl text-gold tracking-wide">
             DOLL WORLDWIDE
           </a>
 
