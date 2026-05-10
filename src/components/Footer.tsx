@@ -1,5 +1,7 @@
 export function Footer() {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('#')) return;
+
     e.preventDefault();
     const target = document.querySelector(href);
     if (target) {
@@ -28,6 +30,7 @@ export function Footer() {
             <div className="flex flex-col gap-2">
               {[
                 { label: 'Ready Stock', href: '#product' },
+                { label: 'All Models', href: '/models' },
                 { label: 'Trade Me Proof', href: '#proof' },
                 { label: 'How It Works', href: '#how-it-works' },
                 { label: 'Contact', href: '#contact' },
