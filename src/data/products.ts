@@ -67,6 +67,16 @@ export const products: Product[] = [
     specs: 'Full Silicone · Skin Texture Detail · Premium Finish',
     tier: 'flagship',
     featured: true,
+    realLifeMedia: {
+      nakedFullBody: {
+        videos: [
+          {
+            src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/flagship-skin-texture/naked/videos/1.mp4',
+            title: 'Full silicone skin texture detail',
+          },
+        ],
+      },
+    },
   },
   {
     id: 'aria',
