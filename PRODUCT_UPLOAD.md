@@ -10,16 +10,20 @@ Example:
 
 ```txt
 public/media/aria/main.jpg
-public/media/aria/naked-full-body.mp4
-public/media/aria/clothed-full-body.mp4
-public/media/aria/head.mp4
+public/media/aria/naked/photos/1.webp
+public/media/aria/naked/videos/1.mp4
+public/media/aria/clothed/photos/1.webp
+public/media/aria/clothed/videos/1.mp4
+public/media/aria/head/photos/1.webp
+public/media/aria/head/videos/1.mp4
 ```
 
 Files in `public` are available on the website with paths like:
 
 ```txt
 /media/aria/main.jpg
-/media/aria/naked-full-body.mp4
+/media/aria/naked/photos/1.webp
+/media/aria/naked/videos/1.mp4
 ```
 
 ## Add a product
@@ -39,18 +43,38 @@ Add one object to the `products` array in `src/data/products.ts`:
   tradeMeSku: '01',
   tradeMeSearchCode: 'DWWD01',
   realLifeMedia: {
-    nakedFullBody: [
-      { type: 'video', src: '/media/aria/naked-full-body.mp4', title: 'Naked full body' },
-    ],
-    clothedFullBody: [
-      { type: 'video', src: '/media/aria/clothed-full-body.mp4', title: 'Clothed full body' },
-    ],
-    head: [
-      { type: 'video', src: '/media/aria/head.mp4', title: 'Head close-up' },
-    ],
+    nakedFullBody: {
+      photos: [
+        { src: '/media/aria/naked/photos/1.webp', title: 'Naked full body photo' },
+      ],
+      videos: [
+        { src: '/media/aria/naked/videos/1.mp4', title: 'Naked full body video', poster: '/media/aria/naked/photos/1.webp' },
+      ],
+    },
+    clothedFullBody: {
+      photos: [
+        { src: '/media/aria/clothed/photos/1.webp', title: 'Clothed full body photo' },
+      ],
+      videos: [
+        { src: '/media/aria/clothed/videos/1.mp4', title: 'Clothed full body video', poster: '/media/aria/clothed/photos/1.webp' },
+      ],
+    },
+    head: {
+      photos: [
+        { src: '/media/aria/head/photos/1.webp', title: 'Head close-up photo' },
+      ],
+      videos: [
+        { src: '/media/aria/head/videos/1.mp4', title: 'Head close-up video', poster: '/media/aria/head/photos/1.webp' },
+      ],
+    },
   },
 }
 ```
+
+Each `See me in real life` view has two tabs in the popup:
+
+- `photos`: compressed WebP/JPG images.
+- `videos`: MP4/video URLs with optional poster images.
 
 ## Product tiers
 
