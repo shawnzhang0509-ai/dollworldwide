@@ -10,6 +10,8 @@ import {
   realLifeViews,
   type Product,
   type RealLifeView,
+  type VideoAsset,
+  type PhotoAsset,
 } from '@/data/products';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { buildTradeMeR18AdultSearchUrl } from '@/lib/trademe';
@@ -23,9 +25,12 @@ interface SelectedRealLifeMedia {
   view: RealLifeView;
 }
 
-function buildRealLifeRequestUrl(productName: string, viewLabel: string) {
-  const subject = `${viewLabel} for ${productName}`;
-  const body = `Hi Doll Worldwide,\n\nPlease send me the real-life media for ${productName}: ${viewLabel}.\n\nThanks.`;
+type MediaTab = 'photos' | 'videos';
+
+function buildRealLifeRequestUrl(productName: string, viewLabel: string, mediaType?: MediaTab) {
+  const mediaLabel = mediaType === 'photos' ? 'photos' : mediaType === 'videos' ? 'videos' : 'media';
+  const subject = `${viewLabel} ${mediaLabel} for ${productName}`;
+  const body = `Hi Doll Worldwide,\n\nPlease send me the real-life ${mediaLabel} for ${productName}: ${viewLabel}.\n\nThanks.`;
 
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
@@ -151,7 +156,15 @@ function RealLifeMediaDialog({
   selected: SelectedRealLifeMedia | null;
   onClose: () => void;
 }) {
-  const media = selected?.product.realLifeMedia?.[selected.view.id] ?? [];
+  const [activeTab, setActiveTab] = useState<MediaTab>('photos');
+  const media = selected?.product.realLifeMedia?.[selected.view.id];
+  const photos = media?.photos ?? [];
+  const videos = media?.videos ?? [];
+  const activeMedia = activeTab === 'photos' ? photos : videos;
+
+  useEffect(() => {
+    setActiveTab('photos');
+  }, [selected?.product.id, selected?.view.id]);
 
   return (
     <Dialog open={Boolean(selected)} onOpenChange={(open) => { if (!open) onClose(); }}>
@@ -167,43 +180,71 @@ function RealLifeMediaDialog({
               </DialogDescription>
             </DialogHeader>
 
-            {media.length > 0 ? (
+            <div className="grid grid-cols-2 gap-2">
+              {([
+                { value: 'photos' as const, label: `Photos (${photos.length})` },
+                { value: 'videos' as const, label: `Videos (${videos.length})` },
+              ]).map((tab) => (
+                <button
+                  key={tab.value}
+                  type="button"
+                  onClick={() => setActiveTab(tab.value)}
+                  className={`border px-4 py-3 text-button transition-colors ${
+                    activeTab === tab.value
+                      ? 'border-gold bg-gold text-noir-900'
+                      : 'border-gold/30 text-gold hover:border-gold'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
+            {activeMedia.length > 0 ? (
               <div className="grid gap-4">
-                {media.map((item) => (
-                  <div key={item.src} className="overflow-hidden bg-noir-700">
-                    {item.type === 'video' ? (
-                      <video
-                        src={item.src}
-                        poster={item.poster}
-                        controls
-                        playsInline
-                        className="max-h-[70vh] w-full object-contain"
-                      />
-                    ) : (
-                      <img
-                        src={item.src}
-                        alt={item.title ?? `${selected.product.name} ${selected.view.label}`}
-                        className="max-h-[70vh] w-full object-contain"
-                      />
-                    )}
-                    {item.title && (
-                      <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
-                    )}
-                  </div>
-                ))}
+                {activeTab === 'photos'
+                  ? (activeMedia as PhotoAsset[]).map((item) => (
+                      <div key={item.src} className="overflow-hidden bg-noir-700">
+                        <img
+                          src={item.src}
+                          alt={item.alt ?? item.title ?? `${selected.product.name} ${selected.view.label}`}
+                          className="max-h-[70vh] w-full object-contain"
+                        />
+                        {item.title && (
+                          <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
+                        )}
+                      </div>
+                    ))
+                  : (activeMedia as VideoAsset[]).map((item) => (
+                      <div key={item.src} className="overflow-hidden bg-noir-700">
+                        <video
+                          src={item.src}
+                          poster={item.poster}
+                          controls
+                          playsInline
+                          preload="metadata"
+                          className="max-h-[70vh] w-full object-contain"
+                        />
+                        {item.title && (
+                          <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
+                        )}
+                      </div>
+                    ))}
               </div>
             ) : (
               <div className="border border-gold/20 bg-noir-700 p-6 text-center">
-                <p className="font-display text-xl text-gold mb-3">Real media opens here.</p>
+                <p className="font-display text-xl text-gold mb-3">
+                  {activeTab === 'photos' ? 'Photos open here.' : 'Videos play here.'}
+                </p>
                 <p className="font-body text-sm text-cream-300 mb-5">
-                  Upload this product&apos;s video or photos and this popup will play them inside the website, without sending buyers to Google Drive or another app.
+                  Add {activeTab} for this product and this popup will show them inside the website, without sending buyers to Google Drive or another app.
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                   <a
-                    href={buildRealLifeRequestUrl(selected.product.name, selected.view.label)}
+                    href={buildRealLifeRequestUrl(selected.product.name, selected.view.label, activeTab)}
                     className="inline-flex items-center justify-center bg-gold px-5 py-3 text-button text-noir-900 transition-colors hover:bg-gold-light"
                   >
-                    Request this media
+                    Request {activeTab}
                   </a>
                   <a
                     href="tel:02885146884"

@@ -6,11 +6,21 @@ export interface RealLifeView {
   description: string;
 }
 
-export interface MediaAsset {
-  type: 'image' | 'video';
+export interface PhotoAsset {
+  src: string;
+  title?: string;
+  alt?: string;
+}
+
+export interface VideoAsset {
   src: string;
   title?: string;
   poster?: string;
+}
+
+export interface RealLifeMediaGroup {
+  photos?: PhotoAsset[];
+  videos?: VideoAsset[];
 }
 
 export type ProductTier = 'flagship' | 'best-value';
@@ -26,7 +36,7 @@ export interface Product {
   featured?: boolean;
   tradeMeSku?: string;
   tradeMeSearchCode?: string;
-  realLifeMedia?: Partial<Record<RealLifeViewId, MediaAsset[]>>;
+  realLifeMedia?: Partial<Record<RealLifeViewId, RealLifeMediaGroup>>;
 }
 
 export const realLifeViews: RealLifeView[] = [
