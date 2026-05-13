@@ -76,6 +76,59 @@ Each `See me in real life` view has two tabs in the popup:
 - `photos`: compressed WebP/JPG images.
 - `videos`: MP4/video URLs with optional poster images.
 
+## Recommended structured feed
+
+When sending products in bulk, use this JSON shape. Use full public R2 URLs, not bucket-internal paths like `dollworldwide-media/DWWD06/...`.
+
+```json
+[
+  {
+    "id": "DWWD06",
+    "name": "Xina",
+    "image": "https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg",
+    "price": "$999",
+    "tag": "READY STOCK",
+    "specs": "Silicone Head · TPE Body",
+    "tier": "best-value",
+    "featured": false,
+    "tradeMeSearchCode": "DWWD06",
+    "realLifeMedia": {
+      "nakedFullBody": {
+        "photos": [
+          {
+            "src": "https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg",
+            "title": "Xina naked full body photo"
+          }
+        ],
+        "videos": []
+      },
+      "clothedFullBody": {
+        "photos": [],
+        "videos": []
+      },
+      "head": {
+        "photos": [],
+        "videos": []
+      }
+    }
+  }
+]
+```
+
+Required fields:
+
+- `id`: same as the Trade Me marker, e.g. `DWWD06`.
+- `name`: display name.
+- `image`: main product card image.
+- `price`: e.g. `$999`.
+- `tier`: `best-value` or `flagship`.
+- `tradeMeSearchCode`: same marker used in the Trade Me title.
+
+Optional fields:
+
+- `featured`: `true` shows the product on the homepage; `false` keeps it on `/models` only.
+- `realLifeMedia`: photos/videos for the in-site popup.
+
 ## Product tiers
 
 - `best-value`: the $999 silicone-head + TPE-body range.
