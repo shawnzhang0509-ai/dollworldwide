@@ -101,6 +101,27 @@ export const products: Product[] = [
     featured: true,
   },
   {
+    id: 'DWWD06',
+    name: 'Xina',
+    image: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg',
+    price: '$999',
+    tag: 'READY STOCK',
+    specs: 'Silicone Head · TPE Body',
+    tier: 'best-value',
+    featured: false,
+    tradeMeSearchCode: 'DWWD06',
+    realLifeMedia: {
+      nakedFullBody: {
+        photos: [
+          {
+            src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg',
+            title: 'Xina naked full body photo',
+          },
+        ],
+      },
+    },
+  },
+  {
     id: 'celeste',
     name: 'Celeste',
     image: '/images/divine-celeste.jpg',
