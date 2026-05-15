@@ -7,9 +7,9 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } f
 import {
   flagshipProducts,
   homepageValueProducts,
-  realLifeViews,
+  realLifeMediaCategories,
   type Product,
-  type RealLifeView,
+  type RealLifeMediaCategory,
   type VideoAsset,
   type PhotoAsset,
 } from '@/data/products';
@@ -22,15 +22,12 @@ const CONTACT_EMAIL = 'dollworldwide2023@gmail.com';
 
 interface SelectedRealLifeMedia {
   product: Product;
-  view: RealLifeView;
+  category: RealLifeMediaCategory;
 }
 
-type MediaTab = 'photos' | 'videos';
-
-function buildRealLifeRequestUrl(productName: string, viewLabel: string, mediaType?: MediaTab) {
-  const mediaLabel = mediaType === 'photos' ? 'photos' : mediaType === 'videos' ? 'videos' : 'media';
-  const subject = `${viewLabel} ${mediaLabel} for ${productName}`;
-  const body = `Hi Doll Worldwide,\n\nPlease send me the real-life ${mediaLabel} for ${productName}: ${viewLabel}.\n\nThanks.`;
+function buildRealLifeRequestUrl(productName: string, categoryLabel: string) {
+  const subject = `${categoryLabel} for ${productName}`;
+  const body = `Hi Doll Worldwide,\n\nPlease send me the real-life media for ${productName}: ${categoryLabel}.\n\nThanks.`;
 
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
@@ -47,7 +44,7 @@ interface ProductCardContentProps {
   tradeMeUrl?: string;
   realLifeOpen: boolean;
   onToggleRealLife: () => void;
-  onSelectRealLife: (view: RealLifeView) => void;
+  onSelectRealLife: (category: RealLifeMediaCategory) => void;
 }
 
 function ProductCardContent({
@@ -130,14 +127,14 @@ function ProductCardContent({
               Choose what you want to see inside the site:
             </p>
             <div className="grid gap-2">
-              {realLifeViews.map((view) => (
+              {realLifeMediaCategories.map((category) => (
                 <button
-                  key={view.id}
+                  key={category.id}
                   type="button"
-                  onClick={() => onSelectRealLife(view)}
+                  onClick={() => onSelectRealLife(category)}
                   className="flex items-center justify-between border border-cream-300/15 px-4 py-2.5 font-body text-sm text-cream-100 transition-colors duration-300 hover:border-gold hover:text-gold"
                 >
-                  <span>{view.label}</span>
+                  <span>{category.label}</span>
                   <span className="text-gold">→</span>
                 </button>
               ))}
@@ -156,15 +153,12 @@ function RealLifeMediaDialog({
   selected: SelectedRealLifeMedia | null;
   onClose: () => void;
 }) {
-  const [activeTab, setActiveTab] = useState<MediaTab>('photos');
-  const media = selected?.product.realLifeMedia?.[selected.view.id];
-  const photos = media?.photos ?? [];
-  const videos = media?.videos ?? [];
-  const activeMedia = activeTab === 'photos' ? photos : videos;
-
-  useEffect(() => {
-    setActiveTab('photos');
-  }, [selected?.product.id, selected?.view.id]);
+  const storedMedia = selected?.product.realLifeMedia?.[selected.category.id] ?? [];
+  const media =
+    selected?.category.id === 'clothedPhotos' && storedMedia.length === 0
+      ? [{ src: selected.product.image, title: `${selected.product.name} main photo` }]
+      : storedMedia;
+  const isVideoCategory = selected?.category.mediaType === 'videos';
 
   return (
     <Dialog open={Boolean(selected)} onOpenChange={(open) => { if (!open) onClose(); }}>
@@ -173,49 +167,17 @@ function RealLifeMediaDialog({
           <>
             <DialogHeader>
               <DialogTitle className="font-display text-2xl text-cream-100">
-                {selected.product.name} — {selected.view.label}
+                {selected.product.name} — {selected.category.label}
               </DialogTitle>
               <DialogDescription className="font-body text-cream-300">
-                {selected.view.description}
+                {selected.category.description}
               </DialogDescription>
             </DialogHeader>
 
-            <div className="grid grid-cols-2 gap-2">
-              {([
-                { value: 'photos' as const, label: `Photos (${photos.length})` },
-                { value: 'videos' as const, label: `Videos (${videos.length})` },
-              ]).map((tab) => (
-                <button
-                  key={tab.value}
-                  type="button"
-                  onClick={() => setActiveTab(tab.value)}
-                  className={`border px-4 py-3 text-button transition-colors ${
-                    activeTab === tab.value
-                      ? 'border-gold bg-gold text-noir-900'
-                      : 'border-gold/30 text-gold hover:border-gold'
-                  }`}
-                >
-                  {tab.label}
-                </button>
-              ))}
-            </div>
-
-            {activeMedia.length > 0 ? (
+            {media.length > 0 ? (
               <div className="grid gap-4">
-                {activeTab === 'photos'
-                  ? (activeMedia as PhotoAsset[]).map((item) => (
-                      <div key={item.src} className="overflow-hidden bg-noir-700">
-                        <img
-                          src={item.src}
-                          alt={item.alt ?? item.title ?? `${selected.product.name} ${selected.view.label}`}
-                          className="max-h-[70vh] w-full object-contain"
-                        />
-                        {item.title && (
-                          <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
-                        )}
-                      </div>
-                    ))
-                  : (activeMedia as VideoAsset[]).map((item) => (
+                {isVideoCategory
+                  ? (media as VideoAsset[]).map((item) => (
                       <div key={item.src} className="overflow-hidden bg-noir-700">
                         <video
                           src={item.src}
@@ -229,22 +191,32 @@ function RealLifeMediaDialog({
                           <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
                         )}
                       </div>
+                    ))
+                  : (media as PhotoAsset[]).map((item) => (
+                      <div key={item.src} className="overflow-hidden bg-noir-700">
+                        <img
+                          src={item.src}
+                          alt={item.alt ?? item.title ?? `${selected.product.name} ${selected.category.label}`}
+                          className="max-h-[70vh] w-full object-contain"
+                        />
+                        {item.title && (
+                          <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
+                        )}
+                      </div>
                     ))}
               </div>
             ) : (
               <div className="border border-gold/20 bg-noir-700 p-6 text-center">
-                <p className="font-display text-xl text-gold mb-3">
-                  {activeTab === 'photos' ? 'Photos open here.' : 'Videos play here.'}
-                </p>
+                <p className="font-display text-xl text-gold mb-3">{selected.category.label} opens here.</p>
                 <p className="font-body text-sm text-cream-300 mb-5">
-                  Add {activeTab} for this product and this popup will show them inside the website, without sending buyers to Google Drive or another app.
+                  Add files for this product and this popup will show them inside the website, without sending buyers to Google Drive or another app.
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
                   <a
-                    href={buildRealLifeRequestUrl(selected.product.name, selected.view.label, activeTab)}
+                    href={buildRealLifeRequestUrl(selected.product.name, selected.category.label)}
                     className="inline-flex items-center justify-center bg-gold px-5 py-3 text-button text-noir-900 transition-colors hover:bg-gold-light"
                   >
-                    Request {activeTab}
+                    Request {selected.category.label}
                   </a>
                   <a
                     href="tel:02885146884"
@@ -299,7 +271,7 @@ export function ProductGrid({ products, gridRef, className = 'grid grid-cols-1 m
                 tradeMeUrl={tradeMeUrl}
                 realLifeOpen={realLifeOpen}
                 onToggleRealLife={() => setOpenRealLifeProduct(realLifeOpen ? null : product.id)}
-                onSelectRealLife={(view) => setSelectedRealLifeMedia({ product, view })}
+                onSelectRealLife={(category) => setSelectedRealLifeMedia({ product, category })}
               />
             </div>
           );

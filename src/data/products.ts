@@ -1,9 +1,10 @@
-export type RealLifeViewId = 'nakedFullBody' | 'clothedFullBody' | 'head';
+export type RealLifeMediaCategoryId = 'clothedPhotos' | 'nakedPhotos' | 'videos';
 
-export interface RealLifeView {
-  id: RealLifeViewId;
+export interface RealLifeMediaCategory {
+  id: RealLifeMediaCategoryId;
   label: string;
   description: string;
+  mediaType: 'photos' | 'videos';
 }
 
 export interface PhotoAsset {
@@ -16,11 +17,6 @@ export interface VideoAsset {
   src: string;
   title?: string;
   poster?: string;
-}
-
-export interface RealLifeMediaGroup {
-  photos?: PhotoAsset[];
-  videos?: VideoAsset[];
 }
 
 export type ProductTier = 'flagship' | 'best-value';
@@ -36,24 +32,27 @@ export interface Product {
   featured?: boolean;
   tradeMeSku?: string;
   tradeMeSearchCode?: string;
-  realLifeMedia?: Partial<Record<RealLifeViewId, RealLifeMediaGroup>>;
+  realLifeMedia?: Partial<Record<RealLifeMediaCategoryId, PhotoAsset[] | VideoAsset[]>>;
 }
 
-export const realLifeViews: RealLifeView[] = [
+export const realLifeMediaCategories: RealLifeMediaCategory[] = [
   {
-    id: 'nakedFullBody',
-    label: 'See naked full body',
-    description: 'Full-body real-life media for checking shape, proportions, and condition.',
+    id: 'clothedPhotos',
+    label: 'Clothed Photos',
+    description: 'Main product and styled photos for checking the model presentation.',
+    mediaType: 'photos',
   },
   {
-    id: 'clothedFullBody',
-    label: 'See clothed full body',
-    description: 'Styled full-body media for seeing the model in a more natural presentation.',
+    id: 'nakedPhotos',
+    label: 'Naked Photos',
+    description: 'Chat-style naked body photos for checking shape, proportions, and condition.',
+    mediaType: 'photos',
   },
   {
-    id: 'head',
-    label: 'See head',
-    description: 'Close-up face and head detail for makeup, eyes, hairline, and expression.',
+    id: 'videos',
+    label: 'Videos',
+    description: 'Real-life videos that play inside the website popup.',
+    mediaType: 'videos',
   },
 ];
 
@@ -68,14 +67,12 @@ export const products: Product[] = [
     tier: 'flagship',
     featured: true,
     realLifeMedia: {
-      nakedFullBody: {
-        videos: [
-          {
-            src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/flagship-skin-texture/naked/videos/1.mp4',
-            title: 'Full silicone skin texture detail',
-          },
-        ],
-      },
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/flagship-skin-texture/naked/videos/1.mp4',
+          title: 'Full silicone skin texture detail',
+        },
+      ],
     },
   },
   {
@@ -111,14 +108,12 @@ export const products: Product[] = [
     featured: false,
     tradeMeSearchCode: 'DWWD06',
     realLifeMedia: {
-      nakedFullBody: {
-        photos: [
-          {
-            src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg',
-            title: 'Xina naked full body photo',
-          },
-        ],
-      },
+      nakedPhotos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg',
+          title: 'Xina naked body photo',
+        },
+      ],
     },
   },
   {
