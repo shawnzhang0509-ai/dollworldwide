@@ -8,22 +8,22 @@ Put files under `public/media/<product-id>/`.
 
 Example:
 
+Use the same simple folders as the R2 bucket:
+
 ```txt
-public/media/aria/main.jpg
-public/media/aria/naked/photos/1.webp
-public/media/aria/naked/videos/1.mp4
-public/media/aria/clothed/photos/1.webp
-public/media/aria/clothed/videos/1.mp4
-public/media/aria/head/photos/1.webp
-public/media/aria/head/videos/1.mp4
+public/media/DWWD06/主图/01.webp
+public/media/DWWD06/聊天图/01.webp
+public/media/DWWD06/聊天图/02.webp
+public/media/DWWD06/视频/01.mp4
+public/media/DWWD06/视频/02.mp4
 ```
 
 Files in `public` are available on the website with paths like:
 
 ```txt
-/media/aria/main.jpg
-/media/aria/naked/photos/1.webp
-/media/aria/naked/videos/1.mp4
+/media/DWWD06/主图/01.webp
+/media/DWWD06/聊天图/01.webp
+/media/DWWD06/视频/01.mp4
 ```
 
 ## Add a product
@@ -43,38 +43,25 @@ Add one object to the `products` array in `src/data/products.ts`:
   tradeMeSku: '01',
   tradeMeSearchCode: 'DWWD01',
   realLifeMedia: {
-    nakedFullBody: {
-      photos: [
-        { src: '/media/aria/naked/photos/1.webp', title: 'Naked full body photo' },
-      ],
-      videos: [
-        { src: '/media/aria/naked/videos/1.mp4', title: 'Naked full body video', poster: '/media/aria/naked/photos/1.webp' },
-      ],
-    },
-    clothedFullBody: {
-      photos: [
-        { src: '/media/aria/clothed/photos/1.webp', title: 'Clothed full body photo' },
-      ],
-      videos: [
-        { src: '/media/aria/clothed/videos/1.mp4', title: 'Clothed full body video', poster: '/media/aria/clothed/photos/1.webp' },
-      ],
-    },
-    head: {
-      photos: [
-        { src: '/media/aria/head/photos/1.webp', title: 'Head close-up photo' },
-      ],
-      videos: [
-        { src: '/media/aria/head/videos/1.mp4', title: 'Head close-up video', poster: '/media/aria/head/photos/1.webp' },
-      ],
-    },
+    clothedPhotos: [
+      { src: '/media/DWWD01/主图/01.webp', title: 'Clothed photo 01' },
+    ],
+    nakedPhotos: [
+      { src: '/media/DWWD01/聊天图/01.webp', title: 'Naked photo 01' },
+      { src: '/media/DWWD01/聊天图/02.webp', title: 'Naked photo 02' },
+    ],
+    videos: [
+      { src: '/media/DWWD01/视频/01.mp4', title: 'Video 01', poster: '/media/DWWD01/主图/01.webp' },
+    ],
   },
 }
 ```
 
-Each `See me in real life` view has two tabs in the popup:
+Each `See me in real life` popup now maps directly to your R2 folders:
 
-- `photos`: compressed WebP/JPG images.
-- `videos`: MP4/video URLs with optional poster images.
+- `Clothed Photos`: `主图`
+- `Naked Photos`: `聊天图`
+- `Videos`: `视频`
 
 ## Recommended structured feed
 
@@ -93,23 +80,25 @@ When sending products in bulk, use this JSON shape. Use full public R2 URLs, not
     "featured": false,
     "tradeMeSearchCode": "DWWD06",
     "realLifeMedia": {
-      "nakedFullBody": {
-        "photos": [
-          {
-            "src": "https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg",
-            "title": "Xina naked full body photo"
-          }
-        ],
-        "videos": []
-      },
-      "clothedFullBody": {
-        "photos": [],
-        "videos": []
-      },
-      "head": {
-        "photos": [],
-        "videos": []
-      }
+      "clothedPhotos": [
+        {
+          "src": "https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/主图/01.webp",
+          "title": "Xina clothed photo 01"
+        }
+      ],
+      "nakedPhotos": [
+        {
+          "src": "https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/聊天图/01.webp",
+          "title": "Xina naked photo 01"
+        }
+      ],
+      "videos": [
+        {
+          "src": "https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/视频/01.mp4",
+          "title": "Xina video 01",
+          "poster": "https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/主图/01.webp"
+        }
+      ]
     }
   }
 ]
@@ -127,7 +116,7 @@ Required fields:
 Optional fields:
 
 - `featured`: `true` shows the product on the homepage; `false` keeps it on `/models` only.
-- `realLifeMedia`: photos/videos for the in-site popup.
+- `realLifeMedia`: `clothedPhotos`, `nakedPhotos`, and `videos` for the in-site popup.
 
 ## Product tiers
 
