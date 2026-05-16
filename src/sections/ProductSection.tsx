@@ -162,30 +162,43 @@ function RealLifeMediaDialog({
 
   return (
     <Dialog open={Boolean(selected)} onOpenChange={(open) => { if (!open) onClose(); }}>
-      <DialogContent className="border-gold/30 bg-noir-900 text-cream-100 sm:max-w-3xl">
+      <DialogContent className="top-[max(0.5rem,2.5dvh)] max-h-[min(92dvh,880px)] translate-y-0 border-gold/30 bg-noir-900 text-cream-100 sm:max-w-3xl flex flex-col gap-3 overflow-hidden p-0 sm:p-6">
         {selected && (
           <>
-            <DialogHeader>
+            <DialogHeader className="shrink-0 space-y-2 px-6 pb-2 pt-6 pr-14 text-left sm:px-0 sm:pb-0 sm:pt-0 sm:pr-10">
               <DialogTitle className="font-display text-2xl text-cream-100">
                 {selected.product.name} — {selected.category.label}
               </DialogTitle>
               <DialogDescription className="font-body text-cream-300">
                 {selected.category.description}
               </DialogDescription>
+              {media.length > 1 && (
+                <p className="font-body text-xs text-cream-400">
+                  Scroll sideways to browse; use trackpad shift-scroll or touch swipe on smaller screens.
+                </p>
+              )}
             </DialogHeader>
 
             {media.length > 0 ? (
-              <div className="grid gap-4">
+              <div className="min-h-0 flex-1 overflow-x-auto overflow-y-auto overscroll-contain px-6 pb-6 [-webkit-overflow-scrolling:touch] sm:px-0 sm:pb-2">
+                <div
+                  className="flex w-max flex-row gap-4 snap-x snap-mandatory scroll-smooth pb-1"
+                  tabIndex={0}
+                  aria-label={`${selected.category.label} gallery`}
+                >
                 {isVideoCategory
                   ? (media as VideoAsset[]).map((item) => (
-                      <div key={item.src} className="overflow-hidden bg-noir-700">
+                      <div
+                        key={item.src}
+                        className="snap-center shrink-0 w-[min(88vw,520px)] max-w-[min(88vw,520px)] overflow-hidden rounded-md border border-cream-300/10 bg-noir-700"
+                      >
                         <video
                           src={item.src}
                           poster={item.poster}
                           controls
                           playsInline
                           preload="metadata"
-                          className="max-h-[70vh] w-full object-contain"
+                          className="mx-auto max-h-[min(48vh,420px)] w-full object-contain"
                         />
                         {item.title && (
                           <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
@@ -193,20 +206,24 @@ function RealLifeMediaDialog({
                       </div>
                     ))
                   : (media as PhotoAsset[]).map((item) => (
-                      <div key={item.src} className="overflow-hidden bg-noir-700">
+                      <div
+                        key={item.src}
+                        className="snap-center shrink-0 w-[min(88vw,520px)] max-w-[min(88vw,520px)] overflow-hidden rounded-md border border-cream-300/10 bg-noir-700"
+                      >
                         <img
                           src={item.src}
                           alt={item.alt ?? item.title ?? `${selected.product.name} ${selected.category.label}`}
-                          className="max-h-[70vh] w-full object-contain"
+                          className="mx-auto max-h-[min(48vh,420px)] w-full object-contain"
                         />
                         {item.title && (
                           <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
                         )}
                       </div>
                     ))}
+                </div>
               </div>
             ) : (
-              <div className="border border-gold/20 bg-noir-700 p-6 text-center">
+              <div className="mx-6 mb-6 border border-gold/20 bg-noir-700 p-6 text-center sm:mx-0 sm:mb-0">
                 <p className="font-display text-xl text-gold mb-3">{selected.category.label} opens here.</p>
                 <p className="font-body text-sm text-cream-300 mb-5">
                   Add files for this product and this popup will show them inside the website, without sending buyers to Google Drive or another app.
