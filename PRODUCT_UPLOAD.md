@@ -63,6 +63,10 @@ Each `See me in real life` popup now maps directly to your R2 folders:
 - `Naked Photos`: `聊天图`
 - `Videos`: `视频`
 
+### Generate draft JSON from R2
+
+Copy `.env.example` to `.env`, fill in R2 API credentials and your public `r2.dev` base URL, then run `npm run r2:scan`. The script skips root prefixes `DWWD06/` and `flagship-skin-texture/` by default (override with `R2_IGNORE_PREFIXES`), walks nested keys under each other root folder, maps `主图` / `聊天图` / `视频` plus common aliases (e.g. `视频1`, `聊天视频`), and writes `scripts/r2-scan-output.json` for you to merge into `products` in `src/data/products.ts`.
+
 ## Recommended structured feed
 
 When sending products in bulk, use this JSON shape. Use full public R2 URLs, not bucket-internal paths like `dollworldwide-media/DWWD06/...`.
