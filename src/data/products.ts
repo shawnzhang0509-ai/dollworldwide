@@ -78,11 +78,21 @@ export const products: Product[] = [
   {
     id: 'aria',
     name: 'Aria',
-    image:
-      'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-4.jpg',
+    image: '/images/divine-aria.jpg',
     price: '$999',
     tag: 'BEST SELLER',
     specs: '165cm · D-Cup · Silicone Head · TPE Body',
+    tier: 'best-value',
+    featured: true,
+  },
+  {
+    id: 'nova',
+    name: 'Nova',
+    image:
+      'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-4.jpg',
+    price: '$999',
+    tag: 'ELITE',
+    specs: '148cm · C-Cup · Silicone Head · TPE Body',
     tier: 'best-value',
     featured: true,
     tradeMeSku: '01',
@@ -91,44 +101,34 @@ export const products: Product[] = [
       clothedPhotos: [
         {
           src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-4.jpg',
-          title: 'Aria clothed 4',
+          title: 'Nova clothed 4',
         },
         {
           src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-5.jpg',
-          title: 'Aria clothed 5',
+          title: 'Nova clothed 5',
         },
         {
           src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-6.jpg',
-          title: 'Aria clothed 6',
+          title: 'Nova clothed 6',
         },
         {
           src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-7.jpg',
-          title: 'Aria clothed 7',
+          title: 'Nova clothed 7',
         },
         {
           src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-8.jpg',
-          title: 'Aria clothed 8',
+          title: 'Nova clothed 8',
         },
         {
           src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-9.jpg',
-          title: 'Aria clothed 9',
+          title: 'Nova clothed 9',
         },
         {
           src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-10.jpg',
-          title: 'Aria clothed 10',
+          title: 'Nova clothed 10',
         },
       ],
     },
-  },
-  {
-    id: 'nova',
-    name: 'Nova',
-    image: '/images/divine-nova.jpg',
-    price: '$999',
-    tag: 'ELITE',
-    specs: '148cm · C-Cup · Silicone Head · TPE Body',
-    tier: 'best-value',
-    featured: true,
   },
   {
     id: 'DWWD06',
