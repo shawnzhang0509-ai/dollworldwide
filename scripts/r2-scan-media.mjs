@@ -18,8 +18,16 @@ import { S3Client, ListObjectsV2Command } from '@aws-sdk/client-s3';
 const PHOTO_EXT = new Set(['.jpg', '.jpeg', '.webp', '.png', '.gif']);
 const VIDEO_EXT = new Set(['.mp4', '.webm', '.mov']);
 
-const CLOTHED_DIRS = new Set(['主图']);
-const NAKED_DIRS = new Set(['聊天图', '聊天图没水印', '聊天图1', '聊天图2']);
+const CLOTHED_DIRS = new Set(['主图', 'Clothed Photos', 'Clothed photos']);
+const NAKED_DIRS = new Set([
+  '聊天图',
+  '聊天图没水印',
+  '聊天图1',
+  '聊天图2',
+  'Naked Photos',
+  'Naked photos',
+  'Naked',
+]);
 const VIDEO_DIRS = new Set([
   '视频',
   '视频1',
@@ -28,6 +36,8 @@ const VIDEO_DIRS = new Set([
   '聊天视频',
   '高清透视私密视频',
   '水印图片视频',
+  'Videos',
+  'videos',
 ]);
 
 const DEFAULT_IGNORE = ['DWWD06/', 'flagship-skin-texture/'];

@@ -78,7 +78,8 @@ export const products: Product[] = [
   {
     id: 'aria',
     name: 'Aria',
-    image: '/images/divine-aria.jpg',
+    image:
+      'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-4.jpg',
     price: '$999',
     tag: 'BEST SELLER',
     specs: '165cm · D-Cup · Silicone Head · TPE Body',
@@ -86,6 +87,38 @@ export const products: Product[] = [
     featured: true,
     tradeMeSku: '01',
     tradeMeSearchCode: 'DWWD01',
+    realLifeMedia: {
+      clothedPhotos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-4.jpg',
+          title: 'Aria clothed 4',
+        },
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-5.jpg',
+          title: 'Aria clothed 5',
+        },
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-6.jpg',
+          title: 'Aria clothed 6',
+        },
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-7.jpg',
+          title: 'Aria clothed 7',
+        },
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-8.jpg',
+          title: 'Aria clothed 8',
+        },
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-9.jpg',
+          title: 'Aria clothed 9',
+        },
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-10.jpg',
+          title: 'Aria clothed 10',
+        },
+      ],
+    },
   },
   {
     id: 'nova',

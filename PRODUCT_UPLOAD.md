@@ -59,9 +59,9 @@ Add one object to the `products` array in `src/data/products.ts`:
 
 Each `See me in real life` popup now maps directly to your R2 folders:
 
-- `Clothed Photos`: `主图`
-- `Naked Photos`: `聊天图`
-- `Videos`: `视频`
+- `Clothed Photos`: `主图` or `Clothed Photos` (e.g. `DWWD01/Clothed Photos/…`)
+- `Naked Photos`: `聊天图`, `Naked Photos`, or `Naked/photos` (e.g. `DWWD06/Naked/photos/…`)
+- `Videos`: `视频` or `Videos`
 
 ### Generate draft JSON from R2
 
