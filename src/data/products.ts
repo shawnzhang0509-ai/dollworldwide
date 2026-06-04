@@ -86,6 +86,17 @@ export const products: Product[] = [
     featured: true,
     tradeMeSku: '01',
     tradeMeSearchCode: 'DWWD01',
+    realLifeMedia: {
+      clothedPhotos: [
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-4.jpg', title: 'Aria clothed DWWD01 - Nova - Xuexian-4.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-5.jpg', title: 'Aria clothed DWWD01 - Nova - Xuexian-5.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-6.jpg', title: 'Aria clothed DWWD01 - Nova - Xuexian-6.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-7.jpg', title: 'Aria clothed DWWD01 - Nova - Xuexian-7.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-8.jpg', title: 'Aria clothed DWWD01 - Nova - Xuexian-8.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-9.jpg', title: 'Aria clothed DWWD01 - Nova - Xuexian-9.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-10.jpg', title: 'Aria clothed DWWD01 - Nova - Xuexian-10.jpg' },
+      ],
+    },
   },
   {
     id: 'nova',
