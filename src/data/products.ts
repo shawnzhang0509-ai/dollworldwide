@@ -610,6 +610,63 @@ export const products: Product[] = [
       ],
     },
   },
+  {
+    id: 'haruki',
+    name: 'Haruki',
+    image: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Clothed%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-3.jpg',
+    price: '$999',
+    tag: 'GALLERY',
+    specs: 'Silicone Head · TPE Body',
+    tier: 'best-value',
+    featured: false,
+    tradeMeSku: '05',
+    tradeMeSearchCode: 'DWWD05',
+    realLifeMedia: {
+      clothedPhotos: [
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Clothed%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-3.jpg', title: 'DWWD05 - Haruki - Yawen-3.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Clothed%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-4.jpg', title: 'DWWD05 - Haruki - Yawen-4.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Clothed%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-5.jpg', title: 'DWWD05 - Haruki - Yawen-5.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Clothed%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-6.jpg', title: 'DWWD05 - Haruki - Yawen-6.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Clothed%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-7.jpg', title: 'DWWD05 - Haruki - Yawen-7.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Clothed%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-8.jpg', title: 'DWWD05 - Haruki - Yawen-8.jpg' },
+      ],
+      nakedPhotos: [
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Naked%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-10.jpg', title: 'DWWD05 - Haruki - Yawen-10.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Naked%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-11.jpg', title: 'DWWD05 - Haruki - Yawen-11.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Naked%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-12.jpg', title: 'DWWD05 - Haruki - Yawen-12.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Naked%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-13.jpg', title: 'DWWD05 - Haruki - Yawen-13.jpg' },
+      ],
+    },
+  },
+  {
+    id: 'yuna',
+    name: 'Yuna',
+    image: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Clothed%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-2.jpg',
+    price: '$999',
+    tag: 'GALLERY',
+    specs: 'Silicone Head · TPE Body',
+    tier: 'best-value',
+    featured: false,
+    tradeMeSku: '07',
+    tradeMeSearchCode: 'DWWD07',
+    realLifeMedia: {
+      clothedPhotos: [
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Clothed%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-2.jpg', title: 'DWWD07 - Yuna - Xingzi-2.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Clothed%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-3.jpg', title: 'DWWD07 - Yuna - Xingzi-3.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Clothed%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-4.jpg', title: 'DWWD07 - Yuna - Xingzi-4.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Clothed%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-5.jpg', title: 'DWWD07 - Yuna - Xingzi-5.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Clothed%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-6.jpg', title: 'DWWD07 - Yuna - Xingzi-6.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Clothed%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-7.jpg', title: 'DWWD07 - Yuna - Xingzi-7.jpg' },
+      ],
+      nakedPhotos: [
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Naked%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-8.jpg', title: 'DWWD07 - Yuna - Xingzi-8.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Naked%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-9.jpg', title: 'DWWD07 - Yuna - Xingzi-9.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Naked%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-10.jpg', title: 'DWWD07 - Yuna - Xingzi-10.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Naked%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-11.jpg', title: 'DWWD07 - Yuna - Xingzi-11.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Naked%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-12.jpg', title: 'DWWD07 - Yuna - Xingzi-12.jpg' },
+      ],
+    },
+  },
 ];
 
 export const homepageValueProducts = products.filter(
