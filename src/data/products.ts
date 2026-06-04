@@ -81,34 +81,19 @@ export const products: Product[] = [
     tradeMeSearchCode: 'DWWD01',
     realLifeMedia: {
       clothedPhotos: [
-        {
-          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-4.jpg',
-          title: 'Nova clothed 4',
-        },
-        {
-          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-5.jpg',
-          title: 'Nova clothed 5',
-        },
-        {
-          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-6.jpg',
-          title: 'Nova clothed 6',
-        },
-        {
-          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-7.jpg',
-          title: 'Nova clothed 7',
-        },
-        {
-          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-8.jpg',
-          title: 'Nova clothed 8',
-        },
-        {
-          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-9.jpg',
-          title: 'Nova clothed 9',
-        },
-        {
-          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-10.jpg',
-          title: 'Nova clothed 10',
-        },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-4.jpg', title: 'Nova clothed DWWD01 - Nova - Xuexian-4.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-5.jpg', title: 'Nova clothed DWWD01 - Nova - Xuexian-5.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-6.jpg', title: 'Nova clothed DWWD01 - Nova - Xuexian-6.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-7.jpg', title: 'Nova clothed DWWD01 - Nova - Xuexian-7.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-8.jpg', title: 'Nova clothed DWWD01 - Nova - Xuexian-8.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-9.jpg', title: 'Nova clothed DWWD01 - Nova - Xuexian-9.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-10.jpg', title: 'Nova clothed DWWD01 - Nova - Xuexian-10.jpg' },
+      ],
+      nakedPhotos: [
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-11.jpg', title: 'Nova naked DWWD01 - Nova - Xuexian-11.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-12.jpg', title: 'Nova naked DWWD01 - Nova - Xuexian-12.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-13.jpg', title: 'Nova naked DWWD01 - Nova - Xuexian-13.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-14.jpg', title: 'Nova naked DWWD01 - Nova - Xuexian-14.jpg' },
       ],
     },
   },
