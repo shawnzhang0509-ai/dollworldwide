@@ -1,21 +1,7 @@
-import { useMemo, useState } from 'react';
 import { ProductGrid } from '@/sections/ProductSection';
-import { products, type ProductTier } from '@/data/products';
-
-const filters: Array<{ label: string; value: 'all' | ProductTier }> = [
-  { label: 'All Models', value: 'all' },
-  { label: '$999 Best Value', value: 'best-value' },
-  { label: 'Flagship', value: 'flagship' },
-];
+import { products } from '@/data/products';
 
 export function AllModelsPage() {
-  const [activeFilter, setActiveFilter] = useState<'all' | ProductTier>('all');
-
-  const filteredProducts = useMemo(() => {
-    if (activeFilter === 'all') return products;
-    return products.filter((product) => product.tier === activeFilter);
-  }, [activeFilter]);
-
   return (
     <main className="bg-noir-900 pt-[120px]">
       <section className="relative overflow-hidden pb-[120px]">
@@ -28,29 +14,12 @@ export function AllModelsPage() {
             <span className="text-label text-gold block mt-8 mb-4">ALL MODELS</span>
             <h1 className="text-display-h2 text-cream-100 mb-5">Browse the full Doll Worldwide catalogue.</h1>
             <p className="text-body-large text-cream-200">
-              Keep the homepage focused on fast decisions. Use this page for the full 30+ model catalogue, with $999 best-value stock separated from flagship premium models.
+              Every model is $999 NZD. Where a Trade Me listing exists, the SKU code on each card (for example DWWD01) matches the search code used on Trade Me.
             </p>
           </div>
 
-          <div className="mb-10 flex flex-wrap gap-3">
-            {filters.map((filter) => (
-              <button
-                key={filter.value}
-                type="button"
-                onClick={() => setActiveFilter(filter.value)}
-                className={`border px-5 py-3 text-button transition-all duration-300 ${
-                  activeFilter === filter.value
-                    ? 'border-gold bg-gold text-noir-900'
-                    : 'border-gold/40 text-gold hover:border-gold hover:bg-gold hover:text-noir-900'
-                }`}
-              >
-                {filter.label}
-              </button>
-            ))}
-          </div>
-
           <ProductGrid
-            products={filteredProducts}
+            products={products}
             className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
           />
         </div>

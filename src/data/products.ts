@@ -19,7 +19,7 @@ export interface VideoAsset {
   poster?: string;
 }
 
-export type ProductTier = 'flagship' | 'best-value';
+export type ProductTier = 'best-value';
 
 export interface Product {
   id: string;
@@ -58,24 +58,6 @@ export const realLifeMediaCategories: RealLifeMediaCategory[] = [
 
 export const products: Product[] = [
   {
-    id: 'skin-texture-flagship',
-    name: 'Full Silicone Skin Texture Edition',
-    image: '/images/hero-bg.jpg',
-    price: '$3,999',
-    tag: 'FLAGSHIP',
-    specs: 'Full Silicone · Skin Texture Detail · Premium Finish',
-    tier: 'flagship',
-    featured: true,
-    realLifeMedia: {
-      videos: [
-        {
-          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/flagship-skin-texture/naked/videos/1.mp4',
-          title: 'Full silicone skin texture detail',
-        },
-      ],
-    },
-  },
-  {
     id: 'aria',
     name: 'Aria',
     image: '/images/divine-aria.jpg',
@@ -88,7 +70,8 @@ export const products: Product[] = [
   {
     id: 'nova',
     name: 'Nova',
-    image: '/images/divine-nova.jpg',
+    image:
+      'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-4.jpg',
     price: '$999',
     tag: 'ELITE',
     specs: '148cm · C-Cup · Silicone Head · TPE Body',
@@ -574,7 +557,6 @@ export const products: Product[] = [
   },
 ];
 
-export const flagshipProducts = products.filter((product) => product.tier === 'flagship');
 export const homepageValueProducts = products.filter(
   (product) => product.tier === 'best-value' && product.featured,
 );
