@@ -114,7 +114,7 @@ Required fields:
 - `name`: display name.
 - `image`: main product card image.
 - `price`: e.g. `$999`.
-- `tier`: `best-value` or `flagship`.
+- `tier`: `best-value` (all models are $999).
 - `tradeMeSearchCode`: same marker used in the Trade Me title.
 
 Optional fields:
@@ -125,7 +125,7 @@ Optional fields:
 ## Product tiers
 
 - `best-value`: the $999 silicone-head + TPE-body range.
-- `flagship`: premium models such as full-silicone special editions.
+- `tradeMeSearchCode`: display on the site card and used for Trade Me search links (e.g. `DWWD01`).
 
 Set `featured: true` for products that should appear on the homepage. All products appear on `/models`.
 
