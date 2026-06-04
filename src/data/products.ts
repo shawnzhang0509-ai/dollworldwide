@@ -106,6 +106,12 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-9.jpg', title: 'Nova clothed DWWD01 - Nova - Xuexian-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Clothed%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-10.jpg', title: 'Nova clothed DWWD01 - Nova - Xuexian-10.jpg' },
       ],
+      nakedPhotos: [
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-11.jpg', title: 'Nova naked DWWD01 - Nova - Xuexian-11.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-12.jpg', title: 'Nova naked DWWD01 - Nova - Xuexian-12.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-13.jpg', title: 'Nova naked DWWD01 - Nova - Xuexian-13.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-14.jpg', title: 'Nova naked DWWD01 - Nova - Xuexian-14.jpg' },
+      ],
     },
   },
   {
