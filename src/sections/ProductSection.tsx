@@ -89,6 +89,11 @@ function ProductCardContent({
           <p className="text-label text-gold mb-2">FULL SILICONE SPECIAL EDITION</p>
         )}
         <h3 className="font-display text-display-h4 text-cream-100 mb-1">{product.name}</h3>
+        {product.tradeMeSearchCode && (
+          <p className="font-body text-xs text-gold mb-2">
+            Trade Me SKU: <span className="font-medium tracking-wide">{product.tradeMeSearchCode}</span>
+          </p>
+        )}
         <p className="font-body text-sm text-cream-300 mb-3">{product.specs}</p>
         <div className="flex items-center justify-between">
           <span className={`font-display text-gold ${isFlagship ? 'text-4xl' : 'text-3xl'}`}>{product.price}</span>

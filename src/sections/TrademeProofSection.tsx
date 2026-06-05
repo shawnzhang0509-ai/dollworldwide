@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TradeMeProofCard } from '@/components/TradeMeProofCard';
-import { TradeMeSoldSummary } from '@/components/TradeMeSoldSummary';
+import { TradeMeRecentSalesScreenshot } from '@/components/TradeMeRecentSalesScreenshot';
 import { trademeSaleProofs } from '@/data/trademeProofs';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
@@ -47,7 +47,7 @@ export function TrademeProofSection() {
         </div>
 
         <div className="proof-item">
-          <TradeMeSoldSummary />
+          <TradeMeRecentSalesScreenshot />
         </div>
 
         <p className="proof-item mb-6 text-center font-body text-sm text-cream-400">
