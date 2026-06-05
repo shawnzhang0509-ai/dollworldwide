@@ -401,8 +401,8 @@ export function ProductSection() {
           <div className="flex flex-col items-center gap-4">
             <a
               href="/models"
-              className={`inline-flex min-w-[min(100%,320px)] items-center justify-center px-12 py-4 bg-gold text-noir-900 font-semibold text-sm tracking-[0.12em] uppercase transition-colors duration-300 hover:bg-gold-light focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-noir-700 ${
-                reduced ? '' : 'animate-cta-attention'
+              className={`inline-flex min-w-[min(100%,320px)] items-center justify-center px-12 py-4 bg-gold text-noir-900 font-semibold text-sm tracking-[0.12em] uppercase focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-noir-700 ${
+                reduced ? 'hover:bg-gold-light transition-colors duration-300' : 'animate-cta-flash'
               }`}
             >
               View All Models

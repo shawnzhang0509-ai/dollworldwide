@@ -92,12 +92,16 @@ module.exports = {
           "0%, 100%": { opacity: "0.03" },
           "50%": { opacity: "0.06" },
         },
-        "cta-attention": {
+        "cta-flash": {
           "0%, 100%": {
-            boxShadow: "0 0 18px rgba(212, 175, 55, 0.45), 0 0 0 0 rgba(212, 175, 55, 0.35)",
+            backgroundColor: "#D4AF37",
+            boxShadow: "0 0 16px rgba(212, 175, 55, 0.5)",
+            transform: "scale(1)",
           },
           "50%": {
-            boxShadow: "0 0 36px rgba(212, 175, 55, 0.85), 0 0 0 10px rgba(212, 175, 55, 0.12)",
+            backgroundColor: "#F2D98B",
+            boxShadow: "0 0 42px rgba(212, 175, 55, 0.95), 0 0 0 8px rgba(212, 175, 55, 0.22)",
+            transform: "scale(1.03)",
           },
         },
       },
@@ -107,6 +111,7 @@ module.exports = {
         "caret-blink": "caret-blink 1.25s ease-out infinite",
         "shimmer-sweep": "shimmer-sweep 8s linear infinite",
         "gold-pulse": "gold-pulse 4s ease-in-out infinite",
+        "cta-flash": "cta-flash 1.1s ease-in-out infinite",
       },
     },
   },
