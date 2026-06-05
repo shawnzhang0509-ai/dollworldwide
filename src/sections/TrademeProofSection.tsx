@@ -42,8 +42,7 @@ export function TrademeProofSection() {
           <div className="w-[60px] h-[1px] bg-gold mx-auto mb-6" />
           <h2 className="text-display-h2 text-cream-100 mb-4">Sold on Trade Me. Trusted by NZ Buyers.</h2>
           <p className="text-body-large text-cream-200 max-w-2xl mx-auto">
-            Real sales from our Trade Me seller account — overview and confirmation details below.
-            Buyer details and amounts are hidden for privacy.
+            Real sales from our Trade Me seller account — recent sold listings and confirmation details below.
           </p>
         </div>
 

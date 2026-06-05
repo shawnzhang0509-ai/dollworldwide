@@ -14,26 +14,19 @@ export function TradeMeSoldSummary() {
             {trademeSoldListSummary.length} listings
           </span>
         </div>
-        <p className="mt-2 font-body text-[11px] text-cream-500">
-          Recent completed sales from our seller account · prices hidden
-        </p>
+
       </div>
 
       <ul className="divide-y divide-noir-500">
         {trademeSoldListSummary.map((listing) => (
           <li key={listing.id} className="flex gap-4 px-4 py-4 transition-colors hover:bg-noir-700/40">
-            <div className="relative h-[72px] w-[72px] shrink-0 overflow-hidden border border-noir-500 bg-noir-700">
+            <div className="relative h-24 w-24 shrink-0 overflow-hidden border border-noir-500 bg-noir-700">
               <img
                 src={listing.thumbnail}
-                alt=""
-                className="h-full w-full object-cover"
+                alt={listing.product}
+                className="h-full w-full object-cover object-top"
                 loading="lazy"
               />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-noir-900/90 to-transparent px-1 py-1">
-                <span className="block truncate font-body text-[7px] font-semibold uppercase tracking-wide text-gold">
-                  NZ stock
-                </span>
-              </div>
             </div>
 
             <div className="min-w-0 flex-1">

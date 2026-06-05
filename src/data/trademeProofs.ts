@@ -8,7 +8,7 @@ export interface TradeMeSoldListing {
   thumbnail: string;
 }
 
-/** Trade Me app “Sold” tab — amounts hidden; matches seller account overview */
+/** Trade Me app Sold tab — recent listings overview */
 export const trademeSoldListSummary: TradeMeSoldListing[] = [
   {
     id: 'sold-p246773433',
@@ -16,7 +16,7 @@ export const trademeSoldListSummary: TradeMeSoldListing[] = [
     product: '148cm Lifesize Flexible Female Seamless TPE Body Doll — premium',
     timeLabel: 'Recent sale',
     fulfillment: 'NZ stock · Shipped',
-    thumbnail: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD08/Clothed%20Photos/DWWD08%20-%20Freya%20-%20Yingying-2.jpg',
+    thumbnail: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD08/Clothed%20Photos/DWWD08%20-%20Freya%20-%20Shasha-2.jpg',
   },
   {
     id: 'sold-p246772405',
@@ -24,7 +24,7 @@ export const trademeSoldListSummary: TradeMeSoldListing[] = [
     product: 'Sofia Realistic Sex Doll — NZ current stock',
     timeLabel: 'Dec 2025',
     fulfillment: 'Buyer to pick-up',
-    thumbnail: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD09/Clothed%20Photos/DWWD09%20-%20Tara%20-%20Yingying-2.jpg',
+    thumbnail: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD09/Clothed%20Photos/DWWD09%20-%20Tara%20-%20Jiachen-2.jpg',
   },
   {
     id: 'sold-p246682140',
@@ -32,7 +32,7 @@ export const trademeSoldListSummary: TradeMeSoldListing[] = [
     product: '148cm Lifesize Flexible Female Seamless TPE Body Doll — premium',
     timeLabel: '22 Dec',
     fulfillment: 'Buyer to pick-up',
-    thumbnail: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD10/Clothed%20Photos/DWWD10%20-%20Kira%20-%20Yingying-2.jpg',
+    thumbnail: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD10/Clothed%20Photos/DWWD10%20-%20Kira%20-%20Longnv-10.jpg',
   },
   {
     id: 'sold-p245937648',
@@ -40,7 +40,7 @@ export const trademeSoldListSummary: TradeMeSoldListing[] = [
     product: '148cm Lifesize Flexible Female Seamless TPE Body Doll V37',
     timeLabel: '17 Nov',
     fulfillment: 'Buyer to pick-up',
-    thumbnail: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD08/Clothed%20Photos/DWWD08%20-%20Freya%20-%20Yingying-3.jpg',
+    thumbnail: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD08/Clothed%20Photos/DWWD08%20-%20Freya%20-%20Shasha-4.jpg',
   },
 ];
 

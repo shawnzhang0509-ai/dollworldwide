@@ -1,4 +1,4 @@
-import { BadgeCheck, ShieldCheck } from 'lucide-react';
+import { BadgeCheck } from 'lucide-react';
 import type { TradeMeSaleProof } from '@/data/trademeProofs';
 
 interface TradeMeProofCardProps {
@@ -50,14 +50,11 @@ export function TradeMeProofCard({ proof }: TradeMeProofCardProps) {
           )}
           <div className="flex items-center justify-between gap-3">
             <dt className="text-cream-400">Buyer</dt>
-            <dd className="text-cream-300">Verified NZ buyer (private)</dd>
+            <dd className="text-cream-300">Verified NZ buyer</dd>
           </div>
         </dl>
 
-        <p className="mt-4 flex items-center gap-1.5 font-body text-[10px] text-cream-500">
-          <ShieldCheck className="h-3 w-3 shrink-0 text-gold/70" strokeWidth={1.5} />
-          Buyer email and amount hidden for privacy
-        </p>
+
       </div>
     </article>
   );
