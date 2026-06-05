@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { TradeMeProofCard } from '@/components/TradeMeProofCard';
+import { TradeMeSoldSummary } from '@/components/TradeMeSoldSummary';
 import { trademeSaleProofs } from '@/data/trademeProofs';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 
@@ -41,10 +42,18 @@ export function TrademeProofSection() {
           <div className="w-[60px] h-[1px] bg-gold mx-auto mb-6" />
           <h2 className="text-display-h2 text-cream-100 mb-4">Sold on Trade Me. Trusted by NZ Buyers.</h2>
           <p className="text-body-large text-cream-200 max-w-2xl mx-auto">
-            Real sale confirmations from our Trade Me account — product names and reference numbers shown.
+            Real sales from our Trade Me seller account — overview and confirmation details below.
             Buyer details and amounts are hidden for privacy.
           </p>
         </div>
+
+        <div className="proof-item">
+          <TradeMeSoldSummary />
+        </div>
+
+        <p className="proof-item mb-6 text-center font-body text-sm text-cream-400">
+          Sale confirmation details
+        </p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
           {featuredProofs.map((proof) => (
