@@ -19,7 +19,7 @@ export interface VideoAsset {
   poster?: string;
 }
 
-export type ProductTier = 'best-value';
+export type ProductTier = 'flagship' | 'best-value';
 
 export interface Product {
   id: string;
@@ -1447,6 +1447,21 @@ export const products: Product[] = [
   },
 ];
 
-export const homepageValueProducts = products.filter(
-  (product) => product.tier === 'best-value' && product.featured,
-);
+export const flagshipProducts = products.filter((product) => product.tier === 'flagship');
+
+/** Homepage featured $999 grid — explicit order, always 9 models with R2 media */
+const homepageFeaturedCodes = [
+  'DWWD02',
+  'DWWD01',
+  'DWWD03',
+  'DWWD04',
+  'DWWD05',
+  'DWWD07',
+  'DWWD08',
+  'DWWD09',
+  'DWWD10',
+] as const;
+
+export const homepageValueProducts = homepageFeaturedCodes
+  .map((code) => products.find((product) => product.tradeMeSearchCode === code))
+  .filter((product): product is Product => product !== undefined);

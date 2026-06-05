@@ -153,4 +153,7 @@
   .gold-glow {
     animation: none;
   }
+  .animate-cta-attention {
+    animation: none;
+  }
 }

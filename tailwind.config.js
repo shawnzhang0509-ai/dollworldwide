@@ -92,6 +92,14 @@ module.exports = {
           "0%, 100%": { opacity: "0.03" },
           "50%": { opacity: "0.06" },
         },
+        "cta-attention": {
+          "0%, 100%": {
+            boxShadow: "0 0 18px rgba(212, 175, 55, 0.45), 0 0 0 0 rgba(212, 175, 55, 0.35)",
+          },
+          "50%": {
+            boxShadow: "0 0 36px rgba(212, 175, 55, 0.85), 0 0 0 10px rgba(212, 175, 55, 0.12)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
