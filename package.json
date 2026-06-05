@@ -8,7 +8,6 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "r2:scan": "node scripts/r2-scan-media.mjs",
-    "trademe:mask-screenshot": "python3 scripts/mask-trademe-screenshot.py",
     "preview": "vite preview"
   },
   "dependencies": {
