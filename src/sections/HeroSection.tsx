@@ -45,14 +45,28 @@ export function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const bgRef = useRef<HTMLDivElement>(null);
   const headlineRef = useRef<HTMLDivElement>(null);
+  const ctaRef = useRef<HTMLDivElement>(null);
   const pointsRef = useRef<HTMLDivElement>(null);
   const reduced = useReducedMotion();
 
   useEffect(() => {
     if (!sectionRef.current) return;
 
-    // Ken Burns
-    if (!reduced && bgRef.current) {
+    const scrollTriggers: ScrollTrigger[] = [];
+
+    if (reduced) {
+      const visible = sectionRef.current.querySelectorAll('.hero-scroll-fade, .sp-card, .sp-icon');
+      gsap.set(visible, { opacity: 1, y: 0, scale: 1, clearProps: 'transform' });
+      if (ctaRef.current) {
+        gsap.set(ctaRef.current, { opacity: 1, y: 0, clearProps: 'transform' });
+      }
+      if (pointsRef.current) {
+        gsap.set(pointsRef.current, { opacity: 1, y: 0 });
+      }
+      return;
+    }
+
+    if (bgRef.current) {
       gsap.to(bgRef.current, {
         scale: 1.05,
         duration: 20,
@@ -62,102 +76,114 @@ export function HeroSection() {
       });
     }
 
-    // Headline entrance
     if (headlineRef.current) {
-      const items = headlineRef.current.querySelectorAll('.hero-animate');
-      gsap.set(items, { opacity: 0, y: 30 });
+      const textItems = headlineRef.current.querySelectorAll('.hero-scroll-fade');
+      gsap.set(textItems, { opacity: 0, y: 30 });
       gsap.timeline({ delay: 0.3 })
-        .to(items[0], { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
-        .to(items[1], { opacity: 1, scaleX: 1, duration: 0.8, ease: 'power2.out' }, '-=0.3')
-        .to(items[2], { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out' }, '-=0.4')
-        .to(items[3], { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5')
-        .to(items[4], { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3')
-        .to(items[5], { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3');
+        .to(textItems[0], { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
+        .to(textItems[1], { opacity: 1, scaleX: 1, duration: 0.8, ease: 'power2.out' }, '-=0.3')
+        .to(textItems[2], { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out' }, '-=0.4')
+        .to(textItems[3], { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5')
+        .to(textItems[4], { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3');
     }
 
-    // ====== 5-CARD SEQUENTIAL EXPLOSION ======
+    if (ctaRef.current) {
+      gsap.set(ctaRef.current, { opacity: 0, y: 20 });
+      gsap.to(ctaRef.current, {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        ease: 'power2.out',
+        delay: 1.4,
+      });
+    }
+
     if (pointsRef.current) {
       const cards = pointsRef.current.querySelectorAll('.sp-card');
       const icons = pointsRef.current.querySelectorAll('.sp-icon');
 
-      // Initial: invisible, below, tiny
       gsap.set(cards, { opacity: 0, y: 60, scale: 0.4 });
       gsap.set(icons, { scale: 0 });
 
-      // Each card gets its own mini-timeline, staggered by 0.18s
       cards.forEach((card, i) => {
         const icon = icons[i];
         const color = sellingPoints[i].color;
 
-        // Build per-card timeline with absolute delay (sequential)
         const cardTl = gsap.timeline({ delay: 1.2 + i * 0.18 });
 
-        // Step 1: COLOR FLASH — background briefly lights up
         cardTl.fromTo(card,
           { backgroundColor: 'rgba(10,10,10,0.9)' },
-          { backgroundColor: color, duration: 0.08, ease: 'power4.out' }
+          { backgroundColor: color, duration: 0.08, ease: 'power4.out' },
         )
-        // Step 2: POP OUT — card appears + explodes upward
-        .to(card, {
-          opacity: 1,
-          y: 0,
-          scale: 1.12,
-          duration: 0.3,
-          ease: 'back.out(2.5)',
-        }, '-=0.02')
-        // Step 3: Flash fades back to dark
-        .to(card, {
-          backgroundColor: 'rgba(10,10,10,0.8)',
-          duration: 0.15,
-          ease: 'power2.out',
-        }, '-=0.15')
-        // Step 4: SETTLE — elastic bounce to final size
-        .to(card, {
-          scale: 1,
-          duration: 0.4,
-          ease: 'elastic.out(1, 0.5)',
-        }, '-=0.05')
-        // Step 5: ICON bounces in
-        .to(icon, {
-          scale: 1,
-          duration: 0.35,
-          ease: 'back.out(3)',
-        }, '-=0.3');
+          .to(card, {
+            opacity: 1,
+            y: 0,
+            scale: 1.12,
+            duration: 0.3,
+            ease: 'back.out(2.5)',
+          }, '-=0.02')
+          .to(card, {
+            backgroundColor: 'rgba(10,10,10,0.8)',
+            duration: 0.15,
+            ease: 'power2.out',
+          }, '-=0.15')
+          .to(card, {
+            scale: 1,
+            duration: 0.4,
+            ease: 'elastic.out(1, 0.5)',
+          }, '-=0.05')
+          .to(icon, {
+            scale: 1,
+            duration: 0.35,
+            ease: 'back.out(3)',
+          }, '-=0.3');
       });
     }
 
-    // Scroll fade-out
     if (headlineRef.current) {
-      gsap.to(headlineRef.current.children, {
-        opacity: 0,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top top',
-          end: 'bottom top',
-          scrub: true,
+      const fadeItems = headlineRef.current.querySelectorAll('.hero-scroll-fade');
+      const textFade = gsap.fromTo(
+        fadeItems,
+        { opacity: 1, y: 0 },
+        {
+          opacity: 0,
+          y: -24,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: '18% top',
+            end: '72% top',
+            scrub: true,
+          },
         },
-      });
+      );
+      scrollTriggers.push(textFade.scrollTrigger!);
     }
 
     if (pointsRef.current) {
-      gsap.to(pointsRef.current, {
-        opacity: 0,
-        y: -30,
-        ease: 'none',
-        scrollTrigger: {
-          trigger: sectionRef.current,
-          start: 'top top',
-          end: '60% top',
-          scrub: true,
+      const pointsFade = gsap.fromTo(
+        pointsRef.current,
+        { opacity: 1, y: 0 },
+        {
+          opacity: 0,
+          y: -30,
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: '25% top',
+            end: '70% top',
+            scrub: true,
+          },
         },
-      });
+      );
+      scrollTriggers.push(pointsFade.scrollTrigger!);
     }
 
+    const refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 1600);
+
     return () => {
-      ScrollTrigger.getAll().forEach((st) => {
-        if (st.trigger === sectionRef.current) st.kill();
-      });
+      window.clearTimeout(refreshTimer);
+      scrollTriggers.forEach((st) => st.kill());
     };
   }, [reduced]);
 
@@ -167,7 +193,6 @@ export function HeroSection() {
       ref={sectionRef}
       className="relative w-full min-h-[100dvh] flex flex-col justify-end overflow-hidden pb-6 md:pb-10"
     >
-      {/* Background */}
       <div
         ref={bgRef}
         className="absolute inset-0 w-full h-full will-change-transform"
@@ -188,33 +213,30 @@ export function HeroSection() {
         {!reduced && <div className="absolute inset-0 shimmer-overlay" />}
       </div>
 
-      {/* Content */}
       <div className="relative z-10 w-full max-w-[1280px] mx-auto px-4 md:px-10">
-        {/* Headline */}
         <div ref={headlineRef} className="mb-6 md:mb-8">
-          <span className="hero-animate text-label text-gold block mb-3 opacity-0">
+          <span className="hero-scroll-fade text-label text-gold block mb-3">
             NZ READY STOCK — AUCKLAND BASED
           </span>
           <div
-            className="hero-animate w-[60px] h-[1px] bg-gold mb-5 origin-left"
+            className="hero-scroll-fade w-[60px] h-[1px] bg-gold mb-5 origin-left"
             style={{ transform: 'scaleX(0)' }}
           />
-          <h1 className="hero-animate text-display-h1 text-cream-100 mb-4 max-w-[650px] opacity-0">
+          <h1 className="hero-scroll-fade text-display-h1 text-cream-100 mb-4 max-w-[650px]">
             Silicone Head + TPE Body. $999 Auckland Ready Stock.
           </h1>
-          <p className="hero-animate text-body-large text-cream-200 mb-4 max-w-[550px] opacity-0">
+          <p className="hero-scroll-fade text-body-large text-cream-200 mb-4 max-w-[550px]">
             Doll Worldwide focuses on the strongest value: realistic silicone-head detail, soft TPE body, real photos, Trade Me proof, and discreet NZ delivery at the best price.
           </p>
-          <p className="hero-animate text-label text-cream-200/90 mb-6 max-w-[620px] opacity-0">
+          <p className="hero-scroll-fade text-label text-cream-200/90 mb-6 max-w-[620px]">
             Why us: $999 clear price · Real media before you buy · Auckland pickup or discreet nationwide shipping
           </p>
-          <div className="hero-animate flex flex-wrap gap-3 opacity-0">
+          <div ref={ctaRef} className="flex flex-wrap gap-3">
             <SecondaryButton href="#product">See Ready Stock</SecondaryButton>
             <PrimaryButton href="tel:02885146884">Call 028 8514 6884</PrimaryButton>
           </div>
         </div>
 
-        {/* ====== 5 SEQUENTIAL EXPLOSIVE CARDS ====== */}
         <div
           ref={pointsRef}
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4"
@@ -228,7 +250,6 @@ export function HeroSection() {
                 borderColor: `${sp.color}40`,
               }}
             >
-              {/* Colored top accent line */}
               <div
                 className="absolute top-0 left-0 right-0 h-[2px]"
                 style={{ backgroundColor: sp.color }}
