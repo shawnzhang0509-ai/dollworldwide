@@ -1,9 +1,15 @@
+import { PageMeta } from '@/components/PageMeta';
 import { ProductGrid } from '@/sections/ProductSection';
 import { products } from '@/data/products';
 
 export function AllModelsPage() {
   return (
     <main className="bg-noir-900 pt-[120px]">
+      <PageMeta
+        title="All Sex Doll Models NZ | $999 Each"
+        description="Browse the full Doll Worldwide catalogue. Every model is $999 NZD with Auckland ready stock, real photos, and Trade Me SKU codes for verified listings."
+        path="/models"
+      />
       <section className="relative overflow-hidden pb-[120px]">
         <div className="absolute inset-x-0 top-0 h-[360px] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.12),transparent_68%)] pointer-events-none" />
         <div className="relative max-w-[1280px] mx-auto px-6 md:px-10">
