@@ -9,6 +9,8 @@ import { TrademeProofSection } from '@/sections/TrademeProofSection';
 import { HowItWorksSection } from '@/sections/HowItWorksSection';
 import { ContactCTASection } from '@/sections/ContactCTASection';
 import { AllModelsPage } from '@/pages/AllModelsPage';
+import { BlogIndexPage } from '@/pages/BlogIndexPage';
+import { BlogArticlePage } from '@/pages/BlogArticlePage';
 
 function HomePage() {
   return (
@@ -32,6 +34,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/models" element={<AllModelsPage />} />
+        <Route path="/blog" element={<BlogIndexPage />} />
+        <Route path="/blog/:slug" element={<BlogArticlePage />} />
       </Routes>
       <Footer />
     </>
