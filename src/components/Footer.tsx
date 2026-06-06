@@ -31,6 +31,7 @@ export function Footer() {
               {[
                 { label: 'Ready Stock', href: '#product' },
                 { label: 'All Models', href: '/models' },
+                { label: 'Blog', href: '/blog' },
                 { label: 'Trade Me Proof', href: '#proof' },
                 { label: 'How It Works', href: '#how-it-works' },
                 { label: 'Contact', href: '#contact' },
