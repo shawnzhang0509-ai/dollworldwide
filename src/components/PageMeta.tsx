@@ -3,12 +3,15 @@ import { useEffect } from 'react';
 const SITE_NAME = 'DollWorldwide';
 const SITE_URL = 'https://dollworldwide.com';
 
+export const DEFAULT_OG_IMAGE = `${SITE_URL}/images/hero-bg.jpg`;
+
 interface PageMetaProps {
   title: string;
   description: string;
   path?: string;
   type?: 'website' | 'article';
   publishedAt?: string;
+  image?: string;
 }
 
 function upsertMeta(name: string, content: string, attribute: 'name' | 'property' = 'name') {
@@ -41,6 +44,7 @@ export function PageMeta({
   path = '/',
   type = 'website',
   publishedAt,
+  image = DEFAULT_OG_IMAGE,
 }: PageMetaProps) {
   const fullTitle = title === SITE_NAME ? title : `${title} | ${SITE_NAME}`;
   const canonicalUrl = `${SITE_URL}${path}`;
@@ -54,14 +58,16 @@ export function PageMeta({
     upsertMeta('og:type', type, 'property');
     upsertMeta('og:url', canonicalUrl, 'property');
     upsertMeta('og:site_name', SITE_NAME, 'property');
+    upsertMeta('og:image', image, 'property');
     upsertMeta('twitter:card', 'summary_large_image');
     upsertMeta('twitter:title', fullTitle);
     upsertMeta('twitter:description', description);
+    upsertMeta('twitter:image', image);
 
     if (type === 'article' && publishedAt) {
       upsertMeta('article:published_time', publishedAt, 'property');
     }
-  }, [fullTitle, description, canonicalUrl, type, publishedAt]);
+  }, [fullTitle, description, canonicalUrl, type, publishedAt, image]);
 
   return null;
 }
