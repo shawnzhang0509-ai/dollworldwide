@@ -14,6 +14,7 @@ import { ContactCTASection } from '@/sections/ContactCTASection';
 import { AllModelsPage } from '@/pages/AllModelsPage';
 import { BlogIndexPage } from '@/pages/BlogIndexPage';
 import { BlogArticlePage } from '@/pages/BlogArticlePage';
+import { VercelAnalytics } from '@/components/VercelAnalytics';
 
 function HomePage() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="/blog/:slug" element={<BlogArticlePage />} />
       </Routes>
       <Footer />
+      <VercelAnalytics />
     </>
   );
 }
