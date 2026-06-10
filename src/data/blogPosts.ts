@@ -18,6 +18,219 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'why-adult-dolls-nz-stock-matters',
+    title: 'Why Some Adult Dolls Are Available in New Zealand Stock (And Why It Matters)',
+    description:
+      'Learn the difference between NZ in-stock adult dolls and overseas made-to-order models — delivery speed, global brands, and what local stock really means.',
+    excerpt:
+      'Most sellers ship from overseas factories. A few keep selected models in NZ stock — here is why that changes delivery time, certainty, and your buying experience.',
+    publishedAt: '2026-06-08',
+    category: 'NZ Stock Guide',
+    readingTimeMinutes: 6,
+    blocks: [
+      {
+        type: 'paragraph',
+        content:
+          'When shopping for adult dolls online, most customers will notice that the majority of sellers are overseas-based.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'However, a small number of suppliers keep selected models in New Zealand stock.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'This difference can have a significant impact on delivery time, availability, and overall buying experience.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'In-Stock vs Made-to-Order Models',
+      },
+      {
+        type: 'paragraph',
+        content: 'Most adult dolls sold online are:',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Made to order in factories overseas',
+          'Customised after purchase',
+          'Shipped internationally after production',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'This process can take several weeks before the product even leaves the factory.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'In contrast, NZ-based stock means the product has already been manufactured and is physically available for dispatch.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Faster Delivery Within New Zealand',
+      },
+      {
+        type: 'paragraph',
+        content: 'One of the biggest advantages of local stock is delivery speed.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Instead of waiting for international production and shipping cycles, in-stock items can typically be dispatched immediately within New Zealand.',
+      },
+      {
+        type: 'paragraph',
+        content: 'This reduces waiting time and avoids common international delays such as:',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Factory backlog',
+          'International shipping congestion',
+          'Customs clearance delays',
+        ],
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Same Global Brands, Different Fulfilment Model',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Customers are often surprised to learn that many adult dolls sold globally come from the same manufacturers, including well-known brands such as:',
+      },
+      {
+        type: 'bullet-list',
+        items: ['WM Doll', 'Irontech Doll', 'SE Doll', 'Jinsan / Starpery (varies by product line)'],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'The difference is not always the brand itself, but how and where the product is fulfilled.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'NZ stock simply means selected models from these global brands are already imported and available locally.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Reduced Uncertainty in Delivery Time',
+      },
+      {
+        type: 'paragraph',
+        content: 'International ordering often involves uncertainty:',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Estimated shipping windows that may change',
+          'Customs inspection delays',
+          'Tracking gaps between countries',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'With NZ stock, customers have a clearer expectation of delivery timing because the product is already in the country.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Limited but Ready Availability',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Because stock is physically held in New Zealand, selection may be more limited compared to full factory catalogues.',
+      },
+      {
+        type: 'paragraph',
+        content: 'However, this trade-off comes with:',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Immediate availability',
+          'Faster fulfilment',
+          'Reduced shipping risk',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'For many buyers, speed and certainty matter more than unlimited customization.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'What "NZ Stock" Does Not Mean',
+      },
+      {
+        type: 'paragraph',
+        content: 'It is important to be clear:',
+      },
+      {
+        type: 'paragraph',
+        content: 'NZ stock does NOT mean the product is manufactured in New Zealand.',
+      },
+      {
+        type: 'paragraph',
+        content: 'It simply means:',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'The product is imported in advance',
+          'It is stored locally',
+          'It is ready for dispatch within New Zealand',
+        ],
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Conclusion',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Buying an adult doll that is already in New Zealand stock offers a different experience compared to overseas ordering.',
+      },
+      {
+        type: 'paragraph',
+        content: 'The key benefits are:',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Faster delivery',
+          'Less waiting uncertainty',
+          'Access to the same global brands',
+          'Immediate availability',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'For customers who prefer speed and certainty, NZ stock provides a practical alternative to traditional made-to-order international purchasing.',
+      },
+      {
+        type: 'cta',
+        content: 'Browse our Auckland ready stock — selected models available for immediate dispatch across New Zealand.',
+        href: '/models',
+        label: 'View Ready Stock',
+      },
+    ],
+  },
+  {
     slug: 'how-to-clean-a-sex-doll-maintenance-guide',
     title: 'How to Clean a Sex Doll: A Simple Maintenance Guide',
     description:
