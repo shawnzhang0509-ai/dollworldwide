@@ -14,6 +14,7 @@ import { ContactCTASection } from '@/sections/ContactCTASection';
 import { AllModelsPage } from '@/pages/AllModelsPage';
 import { BlogIndexPage } from '@/pages/BlogIndexPage';
 import { BlogArticlePage } from '@/pages/BlogArticlePage';
+import { ShippingPolicyPage } from '@/pages/ShippingPolicyPage';
 import { VercelAnalytics } from '@/components/VercelAnalytics';
 
 function HomePage() {
@@ -47,6 +48,7 @@ function App() {
         <Route path="/models" element={<AllModelsPage />} />
         <Route path="/blog" element={<BlogIndexPage />} />
         <Route path="/blog/:slug" element={<BlogArticlePage />} />
+        <Route path="/shipping-policy" element={<ShippingPolicyPage />} />
       </Routes>
       <Footer />
       <VercelAnalytics />

@@ -52,7 +52,13 @@ export function Footer() {
           <div>
             <h4 className="text-label text-cream-100 mb-4">Legal</h4>
             <div className="flex flex-col gap-2">
-              {['Shipping Policy', 'Privacy Policy', 'Terms & Conditions'].map((label) => (
+              <a
+                href="/shipping-policy"
+                className="font-body text-sm text-cream-300 hover:text-cream-100 transition-colors duration-300"
+              >
+                Shipping Policy
+              </a>
+              {['Privacy Policy', 'Terms & Conditions'].map((label) => (
                 <span
                   key={label}
                   className="font-body text-sm text-cream-300 hover:text-cream-100 transition-colors duration-300 cursor-pointer"
