@@ -16,6 +16,7 @@ import { BlogIndexPage } from '@/pages/BlogIndexPage';
 import { BlogArticlePage } from '@/pages/BlogArticlePage';
 import { ShippingPolicyPage } from '@/pages/ShippingPolicyPage';
 import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage';
+import { TermsAndConditionsPage } from '@/pages/TermsAndConditionsPage';
 import { VercelAnalytics } from '@/components/VercelAnalytics';
 
 function HomePage() {
@@ -51,6 +52,7 @@ function App() {
         <Route path="/blog/:slug" element={<BlogArticlePage />} />
         <Route path="/shipping-policy" element={<ShippingPolicyPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
+        <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
       </Routes>
       <Footer />
       <VercelAnalytics />

@@ -64,9 +64,12 @@ export function Footer() {
               >
                 Privacy Policy
               </a>
-              <span className="font-body text-sm text-cream-300 hover:text-cream-100 transition-colors duration-300 cursor-pointer">
+              <a
+                href="/terms-and-conditions"
+                className="font-body text-sm text-cream-300 hover:text-cream-100 transition-colors duration-300"
+              >
                 Terms & Conditions
-              </span>
+              </a>
             </div>
           </div>
         </div>
