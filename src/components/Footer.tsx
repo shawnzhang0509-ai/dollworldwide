@@ -58,14 +58,15 @@ export function Footer() {
               >
                 Shipping Policy
               </a>
-              {['Privacy Policy', 'Terms & Conditions'].map((label) => (
-                <span
-                  key={label}
-                  className="font-body text-sm text-cream-300 hover:text-cream-100 transition-colors duration-300 cursor-pointer"
-                >
-                  {label}
-                </span>
-              ))}
+              <a
+                href="/privacy-policy"
+                className="font-body text-sm text-cream-300 hover:text-cream-100 transition-colors duration-300"
+              >
+                Privacy Policy
+              </a>
+              <span className="font-body text-sm text-cream-300 hover:text-cream-100 transition-colors duration-300 cursor-pointer">
+                Terms & Conditions
+              </span>
             </div>
           </div>
         </div>
