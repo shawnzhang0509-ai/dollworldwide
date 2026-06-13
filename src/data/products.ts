@@ -1308,6 +1308,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD45/Naked%20Photos/DWWD45%20-%20Evie%20-%20Xiaoyu-8.jpg', title: 'DWWD45 - Evie - Xiaoyu-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD45/Naked%20Photos/DWWD45%20-%20Evie%20-%20Xiaoyu-9.jpg', title: 'DWWD45 - Evie - Xiaoyu-9.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD45/Naked%20videos/2.mp4',
+          title: 'DWWD45 - Evie - 2.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD45/Naked%20Photos/DWWD45%20-%20Evie%20-%20Xiaoyu-7.jpg',
+        },
+      ],
     },
   },
   {
