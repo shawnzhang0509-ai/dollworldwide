@@ -77,6 +77,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Naked%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-15.jpg', title: 'Lillith naked DWWD02 - Lillith - DWWD02 - Lillith - Salefenni-15.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Naked%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-16.jpg', title: 'Lillith naked DWWD02 - Lillith - DWWD02 - Lillith - Salefenni-16.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Naked%20videos/DWWD02%20-%20Lillith%20-%20Salefenni.mp4',
+          title: 'DWWD02 - Lillith - Salefenni.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Naked%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-7.jpg',
+        },
+      ],
     },
   },
   {
@@ -107,6 +114,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-13.jpg', title: 'Nova naked DWWD01 - Nova - Xuexian-13.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-14.jpg', title: 'Nova naked DWWD01 - Nova - Xuexian-14.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20videos/DWWD01%20-%20Nova%20-%20Xuexian.mp4',
+          title: 'DWWD01 - Nova - Xuexian.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD01/Naked%20Photos/DWWD01%20-%20Nova%20-%20Xuexian-11.jpg',
+        },
+      ],
     },
   },
   {
@@ -124,6 +138,13 @@ export const products: Product[] = [
         {
           src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg',
           title: 'Xina naked body photo',
+        },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked%20videos/DWWD06%20-%20Hikari%20-%20Kaitelin.mp4',
+          title: 'DWWD06 - Hikari - Kaitelin.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg',
         },
       ],
     },
@@ -207,6 +228,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Naked%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-12.jpg', title: 'DWWD05 - Haruki - Yawen-12.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Naked%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-13.jpg', title: 'DWWD05 - Haruki - Yawen-13.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Naked%20videos/DWWD05%20-%20Haruki%20-%20Yawen.mp4',
+          title: 'DWWD05 - Haruki - Yawen.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD05/Naked%20Photos/DWWD05%20-%20Haruki%20-%20Yawen-10.jpg',
+        },
+      ],
     },
   },
   {
@@ -235,6 +263,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Naked%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-10.jpg', title: 'DWWD07 - Yuna - Xingzi-10.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Naked%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-11.jpg', title: 'DWWD07 - Yuna - Xingzi-11.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Naked%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-12.jpg', title: 'DWWD07 - Yuna - Xingzi-12.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Naked%20videos/DWWD07%20-%20Yuna%20-%20Xingzi.mp4',
+          title: 'DWWD07 - Yuna - Xingzi.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD07/Naked%20Photos/DWWD07%20-%20Yuna%20-%20Xingzi-8.jpg',
+        },
       ],
     },
   },
@@ -290,6 +325,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD09/Naked%20Photos/DWWD09%20-%20Tara%20-%20Jiachen-8.jpg', title: 'DWWD09 - Tara - Jiachen-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD09/Naked%20Photos/DWWD09%20-%20Tara%20-%20Jiachen-9.jpg', title: 'DWWD09 - Tara - Jiachen-9.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD09/Naked%20videos/DWWD09%20-%20Tara%20-%20Jiachen.mp4',
+          title: 'DWWD09 - Tara - Jiachen.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD09/Naked%20Photos/DWWD09%20-%20Tara%20-%20Jiachen-7.jpg',
+        },
+      ],
     },
   },
   {
@@ -317,6 +359,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD10/Naked%20Photos/DWWD10%20-%20Kira%20-%20Longnv-8.jpg', title: 'DWWD10 - Kira - Longnv-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD10/Naked%20Photos/DWWD10%20-%20Kira%20-%20Longnv-9.jpg', title: 'DWWD10 - Kira - Longnv-9.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD10/Naked%20videos/DWWD10%20-%20Kira%20-%20Longnv.mp4',
+          title: 'DWWD10 - Kira - Longnv.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD10/Naked%20Photos/DWWD10%20-%20Kira%20-%20Longnv-6.jpg',
+        },
+      ],
     },
   },
   {
@@ -341,6 +390,13 @@ export const products: Product[] = [
       nakedPhotos: [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD11/Naked%20Photos/DWWD11%20-%20Juliet%20-%20Muyao-8.jpg', title: 'DWWD11 - Juliet - Muyao-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD11/Naked%20Photos/DWWD11%20-%20Juliet%20-%20Muyao-9.jpg', title: 'DWWD11 - Juliet - Muyao-9.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD11/Naked%20videos/DWWD11%20-%20Juliet%20-%20Muyao.mp4',
+          title: 'DWWD11 - Juliet - Muyao.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD11/Naked%20Photos/DWWD11%20-%20Juliet%20-%20Muyao-8.jpg',
+        },
       ],
     },
   },
@@ -371,6 +427,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD12/Naked%20Photos/DWWD12%20-%20Ivy%20-%20Muyu-13.jpg', title: 'DWWD12 - Ivy - Muyu-13.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD12/Naked%20Photos/DWWD12%20-%20Ivy%20-%20Muyu-14.jpg', title: 'DWWD12 - Ivy - Muyu-14.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD12/Naked%20videos/DWWD12%20-%20Ivy%20-%20Muyu.mp4',
+          title: 'DWWD12 - Ivy - Muyu.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD12/Naked%20Photos/DWWD12%20-%20Ivy%20-%20Muyu-10.jpg',
+        },
+      ],
     },
   },
   {
@@ -396,6 +459,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD13/Naked%20Photos/DWWD13%20-%20Olivia%20-%20Nanxi-7.jpg', title: 'DWWD13 - Olivia - Nanxi-7.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD13/Naked%20Photos/DWWD13%20-%20Olivia%20-%20Nanxi-8.jpg', title: 'DWWD13 - Olivia - Nanxi-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD13/Naked%20Photos/DWWD13%20-%20Olivia%20-%20Nanxi-9.jpg', title: 'DWWD13 - Olivia - Nanxi-9.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD13/Naked%20videos/DWWD13%20-%20Olivia%20-%20Nanxi.mp4',
+          title: 'DWWD13 - Olivia - Nanxi.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD13/Naked%20Photos/DWWD13%20-%20Olivia%20-%20Nanxi-7.jpg',
+        },
       ],
     },
   },
@@ -424,6 +494,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD14/Naked%20Photos/DWWD14%20-%20Sophie%20-%20Zhiyan-9.jpg', title: 'DWWD14 - Sophie - Zhiyan-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD14/Naked%20Photos/DWWD14%20-%20Sophie%20-%20Zhiyan-10.jpg', title: 'DWWD14 - Sophie - Zhiyan-10.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD14/Naked%20videos/DWWD14%20-%20Sophie%20-%20Zhiyan.mp4',
+          title: 'DWWD14 - Sophie - Zhiyan.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD14/Naked%20Photos/DWWD14%20-%20Sophie%20-%20Zhiyan-9.jpg',
+        },
+      ],
     },
   },
   {
@@ -450,6 +527,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD15/Naked%20Photos/DWWD15%20-%20Bonnie%20-%20Xiaen-8.jpg', title: 'DWWD15 - Bonnie - Xiaen-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD15/Naked%20Photos/DWWD15%20-%20Bonnie%20-%20Xiaen-9.jpg', title: 'DWWD15 - Bonnie - Xiaen-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD15/Naked%20Photos/DWWD15%20-%20Bonnie%20-%20Xiaen-10.jpg', title: 'DWWD15 - Bonnie - Xiaen-10.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD15/Naked%20videos/DWWD15%20-%20Bonnie%20-%20Xiaen.mp4',
+          title: 'DWWD15 - Bonnie - Xiaen.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD15/Naked%20Photos/DWWD15%20-%20Bonnie%20-%20Xiaen-8.jpg',
+        },
       ],
     },
   },
@@ -481,6 +565,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD16/Naked%20Photos/DWWD16%20-%20Maya%20-%20Chunzi-14.jpg', title: 'DWWD16 - Maya - Chunzi-14.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD16/Naked%20Photos/DWWD16%20-%20Maya%20-%20Chunzi-15.jpg', title: 'DWWD16 - Maya - Chunzi-15.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD16/Naked%20videos/DWWD16%20-%20Maya%20-%20Chunzi.mp4',
+          title: 'DWWD16 - Maya - Chunzi.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD16/Naked%20Photos/DWWD16%20-%20Maya%20-%20Chunzi-11.jpg',
+        },
+      ],
     },
   },
   {
@@ -508,6 +599,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD17/Naked%20Photos/DWWD17%20-%20Aiko%20-%20Qiaoyi-11.jpg', title: 'DWWD17 - Aiko - Qiaoyi-11.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD17/Naked%20Photos/DWWD17%20-%20Aiko%20-%20Qiaoyi-12.jpg', title: 'DWWD17 - Aiko - Qiaoyi-12.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD17/Naked%20Photos/DWWD17%20-%20Aiko%20-%20Qiaoyi-13.jpg', title: 'DWWD17 - Aiko - Qiaoyi-13.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD17/Naked%20videos/DWWD17%20-%20Aiko%20-%20Qiaoyi.mp4',
+          title: 'DWWD17 - Aiko - Qiaoyi.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD17/Naked%20Photos/DWWD17%20-%20Aiko%20-%20Qiaoyi-9.jpg',
+        },
       ],
     },
   },
@@ -538,6 +636,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD18/Naked%20Photos/DWWD18%20-%20Mei%20-%20Xiaodie-14.jpg', title: 'DWWD18 - Mei - Xiaodie-14.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD18/Naked%20Photos/DWWD18%20-%20Mei%20-%20Xiaodie-15.jpg', title: 'DWWD18 - Mei - Xiaodie-15.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD18/Naked%20videos/DWWD18%20-%20Mei%20-%20Xiaodie.mp4',
+          title: 'DWWD18 - Mei - Xiaodie.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD18/Naked%20Photos/DWWD18%20-%20Mei%20-%20Xiaodie-11.jpg',
+        },
+      ],
     },
   },
   {
@@ -566,6 +671,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD19/Naked%20Photos/DWWD19%20-%20Aria%20-%20Beila-4.jpg', title: 'DWWD19 - Aria - Beila-4.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD19/Naked%20Photos/DWWD19%20-%20Aria%20-%20Beila-5.jpg', title: 'DWWD19 - Aria - Beila-5.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD19/Naked%20Photos/DWWD19%20-%20Aria%20-%20Beila-17.jpg', title: 'DWWD19 - Aria - Beila-17.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD19/Naked%20videos/DWWD19%20-%20Aria%20-%20Beila.mp4',
+          title: 'DWWD19 - Aria - Beila.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD19/Naked%20Photos/DWWD19%20-%20Aria%20-%20Beila-2.jpg',
+        },
       ],
     },
   },
@@ -596,6 +708,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD20/Naked%20Photos/DWWD20%20-%20Amara%20-%20Ruoyan-13.jpg', title: 'DWWD20 - Amara - Ruoyan-13.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD20/Naked%20Photos/DWWD20%20-%20Amara%20-%20Ruoyan-14.jpg', title: 'DWWD20 - Amara - Ruoyan-14.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD20/Naked%20videos/DWWD20%20-%20Amara%20-%20Ruoyan.mp4',
+          title: 'DWWD20 - Amara - Ruoyan.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD20/Naked%20Photos/DWWD20%20-%20Amara%20-%20Ruoyan-10.jpg',
+        },
+      ],
     },
   },
   {
@@ -621,6 +740,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD21/Naked%20Photos/DWWD21%20-%20Mae%20-%20Lanxi-7.jpg', title: 'DWWD21 - Mae - Lanxi-7.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD21/Naked%20Photos/DWWD21%20-%20Mae%20-%20Lanxi-8.jpg', title: 'DWWD21 - Mae - Lanxi-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD21/Naked%20Photos/DWWD21%20-%20Mae%20-%20Lanxi-9.jpg', title: 'DWWD21 - Mae - Lanxi-9.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD21/Naked%20videos/DWWD21%20-%20Mae%20-%20Lanxi.mp4',
+          title: 'DWWD21 - Mae - Lanxi.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD21/Naked%20Photos/DWWD21%20-%20Mae%20-%20Lanxi-7.jpg',
+        },
       ],
     },
   },
@@ -648,6 +774,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD22/Naked%20Photos/DWWD22%20-%20Faye%20-%20Lidiya-8.jpg', title: 'DWWD22 - Faye - Lidiya-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD22/Naked%20Photos/DWWD22%20-%20Faye%20-%20Lidiya-9.jpg', title: 'DWWD22 - Faye - Lidiya-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD22/Naked%20Photos/DWWD22%20-%20Faye%20-%20Lidiya-10.jpg', title: 'DWWD22 - Faye - Lidiya-10.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD22/Naked%20videos/DWWD22%20-%20Faye%20-%20Lidiya.mp4',
+          title: 'DWWD22 - Faye - Lidiya.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD22/Naked%20Photos/DWWD22%20-%20Faye%20-%20Lidiya-7.jpg',
+        },
       ],
     },
   },
@@ -737,6 +870,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD25/Naked%20Photos/DWWD25%20-%20Yumi%20-%20Anqing-10.jpg', title: 'DWWD25 - Yumi - Anqing-10.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD25/Naked%20Photos/DWWD25%20-%20Yumi%20-%20Anqing-11.jpg', title: 'DWWD25 - Yumi - Anqing-11.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD25/Naked%20videos/DWWD25%20-%20Yumi%20-%20Anqing.mp4',
+          title: 'DWWD25 - Yumi - Anqing.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD25/Naked%20Photos/DWWD25%20-%20Yumi%20-%20Anqing-7.jpg',
+        },
+      ],
     },
   },
   {
@@ -765,6 +905,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD26/Naked%20Photos/DWWD26%20-%20Hailey%20-%20Beier-10.jpg', title: 'DWWD26 - Hailey - Beier-10.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD26/Naked%20Photos/DWWD26%20-%20Hailey%20-%20Beier-11.jpg', title: 'DWWD26 - Hailey - Beier-11.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD26/Naked%20Photos/DWWD26%20-%20Hailey%20-%20Beier-12.jpg', title: 'DWWD26 - Hailey - Beier-12.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD26/Naked%20videos/DWWD26%20-%20Hailey%20-%20Beier.mp4',
+          title: 'DWWD26 - Hailey - Beier.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD26/Naked%20Photos/DWWD26%20-%20Hailey%20-%20Beier-8.jpg',
+        },
       ],
     },
   },
@@ -795,6 +942,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD27/Naked%20Photos/DWWD27%20-%20Hiroko%20-%20Huanshi-11.jpg', title: 'DWWD27 - Hiroko - Huanshi-11.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD27/Naked%20Photos/DWWD27%20-%20Hiroko%20-%20Huanshi-12.jpg', title: 'DWWD27 - Hiroko - Huanshi-12.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD27/Naked%20Photos/DWWD27%20-%20Hiroko%20-%20Huanshi-13.jpg', title: 'DWWD27 - Hiroko - Huanshi-13.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD27/Naked%20videos/DWWD27%20-%20Hiroko%20-%20Huanshi.mp4',
+          title: 'DWWD27 - Hiroko - Huanshi.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD27/Naked%20Photos/DWWD27%20-%20Hiroko%20-%20Huanshi-7.jpg',
+        },
       ],
     },
   },
@@ -827,6 +981,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD28/Naked%20Photos/DWWD28%20-%20Natsuki%20-%20Huiyan-13.jpg', title: 'DWWD28 - Natsuki - Huiyan-13.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD28/Naked%20Photos/DWWD28%20-%20Natsuki%20-%20Huiyan-14.jpg', title: 'DWWD28 - Natsuki - Huiyan-14.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD28/Naked%20videos/DWWD28%20-%20Natsuki%20-%20Huiyan.mp4',
+          title: 'DWWD28 - Natsuki - Huiyan.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD28/Naked%20Photos/DWWD28%20-%20Natsuki%20-%20Huiyan-9.jpg',
+        },
+      ],
     },
   },
   {
@@ -854,6 +1015,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD29/Naked%20Photos/DWWD29%20-%20Sakura%20-%20Jiani-3.jpg', title: 'DWWD29 - Sakura - Jiani-3.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD29/Naked%20Photos/DWWD29%20-%20Sakura%20-%20Jiani-4.jpg', title: 'DWWD29 - Sakura - Jiani-4.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD29/Naked%20videos/DWWD29%20-%20Sakura%20-%20Jiani.mp4',
+          title: 'DWWD29 - Sakura - Jiani.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD29/Naked%20Photos/DWWD29%20-%20Sakura%20-%20Jiani-2.jpg',
+        },
+      ],
     },
   },
   {
@@ -880,6 +1048,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD30/Naked%20Photos/DWWD30%20-%20Yuri%20-%20Manni-8.jpg', title: 'DWWD30 - Yuri - Manni-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD30/Naked%20Photos/DWWD30%20-%20Yuri%20-%20Manni-9.jpg', title: 'DWWD30 - Yuri - Manni-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD30/Naked%20Photos/DWWD30%20-%20Yuri%20-%20Manni-10.jpg', title: 'DWWD30 - Yuri - Manni-10.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD30/Naked%20videos/DWWD30%20-%20Yuri%20-%20Manni.mp4',
+          title: 'DWWD30 - Yuri - Manni.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD30/Naked%20Photos/DWWD30%20-%20Yuri%20-%20Manni-7.jpg',
+        },
       ],
     },
   },
@@ -935,6 +1110,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD32/Naked%20Photos/DWWD32%20-%20Luna%20-%20Muhan-9.jpg', title: 'DWWD32 - Luna - Muhan-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD32/Naked%20Photos/DWWD32%20-%20Luna%20-%20Muhan-10.jpg', title: 'DWWD32 - Luna - Muhan-10.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD32/Naked%20videos/DWWD32%20-%20Luna%20-%20Muhan.mp4',
+          title: 'DWWD32 - Luna - Muhan.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD32/Naked%20Photos/DWWD32%20-%20Luna%20-%20Muhan-8.jpg',
+        },
+      ],
     },
   },
   {
@@ -961,6 +1143,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD33/Naked%20Photos/DWWD33%20-%20Emiko%20-%20Nanyuan-8.jpg', title: 'DWWD33 - Emiko - Nanyuan-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD33/Naked%20Photos/DWWD33%20-%20Emiko%20-%20Nanyuan-9.jpg', title: 'DWWD33 - Emiko - Nanyuan-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD33/Naked%20Photos/DWWD33%20-%20Emiko%20-%20Nanyuan-10.jpg', title: 'DWWD33 - Emiko - Nanyuan-10.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD33/Naked%20videos/DWWD33%20-%20Emiko%20-%20Nanyuan.mp4',
+          title: 'DWWD33 - Emiko - Nanyuan.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD33/Naked%20Photos/DWWD33%20-%20Emiko%20-%20Nanyuan-2.jpg',
+        },
       ],
     },
   },
@@ -992,6 +1181,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD34/Naked%20Photos/DWWD34%20-%20Kaori%20-%20Siying-12.jpg', title: 'DWWD34 - Kaori - Siying-12.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD34/Naked%20Photos/DWWD34%20-%20Kaori%20-%20Siying-13.jpg', title: 'DWWD34 - Kaori - Siying-13.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD34/Naked%20videos/DWWD34%20-%20Kaori%20-%20Siying.mp4',
+          title: 'DWWD34 - Kaori - Siying.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD34/Naked%20Photos/DWWD34%20-%20Kaori%20-%20Siying-10.jpg',
+        },
+      ],
     },
   },
   {
@@ -1018,6 +1214,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD35/Naked%20Photos/DWWD35%20-%20Indy%20-%20Xiaoying-8.jpg', title: 'DWWD35 - Indy - Xiaoying-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD35/Naked%20Photos/DWWD35%20-%20Indy%20-%20Xiaoying-9.jpg', title: 'DWWD35 - Indy - Xiaoying-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD35/Naked%20Photos/DWWD35%20-%20Indy%20-%20Xiaoying-10.jpg', title: 'DWWD35 - Indy - Xiaoying-10.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD35/Naked%20videos/DWWD35%20-%20Indy%20-%20Xiaoying.mp4',
+          title: 'DWWD35 - Indy - Xiaoying.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD35/Naked%20Photos/DWWD35%20-%20Indy%20-%20Xiaoying-7.jpg',
+        },
       ],
     },
   },
@@ -1047,6 +1250,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD36/Naked%20Photos/DWWD36%20-%20Asami%20-%20Xiaozhi-10.jpg', title: 'DWWD36 - Asami - Xiaozhi-10.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD36/Naked%20Photos/DWWD36%20-%20Asami%20-%20Xiaozhi-11.jpg', title: 'DWWD36 - Asami - Xiaozhi-11.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD36/Naked%20Photos/DWWD36%20-%20Asami%20-%20Xiaozhi-12.jpg', title: 'DWWD36 - Asami - Xiaozhi-12.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD36/Naked%20videos/DWWD36%20-%20Asami%20-%20Xiaozhi.mp4',
+          title: 'DWWD36 - Asami - Xiaozhi.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD36/Naked%20Photos/DWWD36%20-%20Asami%20-%20Xiaozhi-8.jpg',
+        },
       ],
     },
   },
@@ -1108,6 +1318,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD38/Naked%20Photos/DWWD38%20-%20Elysia%20-%20Xiuyan-14.jpg', title: 'DWWD38 - Elysia - Xiuyan-14.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD38/Naked%20Photos/DWWD38%20-%20Elysia%20-%20Xiuyan-15.jpg', title: 'DWWD38 - Elysia - Xiuyan-15.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD38/Naked%20videos/DWWD38%20-%20Elysia%20-%20Xiuyan.mp4',
+          title: 'DWWD38 - Elysia - Xiuyan.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD38/Naked%20Photos/DWWD38%20-%20Elysia%20-%20Xiuyan-4.jpg',
+        },
+      ],
     },
   },
   {
@@ -1137,6 +1354,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD39/Naked%20Photos/DWWD39%20-%20Akira%20-%20Yanqi-11.jpg', title: 'DWWD39 - Akira - Yanqi-11.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD39/Naked%20Photos/DWWD39%20-%20Akira%20-%20Yanqi-12.jpg', title: 'DWWD39 - Akira - Yanqi-12.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD39/Naked%20Photos/DWWD39%20-%20Akira%20-%20Yanqi-13.jpg', title: 'DWWD39 - Akira - Yanqi-13.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD39/Naked%20videos/DWWD39%20-%20Akira%20-%20Yanqi.mp4',
+          title: 'DWWD39 - Akira - Yanqi.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD39/Naked%20Photos/DWWD39%20-%20Akira%20-%20Yanqi-10.jpg',
+        },
       ],
     },
   },
@@ -1170,6 +1394,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD40/Naked%20Photos/DWWD40%20-%20Haruki%20-%20Yawen-6.jpg', title: 'DWWD40 - Haruki - Yawen-6.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD40/Naked%20Photos/DWWD40%20-%20Haruki%20-%20Yawen-7.jpg', title: 'DWWD40 - Haruki - Yawen-7.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD40/Naked%20videos/DWWD40%20-%20Haruki%20-%20Yawen.mp4',
+          title: 'DWWD40 - Haruki - Yawen.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD40/Naked%20Photos/DWWD40%20-%20Haruki%20-%20Yawen-2.jpg',
+        },
+      ],
     },
   },
   {
@@ -1197,6 +1428,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD41/Naked%20Photos/DWWD41%20-%20Stella%20-%20Yumeng-9.jpg', title: 'DWWD41 - Stella - Yumeng-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD41/Naked%20Photos/DWWD41%20-%20Stella%20-%20Yumeng-10.jpg', title: 'DWWD41 - Stella - Yumeng-10.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD41/Naked%20Photos/DWWD41%20-%20Stella%20-%20Yumeng-11.jpg', title: 'DWWD41 - Stella - Yumeng-11.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD41/Naked%20videos/DWWD41%20-%20Stella%20-%20Yumeng.mp4',
+          title: 'DWWD41 - Stella - Yumeng.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD41/Naked%20Photos/DWWD41%20-%20Stella%20-%20Yumeng-7.jpg',
+        },
       ],
     },
   },
@@ -1229,6 +1467,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD42/Naked%20Photos/DWWD42%20-%20Kohana%20-%20Yuanli-13.jpg', title: 'DWWD42 - Kohana - Yuanli-13.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD42/Naked%20Photos/DWWD42%20-%20Kohana%20-%20Yuanli-14.jpg', title: 'DWWD42 - Kohana - Yuanli-14.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD42/Naked%20videos/DWWD42%20-%20Kohana%20-%20Yuanli.mp4',
+          title: 'DWWD42 - Kohana - Yuanli.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD42/Naked%20Photos/DWWD42%20-%20Kohana%20-%20Yuanli-8.jpg',
+        },
+      ],
     },
   },
   {
@@ -1254,6 +1499,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD43/Naked%20Photos/DWWD43%20-%20Elisha%20-%20Siwei-7.jpg', title: 'DWWD43 - Elisha - Siwei-7.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD43/Naked%20Photos/DWWD43%20-%20Elisha%20-%20Siwei-8.jpg', title: 'DWWD43 - Elisha - Siwei-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD43/Naked%20Photos/DWWD43%20-%20Elisha%20-%20Siwei-9.jpg', title: 'DWWD43 - Elisha - Siwei-9.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD43/Naked%20videos/DWWD43%20-%20Elisha%20-%20Siwei.mp4',
+          title: 'DWWD43 - Elisha - Siwei.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD43/Naked%20Photos/DWWD43%20-%20Elisha%20-%20Siwei-7.jpg',
+        },
       ],
     },
   },
@@ -1282,6 +1534,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD44/Naked%20Photos/DWWD44%20-%20Reina%20-%20Waner-9.jpg', title: 'DWWD44 - Reina - Waner-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD44/Naked%20Photos/DWWD44%20-%20Reina%20-%20Waner-10.jpg', title: 'DWWD44 - Reina - Waner-10.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD44/Naked%20videos/DWWD44%20-%20Reina%20-%20Waner.mp4',
+          title: 'DWWD44 - Reina - Waner.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD44/Naked%20Photos/DWWD44%20-%20Reina%20-%20Waner-7.jpg',
+        },
+      ],
     },
   },
   {
@@ -1308,10 +1567,10 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD45/Naked%20Photos/DWWD45%20-%20Evie%20-%20Xiaoyu-8.jpg', title: 'DWWD45 - Evie - Xiaoyu-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD45/Naked%20Photos/DWWD45%20-%20Evie%20-%20Xiaoyu-9.jpg', title: 'DWWD45 - Evie - Xiaoyu-9.jpg' },
       ],
-      videos: [
+            videos: [
         {
-          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD45/Naked%20videos/2.mp4',
-          title: 'DWWD45 - Evie - 2.mp4',
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD45/Naked%20videos/DWWD45%20-%20Evie%20-%20Xiaoyu.mp4',
+          title: 'DWWD45 - Evie - Xiaoyu.mp4',
           poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD45/Naked%20Photos/DWWD45%20-%20Evie%20-%20Xiaoyu-7.jpg',
         },
       ],
@@ -1341,6 +1600,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD46/Naked%20Photos/DWWD46%20-%20Maia%20-%20Baoer-8.jpg', title: 'DWWD46 - Maia - Baoer-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD46/Naked%20Photos/DWWD46%20-%20Maia%20-%20Baoer-9.jpg', title: 'DWWD46 - Maia - Baoer-9.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD46/Naked%20videos/DWWD46%20-%20Maia%20-%20Baoer.mov',
+          title: 'DWWD46 - Maia - Baoer.mov',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD46/Naked%20Photos/DWWD46%20-%20Maia%20-%20Baoer-6.jpg',
+        },
+      ],
     },
   },
   {
@@ -1369,6 +1635,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD47/Naked%20Photos/DWWD47%20-%20Lyla%20-%20Yanke-10.jpg', title: 'DWWD47 - Lyla - Yanke-10.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD47/Naked%20Photos/DWWD47%20-%20Lyla%20-%20Yanke-11.jpg', title: 'DWWD47 - Lyla - Yanke-11.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD47/Naked%20videos/DWWD47%20-%20Lyla%20-%20Yanke.mp4',
+          title: 'DWWD47 - Lyla - Yanke.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD47/Naked%20Photos/DWWD47%20-%20Lyla%20-%20Yanke-8.jpg',
+        },
+      ],
     },
   },
   {
@@ -1395,6 +1668,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD48/Naked%20Photos/DWWD48%20-%20Lola%20-%20Cailin-8.jpg', title: 'DWWD48 - Lola - Cailin-8.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD48/Naked%20Photos/DWWD48%20-%20Lola%20-%20Cailin-9.jpg', title: 'DWWD48 - Lola - Cailin-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD48/Naked%20Photos/DWWD48%20-%20Lola%20-%20Cailin-10.jpg', title: 'DWWD48 - Lola - Cailin-10.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD48/Naked%20videos/DWWD48%20-%20Lola%20-%20Cailin.mp4',
+          title: 'DWWD48 - Lola - Cailin.mp4',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD48/Naked%20Photos/DWWD48%20-%20Lola%20-%20Cailin-7.jpg',
+        },
       ],
     },
   },
@@ -1423,6 +1703,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD49/Naked%20Photos/DWWD49%20-%20Lucy%20-%20Huaze-9.jpg', title: 'DWWD49 - Lucy - Huaze-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD49/Naked%20Photos/DWWD49%20-%20Lucy%20-%20Huaze-10.jpg', title: 'DWWD49 - Lucy - Huaze-10.jpg' },
       ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD49/Naked%20videos/DWWD49%20-%20Lucy%20-%20Huaze.mov',
+          title: 'DWWD49 - Lucy - Huaze.mov',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD49/Naked%20Photos/DWWD49%20-%20Lucy%20-%20Huaze-7.jpg',
+        },
+      ],
     },
   },
   {
@@ -1449,6 +1736,13 @@ export const products: Product[] = [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD50/Naked%20Photos/DWWD50%20-%20Hana%20-%20Jieyi-9.jpg', title: 'DWWD50 - Hana - Jieyi-9.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD50/Naked%20Photos/DWWD50%20-%20Hana%20-%20Jieyi-10.jpg', title: 'DWWD50 - Hana - Jieyi-10.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD50/Naked%20Photos/DWWD50%20-%20Hana%20-%20Jieyi-11.jpg', title: 'DWWD50 - Hana - Jieyi-11.jpg' },
+      ],
+      videos: [
+        {
+          src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD50/Naked%20videos/DWWD50%20-%20Hana%20-%20Jieyi.mov',
+          title: 'DWWD50 - Hana - Jieyi.mov',
+          poster: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD50/Naked%20Photos/DWWD50%20-%20Hana%20-%20Jieyi-8.jpg',
+        },
       ],
     },
   },
