@@ -617,6 +617,129 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: 'why-silicone-heads-implanted-hair',
+    title: 'Why We Choose Silicone Heads and Implanted Hair',
+    description:
+      'Learn why Doll Worldwide uses silicone heads with implanted hair for better realism, easier maintenance, and long-term durability.',
+    excerpt:
+      'Head construction and hair system matter more than most buyers realise. Here is why we choose silicone heads with implanted hair for realism, durability, and easier care.',
+    publishedAt: '2026-06-09',
+    category: 'Product Guide',
+    readingTimeMinutes: 5,
+    blocks: [
+      {
+        type: 'paragraph',
+        content:
+          'When selecting a premium doll, most buyers focus on body type, height, or appearance. However, two of the most important factors affecting long-term satisfaction are often overlooked: the head construction and hair system.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'At Doll Worldwide, we choose silicone heads with implanted hair because they provide a more realistic appearance, easier maintenance, and better long-term durability.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'More Durable Makeup',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Unlike many standard dolls that use hard vinyl or TPE heads, silicone heads generally hold facial details and makeup better over time.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'The makeup remains more stable during cleaning and handling, helping the doll maintain its original appearance for longer. This is especially important for collectors who want their doll to look as beautiful years later as it did on day one.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Better Facial Definition',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Silicone allows for finer facial sculpting and sharper details around the eyes, lips, and nose.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'This creates a more refined and expressive appearance, giving the face a natural firmness and structure that many customers prefer.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Easier to Maintain',
+      },
+      {
+        type: 'paragraph',
+        content: 'A silicone head is generally easier to clean and maintain.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'The surface is less prone to absorbing dust and oils, making routine care simpler. For long-term owners, this means less effort spent maintaining the doll\'s appearance.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Implanted Hair Instead of Wigs',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Many dolls on the market use removable wigs. While wigs offer flexibility, they can shift, tangle, or require frequent adjustment.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Our dolls feature individually implanted hair strands directly rooted into the silicone head.',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'More natural hairline appearance',
+          'Better realism in close-up viewing',
+          'No need to reposition a wig',
+          'Reduced risk of accidental removal',
+          'More consistent appearance during display',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'The result is a cleaner, more authentic look that feels closer to a premium collector-grade product.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Designed for Long-Term Ownership',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Every design choice involves a balance between manufacturing cost and user experience.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Silicone heads and implanted hair require more work during production, but we believe the improved realism, durability, and ease of maintenance make the investment worthwhile.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'For customers seeking a doll that looks great not only today but also years into ownership, these details make a meaningful difference.',
+      },
+      {
+        type: 'cta',
+        content: 'Browse silicone-head models with implanted hair in our current NZ stock.',
+        href: '/models',
+        label: 'View All Models',
+      },
+    ],
+  },
 ];
 
 export function getBlogPost(slug: string): BlogPost | undefined {
