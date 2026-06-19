@@ -79,12 +79,13 @@ export function HeroSection() {
     if (headlineRef.current) {
       const textItems = headlineRef.current.querySelectorAll('.hero-scroll-fade');
       gsap.set(textItems, { opacity: 0, y: 30 });
-      gsap.timeline({ delay: 0.3 })
-        .to(textItems[0], { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' })
-        .to(textItems[1], { opacity: 1, scaleX: 1, duration: 0.8, ease: 'power2.out' }, '-=0.3')
-        .to(textItems[2], { opacity: 1, y: 0, duration: 1.0, ease: 'power3.out' }, '-=0.4')
-        .to(textItems[3], { opacity: 1, y: 0, duration: 0.8, ease: 'power3.out' }, '-=0.5')
-        .to(textItems[4], { opacity: 1, y: 0, duration: 0.6, ease: 'power2.out' }, '-=0.3');
+      gsap.to(textItems, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        delay: 0.3,
+      });
     }
 
     if (ctaRef.current) {
@@ -94,7 +95,7 @@ export function HeroSection() {
         y: 0,
         duration: 0.6,
         ease: 'power2.out',
-        delay: 1.4,
+        delay: 0.75,
       });
     }
 
@@ -109,7 +110,7 @@ export function HeroSection() {
         const icon = icons[i];
         const color = sellingPoints[i].color;
 
-        const cardTl = gsap.timeline({ delay: 1.2 + i * 0.18 });
+        const cardTl = gsap.timeline({ delay: 0.95 + i * 0.18 });
 
         cardTl.fromTo(card,
           { backgroundColor: 'rgba(10,10,10,0.9)' },
@@ -214,23 +215,10 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 w-full max-w-[1280px] mx-auto px-4 md:px-10">
-        <div ref={headlineRef} className="mb-6 md:mb-8">
-          <span className="hero-scroll-fade text-label text-gold block mb-3">
-            NZ READY STOCK — AUCKLAND BASED
-          </span>
-          <div
-            className="hero-scroll-fade w-[60px] h-[1px] bg-gold mb-5 origin-left"
-            style={{ transform: 'scaleX(0)' }}
-          />
-          <h1 className="hero-scroll-fade text-display-h1 text-cream-100 mb-4 max-w-[650px]">
-            Silicone Head + TPE Body. $999 Auckland Ready Stock.
+        <div ref={headlineRef} className="mb-5 md:mb-7">
+          <h1 className="hero-scroll-fade font-display text-[clamp(2.5rem,8vw,4.5rem)] leading-none tracking-wide text-gold mb-5 md:mb-6">
+            DOLL WORLDWIDE
           </h1>
-          <p className="hero-scroll-fade text-body-large text-cream-200 mb-4 max-w-[550px]">
-            Doll Worldwide focuses on the strongest value: realistic silicone-head detail, soft TPE body, real photos, Trade Me proof, and discreet NZ delivery at the best price.
-          </p>
-          <p className="hero-scroll-fade text-label text-cream-200/90 mb-6 max-w-[620px]">
-            Why us: $999 clear price · Real media before you buy · Auckland pickup or discreet nationwide shipping
-          </p>
           <div ref={ctaRef} className="flex flex-wrap gap-3">
             <SecondaryButton href="#product">See Ready Stock</SecondaryButton>
             <PrimaryButton href="tel:02885146884">Call 028 8514 6884</PrimaryButton>
