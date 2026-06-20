@@ -85,6 +85,7 @@ export function HeroSection() {
         duration: 0.8,
         ease: 'power3.out',
         delay: 0.3,
+        stagger: 0.12,
       });
     }
 
@@ -95,7 +96,7 @@ export function HeroSection() {
         y: 0,
         duration: 0.6,
         ease: 'power2.out',
-        delay: 0.75,
+        delay: 0.95,
       });
     }
 
@@ -216,9 +217,15 @@ export function HeroSection() {
 
       <div className="relative z-10 w-full max-w-[1280px] mx-auto px-4 md:px-10">
         <div ref={headlineRef} className="mb-5 md:mb-7">
-          <h1 className="hero-scroll-fade font-display text-[clamp(2.5rem,8vw,4.5rem)] leading-none tracking-wide text-gold mb-5 md:mb-6">
+          <h1 className="hero-scroll-fade font-display text-[clamp(2.5rem,8vw,4.5rem)] leading-none tracking-wide text-gold mb-4 md:mb-5">
             DOLL WORLDWIDE
           </h1>
+          <p className="hero-scroll-fade font-display text-[clamp(1.25rem,4vw,1.75rem)] leading-snug text-cream-100 mb-3 max-w-[640px]">
+            Global Brands. Local Trust. Since 2023.
+          </p>
+          <p className="hero-scroll-fade text-body-large text-cream-200 mb-5 md:mb-6 max-w-[620px]">
+            Serving New Zealand collectors with premium brands, local stock, and local support.
+          </p>
           <div ref={ctaRef} className="flex flex-wrap gap-3">
             <SecondaryButton href="#product">See Ready Stock</SecondaryButton>
             <PrimaryButton href="tel:02885146884">Call 028 8514 6884</PrimaryButton>
