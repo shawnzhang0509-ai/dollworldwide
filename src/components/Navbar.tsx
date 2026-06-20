@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router';
 import gsap from 'gsap';
 
 const navLinks = [
@@ -11,6 +12,8 @@ const navLinks = [
 ];
 
 export function Navbar() {
+  const location = useLocation();
+  const isHome = location.pathname === '/';
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
@@ -58,6 +61,8 @@ export function Navbar() {
     }
   };
 
+  const showNavBrand = !isHome || scrolled;
+
   return (
     <>
       <nav
@@ -66,7 +71,13 @@ export function Navbar() {
         }`}
       >
         <div className="w-full max-w-[1280px] mx-auto px-6 md:px-10 flex items-center justify-between">
-          <a href="/" className="font-display text-2xl text-gold tracking-wide">
+          <a
+            href="/"
+            aria-hidden={!showNavBrand}
+            className={`font-display text-2xl text-gold tracking-wide transition-opacity duration-300 ${
+              showNavBrand ? 'opacity-100' : 'opacity-0 pointer-events-none'
+            }`}
+          >
             DOLL WORLDWIDE
           </a>
 
