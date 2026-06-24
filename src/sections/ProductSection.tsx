@@ -1,8 +1,9 @@
 import { useEffect, useRef, useState, type RefObject } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
 import { PrimaryButton } from '@/components/PrimaryButton';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import {
   flagshipProducts,
   homepageValueProducts,
@@ -153,6 +154,50 @@ function ProductCardContent({
   );
 }
 
+function PhotoLightbox({
+  src,
+  alt,
+  onClose,
+}: {
+  src: string;
+  alt: string;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+
+    window.addEventListener('keydown', onKeyDown);
+    return () => window.removeEventListener('keydown', onKeyDown);
+  }, [onClose]);
+
+  return (
+    <div
+      className="fixed inset-0 z-[300] flex items-center justify-center bg-noir-900/95 p-4 backdrop-blur-sm"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Enlarged photo"
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute right-4 top-4 rounded-full border border-cream-300/20 p-2 text-cream-100 transition-colors hover:border-gold hover:text-gold"
+        aria-label="Close enlarged photo"
+      >
+        <X className="h-5 w-5" />
+      </button>
+      <img
+        src={src}
+        alt={alt}
+        className="max-h-[92vh] max-w-[96vw] object-contain"
+        onClick={(event) => event.stopPropagation()}
+      />
+    </div>
+  );
+}
+
 function RealLifeMediaDialog({
   selected,
   onClose,
@@ -160,76 +205,121 @@ function RealLifeMediaDialog({
   selected: SelectedRealLifeMedia | null;
   onClose: () => void;
 }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [lightboxPhoto, setLightboxPhoto] = useState<{ src: string; alt: string } | null>(null);
+
+  useEffect(() => {
+    if (!selected) {
+      setLightboxPhoto(null);
+    }
+  }, [selected]);
+
   const storedMedia = selected?.product.realLifeMedia?.[selected.category.id] ?? [];
   const media =
     selected?.category.id === 'clothedPhotos' && storedMedia.length === 0
-      ? [{ src: selected.product.image, title: `${selected.product.name} main photo` }]
+      ? [{ src: selected.product.image, alt: `${selected.product.name} photo` }]
       : storedMedia;
   const isVideoCategory = selected?.category.mediaType === 'videos';
+  const hasMultipleItems = media.length > 1;
+
+  const scrollGallery = (direction: -1 | 1) => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    container.scrollBy({
+      left: direction * Math.max(container.clientWidth * 0.82, 280),
+      behavior: 'smooth',
+    });
+  };
 
   return (
-    <Dialog open={Boolean(selected)} onOpenChange={(open) => { if (!open) onClose(); }}>
-      <DialogContent className="top-[max(0.5rem,2.5dvh)] max-h-[min(92dvh,880px)] translate-y-0 border-gold/30 bg-noir-900 text-cream-100 sm:max-w-3xl flex flex-col gap-3 overflow-hidden p-0 sm:p-6">
-        {selected && (
-          <>
-            <DialogHeader className="shrink-0 space-y-2 px-6 pb-2 pt-6 pr-14 text-left sm:px-0 sm:pb-0 sm:pt-0 sm:pr-10">
-              <DialogTitle className="font-display text-2xl text-cream-100">
-                {selected.product.name} — {selected.category.label}
-              </DialogTitle>
-              <DialogDescription className="font-body text-cream-300">
-                {selected.category.description}
-              </DialogDescription>
-              {media.length > 1 && (
-                <p className="font-body text-xs text-cream-400">
-                  Scroll sideways to browse; use trackpad shift-scroll or touch swipe on smaller screens.
-                </p>
-              )}
-            </DialogHeader>
+    <>
+      <Dialog open={Boolean(selected)} onOpenChange={(open) => { if (!open) onClose(); }}>
+        <DialogContent className="top-[max(0.5rem,2.5dvh)] max-h-[min(94dvh,920px)] translate-y-0 border-gold/30 bg-noir-900 text-cream-100 sm:max-w-4xl flex flex-col gap-2 overflow-hidden p-0 sm:p-6">
+          {selected && (
+            <>
+              <DialogHeader className="shrink-0 space-y-0 px-6 pb-1 pt-6 pr-14 text-left sm:px-0 sm:pb-0 sm:pt-0 sm:pr-10">
+                <DialogTitle className="font-display text-2xl text-cream-100">
+                  {selected.product.name} — {selected.category.label}
+                </DialogTitle>
+              </DialogHeader>
 
-            {media.length > 0 ? (
-              <div className="min-h-0 flex-1 overflow-x-auto overflow-y-auto overscroll-contain px-6 pb-6 [-webkit-overflow-scrolling:touch] sm:px-0 sm:pb-2">
-                <div
-                  className="flex w-max flex-row gap-4 snap-x snap-mandatory scroll-smooth pb-1"
-                  tabIndex={0}
-                  aria-label={`${selected.category.label} gallery`}
-                >
-                {isVideoCategory
-                  ? (media as VideoAsset[]).map((item) => (
-                      <div
-                        key={item.src}
-                        className="snap-center shrink-0 w-[min(88vw,520px)] max-w-[min(88vw,520px)] overflow-hidden rounded-md border border-cream-300/10 bg-noir-700"
+              {media.length > 0 ? (
+                <div className="relative min-h-0 flex-1 px-6 pb-6 sm:px-0 sm:pb-2">
+                  {hasMultipleItems && !isVideoCategory && (
+                    <>
+                      <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-10 bg-gradient-to-r from-noir-900 to-transparent sm:left-0" />
+                      <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-14 bg-gradient-to-l from-noir-900 to-transparent" />
+                      <button
+                        type="button"
+                        onClick={() => scrollGallery(-1)}
+                        className="absolute left-2 top-1/2 z-20 hidden -translate-y-1/2 rounded-full border border-cream-300/20 bg-noir-900/85 p-2 text-cream-100 transition-colors hover:border-gold hover:text-gold sm:inline-flex"
+                        aria-label="Previous photo"
                       >
-                        <video
-                          src={item.src}
-                          poster={item.poster}
-                          controls
-                          playsInline
-                          preload="metadata"
-                          className="mx-auto max-h-[min(48vh,420px)] w-full object-contain"
-                        />
-                        {item.title && (
-                          <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
-                        )}
-                      </div>
-                    ))
-                  : (media as PhotoAsset[]).map((item) => (
-                      <div
-                        key={item.src}
-                        className="snap-center shrink-0 w-[min(88vw,520px)] max-w-[min(88vw,520px)] overflow-hidden rounded-md border border-cream-300/10 bg-noir-700"
+                        <ChevronLeft className="h-5 w-5" />
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => scrollGallery(1)}
+                        className="absolute right-2 top-1/2 z-20 hidden -translate-y-1/2 rounded-full border border-cream-300/20 bg-noir-900/85 p-2 text-cream-100 transition-colors hover:border-gold hover:text-gold sm:inline-flex"
+                        aria-label="Next photo"
                       >
-                        <img
-                          src={item.src}
-                          alt={item.alt ?? item.title ?? `${selected.product.name} ${selected.category.label}`}
-                          className="mx-auto max-h-[min(48vh,420px)] w-full object-contain"
-                        />
-                        {item.title && (
-                          <p className="p-3 font-body text-sm text-cream-300">{item.title}</p>
-                        )}
-                      </div>
-                    ))}
+                        <ChevronRight className="h-5 w-5" />
+                      </button>
+                    </>
+                  )}
+
+                  <div
+                    ref={scrollRef}
+                    className="h-full overflow-x-auto overflow-y-hidden overscroll-x-contain [-webkit-overflow-scrolling:touch]"
+                    tabIndex={0}
+                    aria-label={`${selected.category.label} gallery`}
+                  >
+                    <div className="flex w-max flex-row gap-3 snap-x snap-mandatory scroll-smooth pb-1">
+                      {isVideoCategory
+                        ? (media as VideoAsset[]).map((item) => (
+                            <div
+                              key={item.src}
+                              className="snap-center shrink-0 w-[min(92vw,640px)] max-w-[min(92vw,640px)] overflow-hidden rounded-md border border-cream-300/10 bg-noir-700"
+                            >
+                              <video
+                                src={item.src}
+                                poster={item.poster}
+                                controls
+                                playsInline
+                                preload="metadata"
+                                className="mx-auto h-[min(68vh,640px)] w-full object-contain"
+                              />
+                            </div>
+                          ))
+                        : (media as PhotoAsset[]).map((item, index) => {
+                            const alt = item.alt ?? `${selected.product.name} photo ${index + 1}`;
+
+                            return (
+                              <button
+                                key={item.src}
+                                type="button"
+                                onClick={() => setLightboxPhoto({ src: item.src, alt })}
+                                className="group relative snap-center shrink-0 w-[min(92vw,640px)] max-w-[min(92vw,640px)] overflow-hidden rounded-md border border-cream-300/10 bg-noir-700 text-left transition-colors hover:border-gold/40"
+                                aria-label={`View photo ${index + 1} full size`}
+                              >
+                                <img
+                                  src={item.src}
+                                  alt={alt}
+                                  className="h-[min(68vh,640px)] w-full object-contain"
+                                  loading="lazy"
+                                />
+                                <span className="pointer-events-none absolute bottom-3 right-3 inline-flex items-center gap-1 rounded-full border border-cream-300/15 bg-noir-900/80 px-2.5 py-1 font-body text-[11px] text-cream-200 opacity-80 transition-opacity sm:opacity-0 sm:group-hover:opacity-100">
+                                  <ZoomIn className="h-3.5 w-3.5" />
+                                  Tap to enlarge
+                                </span>
+                              </button>
+                            );
+                          })}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            ) : (
+              ) : (
               <div className="mx-6 mb-6 border border-gold/20 bg-noir-700 p-6 text-center sm:mx-0 sm:mb-0">
                 <p className="font-display text-xl text-gold mb-3">{selected.category.label} opens here.</p>
                 <p className="font-body text-sm text-cream-300 mb-5">
@@ -255,6 +345,15 @@ function RealLifeMediaDialog({
         )}
       </DialogContent>
     </Dialog>
+
+      {lightboxPhoto && (
+        <PhotoLightbox
+          src={lightboxPhoto.src}
+          alt={lightboxPhoto.alt}
+          onClose={() => setLightboxPhoto(null)}
+        />
+      )}
+    </>
   );
 }
 
