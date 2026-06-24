@@ -75,8 +75,8 @@ function ProductCardImage({ product, dualImagePreview }: ProductCardImageProps) 
       aria-label={
         hasDualPreview
           ? showSecondary
-            ? `Show clothed photo of ${product.name}`
-            : `Show body photo of ${product.name}`
+            ? `Tap to put on clothes, ${product.name}`
+            : `Tap to take off clothes, ${product.name}`
           : undefined
       }
     >
@@ -115,8 +115,15 @@ function ProductCardImage({ product, dualImagePreview }: ProductCardImageProps) 
               showSecondary ? 'bg-gold' : 'bg-cream-300/40'
             }`}
           />
-          <span className="ml-0.5 font-body text-[10px] text-cream-200 md:hidden">Tap to switch</span>
-          <span className="ml-0.5 hidden font-body text-[10px] text-cream-200 md:inline">Hover to switch</span>
+          <span className="ml-0.5 font-body text-[10px] text-cream-200 md:hidden">
+            {showSecondary ? 'Tap to put on clothes' : 'Tap to take off clothes'}
+          </span>
+          <span className="ml-0.5 hidden font-body text-[10px] text-cream-200 md:inline md:group-hover:hidden">
+            Tap to take off clothes
+          </span>
+          <span className="ml-0.5 hidden font-body text-[10px] text-cream-200 md:group-hover:inline">
+            Tap to put on clothes
+          </span>
         </div>
       )}
     </div>
@@ -576,6 +583,7 @@ export function ProductSection() {
             </div>
             <ProductGrid
               products={flagshipProducts}
+              dualImagePreview
               className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.72fr)] gap-6"
             />
           </div>
@@ -584,6 +592,7 @@ export function ProductSection() {
         <ProductGrid
           products={homepageValueProducts}
           gridRef={cardsRef}
+          dualImagePreview
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         />
 
