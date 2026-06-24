@@ -26,6 +26,7 @@ export function AllModelsPage() {
 
           <ProductGrid
             products={products}
+            dualImagePreview
             className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6"
           />
         </div>

@@ -1748,6 +1748,59 @@ export const products: Product[] = [
   },
 ];
 
+export interface ProductPreviewPair {
+  primary: { src: string; alt: string };
+  secondary?: { src: string; alt: string };
+}
+
+function firstPhoto(assets?: PhotoAsset[] | VideoAsset[]): PhotoAsset | undefined {
+  const first = assets?.[0];
+  return first && 'src' in first ? first : undefined;
+}
+
+export function getProductPreviewPair(product: Product): ProductPreviewPair {
+  const clothed = firstPhoto(product.realLifeMedia?.clothedPhotos);
+  const naked = firstPhoto(product.realLifeMedia?.nakedPhotos);
+
+  if (clothed && naked) {
+    return {
+      primary: {
+        src: clothed.src,
+        alt: clothed.alt ?? clothed.title ?? `${product.name} clothed`,
+      },
+      secondary: {
+        src: naked.src,
+        alt: naked.alt ?? naked.title ?? `${product.name} body`,
+      },
+    };
+  }
+
+  if (naked) {
+    return {
+      primary: {
+        src: naked.src,
+        alt: naked.alt ?? naked.title ?? product.name,
+      },
+    };
+  }
+
+  if (clothed) {
+    return {
+      primary: {
+        src: clothed.src,
+        alt: clothed.alt ?? clothed.title ?? product.name,
+      },
+    };
+  }
+
+  return {
+    primary: {
+      src: product.image,
+      alt: product.name,
+    },
+  };
+}
+
 export const flagshipProducts = products.filter((product) => product.tier === 'flagship');
 
 /** Homepage featured $999 grid — explicit order, always 9 models with R2 media */
