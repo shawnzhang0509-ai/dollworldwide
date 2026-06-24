@@ -55,14 +55,19 @@ function ProductCardImage({ product, dualImagePreview, isFlagship = false }: Pro
 
   const togglePreview = () => {
     if (!hasDualPreview) return;
+    setIsHovered(false);
     setShowSecondary((current) => !current);
   };
 
   return (
     <div
       className={`relative aspect-[3/4] overflow-hidden ${hasDualPreview ? 'cursor-pointer' : ''}`}
-      onMouseEnter={hasDualPreview ? () => setIsHovered(true) : undefined}
-      onMouseLeave={hasDualPreview ? () => setIsHovered(false) : undefined}
+      onPointerEnter={(event) => {
+        if (event.pointerType === 'mouse') setIsHovered(true);
+      }}
+      onPointerLeave={(event) => {
+        if (event.pointerType === 'mouse') setIsHovered(false);
+      }}
       onClick={hasDualPreview ? togglePreview : undefined}
       onKeyDown={
         hasDualPreview
@@ -114,7 +119,14 @@ function ProductCardImage({ product, dualImagePreview, isFlagship = false }: Pro
         }}
       />
       {hasDualPreview && (
-        <div className="pointer-events-none absolute bottom-3 left-1/2 z-[2] flex -translate-x-1/2 items-center gap-2 rounded-full border border-cream-300/15 bg-noir-900/75 px-3 py-1.5 backdrop-blur-sm">
+        <button
+          type="button"
+          onClick={(event) => {
+            event.stopPropagation();
+            togglePreview();
+          }}
+          className="absolute bottom-3 left-1/2 z-[2] flex -translate-x-1/2 items-center gap-2 rounded-full border border-cream-300/15 bg-noir-900/75 px-3 py-1.5 backdrop-blur-sm transition-colors hover:border-gold/35"
+        >
           <span
             className={`h-1.5 w-1.5 rounded-full transition-colors ${
               showingSecondary ? 'bg-cream-300/40' : 'bg-gold'
@@ -128,7 +140,7 @@ function ProductCardImage({ product, dualImagePreview, isFlagship = false }: Pro
           <span className="ml-0.5 font-body text-[10px] text-cream-200">
             {showingSecondary ? 'Tap to put on clothes' : 'Tap to take off clothes'}
           </span>
-        </div>
+        </button>
       )}
     </div>
   );
