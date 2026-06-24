@@ -43,12 +43,15 @@ function buildTradeMeRequestUrl(productName: string) {
 interface ProductCardImageProps {
   product: Product;
   dualImagePreview?: boolean;
+  isFlagship?: boolean;
 }
 
-function ProductCardImage({ product, dualImagePreview }: ProductCardImageProps) {
+function ProductCardImage({ product, dualImagePreview, isFlagship = false }: ProductCardImageProps) {
   const [showSecondary, setShowSecondary] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
   const preview = getProductPreviewPair(product);
   const hasDualPreview = Boolean(dualImagePreview && preview.secondary);
+  const showingSecondary = hasDualPreview && (showSecondary || isHovered);
 
   const togglePreview = () => {
     if (!hasDualPreview) return;
@@ -58,6 +61,8 @@ function ProductCardImage({ product, dualImagePreview }: ProductCardImageProps) 
   return (
     <div
       className={`relative aspect-[3/4] overflow-hidden ${hasDualPreview ? 'cursor-pointer' : ''}`}
+      onMouseEnter={hasDualPreview ? () => setIsHovered(true) : undefined}
+      onMouseLeave={hasDualPreview ? () => setIsHovered(false) : undefined}
       onClick={hasDualPreview ? togglePreview : undefined}
       onKeyDown={
         hasDualPreview
@@ -71,23 +76,23 @@ function ProductCardImage({ product, dualImagePreview }: ProductCardImageProps) 
       }
       role={hasDualPreview ? 'button' : undefined}
       tabIndex={hasDualPreview ? 0 : undefined}
-      aria-pressed={hasDualPreview ? showSecondary : undefined}
+      aria-pressed={hasDualPreview ? showingSecondary : undefined}
       aria-label={
         hasDualPreview
-          ? showSecondary
-            ? `Show clothed photo of ${product.name}`
-            : `Show body photo of ${product.name}`
+          ? showingSecondary
+            ? `Tap to put on clothes, ${product.name}`
+            : `Tap to take off clothes, ${product.name}`
           : undefined
       }
     >
       <img
         src={preview.primary.src}
         alt={preview.primary.alt}
-        className={`w-full h-full object-cover transition-all duration-500 ${
+        className={`relative z-0 w-full h-full object-cover transition-all duration-500 ${
           hasDualPreview
-            ? showSecondary
+            ? showingSecondary
               ? 'opacity-0 scale-100'
-              : 'opacity-100 scale-100 md:group-hover:opacity-0 md:group-hover:scale-105'
+              : 'opacity-100 scale-100 group-hover:scale-105'
             : 'group-hover:scale-105'
         }`}
       />
@@ -95,28 +100,34 @@ function ProductCardImage({ product, dualImagePreview }: ProductCardImageProps) 
         <img
           src={preview.secondary.src}
           alt={preview.secondary.alt}
-          loading="lazy"
-          className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
-            showSecondary
-              ? 'opacity-100 scale-105'
-              : 'opacity-0 scale-100 md:group-hover:opacity-100 md:group-hover:scale-105'
+          className={`absolute inset-0 z-0 w-full h-full object-cover transition-all duration-500 ${
+            showingSecondary ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
           }`}
         />
       )}
+      <div
+        className="pointer-events-none absolute inset-0 z-[1]"
+        style={{
+          background: isFlagship
+            ? 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.35) 42%, rgba(212,175,55,0.16) 100%)'
+            : 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 40%)',
+        }}
+      />
       {hasDualPreview && (
-        <div className="pointer-events-none absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full border border-cream-300/15 bg-noir-900/75 px-3 py-1.5 backdrop-blur-sm">
+        <div className="pointer-events-none absolute bottom-3 left-1/2 z-[2] flex -translate-x-1/2 items-center gap-2 rounded-full border border-cream-300/15 bg-noir-900/75 px-3 py-1.5 backdrop-blur-sm">
           <span
             className={`h-1.5 w-1.5 rounded-full transition-colors ${
-              showSecondary ? 'bg-cream-300/40' : 'bg-gold'
+              showingSecondary ? 'bg-cream-300/40' : 'bg-gold'
             }`}
           />
           <span
             className={`h-1.5 w-1.5 rounded-full transition-colors ${
-              showSecondary ? 'bg-gold' : 'bg-cream-300/40'
+              showingSecondary ? 'bg-gold' : 'bg-cream-300/40'
             }`}
           />
-          <span className="ml-0.5 font-body text-[10px] text-cream-200 md:hidden">Tap to switch</span>
-          <span className="ml-0.5 hidden font-body text-[10px] text-cream-200 md:inline">Hover to switch</span>
+          <span className="ml-0.5 font-body text-[10px] text-cream-200">
+            {showingSecondary ? 'Tap to put on clothes' : 'Tap to take off clothes'}
+          </span>
         </div>
       )}
     </div>
@@ -145,7 +156,11 @@ function ProductCardContent({
   return (
     <>
       <div className="relative">
-        <ProductCardImage product={product} dualImagePreview={dualImagePreview} />
+        <ProductCardImage
+          product={product}
+          dualImagePreview={dualImagePreview}
+          isFlagship={isFlagship}
+        />
         <div className="pointer-events-none absolute top-4 left-4 z-10">
           <span className={`text-label text-xs px-3 py-1 ${
             isFlagship ? 'bg-noir-900 text-gold border border-gold' : 'bg-gold text-noir-900'
@@ -158,14 +173,6 @@ function ProductCardContent({
             <span className="text-label text-[10px] text-noir-900">PREMIUM</span>
           </div>
         )}
-        <div
-          className="pointer-events-none absolute inset-0 z-[1]"
-          style={{
-            background: isFlagship
-              ? 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.35) 42%, rgba(212,175,55,0.16) 100%)'
-              : 'linear-gradient(to top, rgba(10,10,10,0.85) 0%, transparent 40%)',
-          }}
-        />
       </div>
       <div className={`p-6 ${isFlagship ? 'bg-[linear-gradient(135deg,rgba(31,24,9,0.98),rgba(10,10,10,0.98))]' : ''}`}>
         {isFlagship && (
@@ -576,6 +583,7 @@ export function ProductSection() {
             </div>
             <ProductGrid
               products={flagshipProducts}
+              dualImagePreview
               className="grid grid-cols-1 lg:grid-cols-[minmax(0,0.72fr)] gap-6"
             />
           </div>
@@ -584,6 +592,7 @@ export function ProductSection() {
         <ProductGrid
           products={homepageValueProducts}
           gridRef={cardsRef}
+          dualImagePreview
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6"
         />
 

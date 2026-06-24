@@ -60,7 +60,7 @@ export const products: Product[] = [
   {
     id: 'lillith',
     name: 'Lillith',
-    image: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Naked%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-12.jpg',
+    image: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Clothed%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-20.jpg',
     price: '$999',
     tag: 'BEST SELLER',
     specs: '165cm · D-Cup · Silicone Head · TPE Body',
@@ -69,6 +69,13 @@ export const products: Product[] = [
     tradeMeSku: '02',
     tradeMeSearchCode: 'DWWD02',
     realLifeMedia: {
+      clothedPhotos: [
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Clothed%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-20.jpg', title: 'Lillith clothed DWWD02 - Lillith - Salefenni-20.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Clothed%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-21.jpg', title: 'Lillith clothed DWWD02 - Lillith - Salefenni-21.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Clothed%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-22.jpg', title: 'Lillith clothed DWWD02 - Lillith - Salefenni-22.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Clothed%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-23.jpg', title: 'Lillith clothed DWWD02 - Lillith - Salefenni-23.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Clothed%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-24.jpg', title: 'Lillith clothed DWWD02 - Lillith - Salefenni-24.jpg' },
+      ],
       nakedPhotos: [
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Naked%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-7.jpg', title: 'Lillith naked DWWD02 - Lillith - DWWD02 - Lillith - Salefenni-7.jpg' },
         { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD02/Naked%20Photos/DWWD02%20-%20Lillith%20-%20Salefenni-12.jpg', title: 'Lillith naked DWWD02 - Lillith - DWWD02 - Lillith - Salefenni-12.jpg' },
@@ -126,7 +133,7 @@ export const products: Product[] = [
   {
     id: 'DWWD06',
     name: 'Xina',
-    image: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg',
+    image: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Clothed%20Photos/DWWD06%20-%20Hikari%20-%20Kaitelin-3.jpg',
     price: '$999',
     tag: 'READY STOCK',
     specs: 'Silicone Head · TPE Body',
@@ -134,6 +141,13 @@ export const products: Product[] = [
     featured: false,
     tradeMeSearchCode: 'DWWD06',
     realLifeMedia: {
+      clothedPhotos: [
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Clothed%20Photos/DWWD06%20-%20Hikari%20-%20Kaitelin-3.jpg', title: 'Xina clothed DWWD06 - Hikari - Kaitelin-3.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Clothed%20Photos/DWWD06%20-%20Hikari%20-%20Kaitelin-4.jpg', title: 'Xina clothed DWWD06 - Hikari - Kaitelin-4.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Clothed%20Photos/DWWD06%20-%20Hikari%20-%20Kaitelin-5.jpg', title: 'Xina clothed DWWD06 - Hikari - Kaitelin-5.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Clothed%20Photos/DWWD06%20-%20Hikari%20-%20Kaitelin-6.jpg', title: 'Xina clothed DWWD06 - Hikari - Kaitelin-6.jpg' },
+        { src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Clothed%20Photos/DWWD06%20-%20Hikari%20-%20Kaitelin-7.jpg', title: 'Xina clothed DWWD06 - Hikari - Kaitelin-7.jpg' },
+      ],
       nakedPhotos: [
         {
           src: 'https://pub-2332c827c22d490283e3e7585dc5e06c.r2.dev/DWWD06/Naked/photos/2236145526.jpg',
