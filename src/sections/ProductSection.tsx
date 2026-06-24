@@ -6,6 +6,7 @@ import { PrimaryButton } from '@/components/PrimaryButton';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import {
   flagshipProducts,
+  getProductPreviewPair,
   homepageValueProducts,
   realLifeMediaCategories,
   type Product,
@@ -39,10 +40,94 @@ function buildTradeMeRequestUrl(productName: string) {
   return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
+interface ProductCardImageProps {
+  product: Product;
+  dualImagePreview?: boolean;
+}
+
+function ProductCardImage({ product, dualImagePreview }: ProductCardImageProps) {
+  const [showSecondary, setShowSecondary] = useState(false);
+  const preview = getProductPreviewPair(product);
+  const hasDualPreview = Boolean(dualImagePreview && preview.secondary);
+
+  const togglePreview = () => {
+    if (!hasDualPreview) return;
+    setShowSecondary((current) => !current);
+  };
+
+  return (
+    <div
+      className={`relative aspect-[3/4] overflow-hidden ${hasDualPreview ? 'cursor-pointer' : ''}`}
+      onClick={hasDualPreview ? togglePreview : undefined}
+      onKeyDown={
+        hasDualPreview
+          ? (event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault();
+                togglePreview();
+              }
+            }
+          : undefined
+      }
+      role={hasDualPreview ? 'button' : undefined}
+      tabIndex={hasDualPreview ? 0 : undefined}
+      aria-pressed={hasDualPreview ? showSecondary : undefined}
+      aria-label={
+        hasDualPreview
+          ? showSecondary
+            ? `Show clothed photo of ${product.name}`
+            : `Show body photo of ${product.name}`
+          : undefined
+      }
+    >
+      <img
+        src={preview.primary.src}
+        alt={preview.primary.alt}
+        className={`w-full h-full object-cover transition-all duration-500 ${
+          hasDualPreview
+            ? showSecondary
+              ? 'opacity-0 scale-100'
+              : 'opacity-100 scale-100 md:group-hover:opacity-0 md:group-hover:scale-105'
+            : 'group-hover:scale-105'
+        }`}
+      />
+      {preview.secondary && (
+        <img
+          src={preview.secondary.src}
+          alt={preview.secondary.alt}
+          loading="lazy"
+          className={`absolute inset-0 w-full h-full object-cover transition-all duration-500 ${
+            showSecondary
+              ? 'opacity-100 scale-105'
+              : 'opacity-0 scale-100 md:group-hover:opacity-100 md:group-hover:scale-105'
+          }`}
+        />
+      )}
+      {hasDualPreview && (
+        <div className="pointer-events-none absolute bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 rounded-full border border-cream-300/15 bg-noir-900/75 px-3 py-1.5 backdrop-blur-sm">
+          <span
+            className={`h-1.5 w-1.5 rounded-full transition-colors ${
+              showSecondary ? 'bg-cream-300/40' : 'bg-gold'
+            }`}
+          />
+          <span
+            className={`h-1.5 w-1.5 rounded-full transition-colors ${
+              showSecondary ? 'bg-gold' : 'bg-cream-300/40'
+            }`}
+          />
+          <span className="ml-0.5 font-body text-[10px] text-cream-200 md:hidden">Tap to switch</span>
+          <span className="ml-0.5 hidden font-body text-[10px] text-cream-200 md:inline">Hover to switch</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
 interface ProductCardContentProps {
   product: Product;
   tradeMeUrl?: string;
   realLifeOpen: boolean;
+  dualImagePreview?: boolean;
   onToggleRealLife: () => void;
   onSelectRealLife: (category: RealLifeMediaCategory) => void;
 }
@@ -51,6 +136,7 @@ function ProductCardContent({
   product,
   tradeMeUrl,
   realLifeOpen,
+  dualImagePreview,
   onToggleRealLife,
   onSelectRealLife,
 }: ProductCardContentProps) {
@@ -58,13 +144,9 @@ function ProductCardContent({
 
   return (
     <>
-      <div className="relative aspect-[3/4] overflow-hidden">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
-        />
-        <div className="absolute top-4 left-4">
+      <div className="relative">
+        <ProductCardImage product={product} dualImagePreview={dualImagePreview} />
+        <div className="pointer-events-none absolute top-4 left-4 z-10">
           <span className={`text-label text-xs px-3 py-1 ${
             isFlagship ? 'bg-noir-900 text-gold border border-gold' : 'bg-gold text-noir-900'
           }`}>
@@ -72,12 +154,12 @@ function ProductCardContent({
           </span>
         </div>
         {isFlagship && (
-          <div className="absolute right-[-46px] top-7 rotate-45 bg-gold px-12 py-2 text-center shadow-lg">
+          <div className="pointer-events-none absolute right-[-46px] top-7 z-10 rotate-45 bg-gold px-12 py-2 text-center shadow-lg">
             <span className="text-label text-[10px] text-noir-900">PREMIUM</span>
           </div>
         )}
         <div
-          className="absolute inset-0"
+          className="pointer-events-none absolute inset-0 z-[1]"
           style={{
             background: isFlagship
               ? 'linear-gradient(to top, rgba(10,10,10,0.95) 0%, rgba(10,10,10,0.35) 42%, rgba(212,175,55,0.16) 100%)'
@@ -361,9 +443,15 @@ interface ProductGridProps {
   products: Product[];
   gridRef?: RefObject<HTMLDivElement | null>;
   className?: string;
+  dualImagePreview?: boolean;
 }
 
-export function ProductGrid({ products, gridRef, className = 'grid grid-cols-1 md:grid-cols-3 gap-6' }: ProductGridProps) {
+export function ProductGrid({
+  products,
+  gridRef,
+  className = 'grid grid-cols-1 md:grid-cols-3 gap-6',
+  dualImagePreview = false,
+}: ProductGridProps) {
   const [openRealLifeProduct, setOpenRealLifeProduct] = useState<string | null>(null);
   const [selectedRealLifeMedia, setSelectedRealLifeMedia] = useState<SelectedRealLifeMedia | null>(null);
 
@@ -393,6 +481,7 @@ export function ProductGrid({ products, gridRef, className = 'grid grid-cols-1 m
                 product={product}
                 tradeMeUrl={tradeMeUrl}
                 realLifeOpen={realLifeOpen}
+                dualImagePreview={dualImagePreview}
                 onToggleRealLife={() => setOpenRealLifeProduct(realLifeOpen ? null : product.id)}
                 onSelectRealLife={(category) => setSelectedRealLifeMedia({ product, category })}
               />
