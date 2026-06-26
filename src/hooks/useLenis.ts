@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import Lenis from 'lenis';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { setLenisInstance } from '@/lib/scrollToSection';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,7 @@ export function useLenis() {
     });
 
     lenisRef.current = lenis;
+    setLenisInstance(lenis);
 
     lenis.on('scroll', ScrollTrigger.update);
 
@@ -24,6 +26,7 @@ export function useLenis() {
     gsap.ticker.lagSmoothing(0);
 
     return () => {
+      setLenisInstance(null);
       lenis.destroy();
       gsap.ticker.remove(lenis.raf);
     };

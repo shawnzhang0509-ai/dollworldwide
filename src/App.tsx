@@ -18,6 +18,7 @@ import { ShippingPolicyPage } from '@/pages/ShippingPolicyPage';
 import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage';
 import { TermsAndConditionsPage } from '@/pages/TermsAndConditionsPage';
 import { VercelAnalytics } from '@/components/VercelAnalytics';
+import { HashScrollHandler } from '@/components/HashScrollHandler';
 
 function HomePage() {
   return (
@@ -44,6 +45,7 @@ function App() {
   return (
     <>
       <AgeVerificationGate />
+      <HashScrollHandler />
       <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
