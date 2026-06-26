@@ -18,6 +18,181 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'tpe-body-silicone-head-hybrid-dolls-best-value-2026',
+    title: "TPE Body + Silicone Head: Why DollWorldwide's Hybrid Dolls Are the Best Value in 2026",
+    description:
+      'Why TPE body and silicone head hybrids beat full silicone and full TPE on value — planted hair, $999 NZ pricing, and the right material in the right place.',
+    excerpt:
+      "Full silicone is expensive. Full TPE sacrifices head realism. DollWorldwide's hybrid — silicone head, TPE body, planted hair — hits $999 with the best of both.",
+    publishedAt: '2026-06-09',
+    category: "Buyer's Guide",
+    readingTimeMinutes: 7,
+    blocks: [
+      {
+        type: 'paragraph',
+        content:
+          'Most doll buyers face a frustrating choice: pay $1,500+ for full silicone or settle for less realism with full TPE.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          "At DollWorldwide, we built a third option—and we think it's the smartest one on the market.",
+      },
+      {
+        type: 'paragraph',
+        content: 'TPE body + Silicone head. All for $999.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          "Here's why this hybrid configuration gives you the best of both worlds without the premium price tag.",
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'The Problem with "Full Silicone" and "Full TPE"',
+      },
+      {
+        type: 'comparison',
+        items: [
+          {
+            title: 'Full TPE',
+            points: [
+              'Soft, affordable, but head detail is limited',
+              'Head makeup fades faster',
+              'Hair typically glued or wig-based',
+            ],
+          },
+          {
+            title: 'Full Silicone',
+            points: [
+              'Hyper-realistic, but heavy and expensive ($1,500–$2,500+)',
+              'Head is durable but body is overkill—most wear happens on the body',
+              "Better for head, but you're paying silicone prices for the whole body",
+            ],
+          },
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'The reality: most wear and tear happens on the body. The head needs realism and longevity; the body needs softness and affordability.',
+      },
+      {
+        type: 'paragraph',
+        content: "That's why we split them.",
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: "DollWorldwide's Hybrid Formula: TPE Body + Silicone Head",
+      },
+      {
+        type: 'paragraph',
+        content: 'We engineered our dolls to put the right material in the right place:',
+      },
+      {
+        type: 'heading',
+        level: 3,
+        content: 'Silicone Head — Where Realism Matters Most',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Planted hair (not glued or wig): Each strand is individually implanted for natural movement, parting, and styling. No wig lines, no glue residue, no "helmet hair."',
+          'Maximum facial detail: Silicone holds fine textures—skin pores, subtle veins, lip definition—better than TPE ever can.',
+          "Longest lifespan: Silicone doesn't degrade like TPE. Your head stays sharp for years. Makeup holds longer. Expression stays intact.",
+          'Easy to clean: Non-porous silicone head is hygienic and low-maintenance.',
+        ],
+      },
+      {
+        type: 'heading',
+        level: 3,
+        content: 'TPE Body — Where Comfort and Cost Matter',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Soft, squeezable, lifelike feel — the gold standard for body texture.',
+          'Lightweight — easier to handle, pose, and store than full silicone.',
+          'Affordable to replace — if the body sees wear after years of use, replacement costs a fraction of a full silicone body.',
+          'Flexible skeleton — full articulation for natural posing.',
+        ],
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'The $999 Price Point: How We Do It',
+      },
+      {
+        type: 'paragraph',
+        content:
+          "Full silicone dolls from other brands start at $1,500 and climb to $3,000+. Full TPE dolls with decent heads still run $800–$1,200—and the head realism isn't close.",
+      },
+      {
+        type: 'paragraph',
+        content: 'Our hybrid approach lets us hit $999 flat:',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          "We don't charge silicone prices for a TPE body.",
+          "We don't compromise the head with cheap TPE or glued wigs.",
+          'We ship direct from factory to you—no distributor markup.',
+          'One price. One configuration. Best value.',
+        ],
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Planted Hair: The Detail That Changes Everything',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Most dolls in the $999 range use wigs or glued hair. It looks fine in photos, but in person?',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Wigs shift, slip, and expose seams.',
+          'Glued hair falls out and looks synthetic up close.',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Planted hair is the standard on premium $2,000+ dolls. We brought it to $999.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Each strand is rooted into the silicone scalp. You can:',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Part it anywhere',
+          'Style it with heat (low setting)',
+          'Wash and condition it like real hair',
+          'Never worry about a wig line',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          "It's the single biggest realism upgrade you can make—and it's included on every DollWorldwide doll.",
+      },
+      {
+        type: 'cta',
+        content:
+          'Browse our full hybrid catalogue — silicone head, TPE body, planted hair, all at $999 NZD.',
+        href: '/models',
+        label: 'View All Models',
+      },
+    ],
+  },
+  {
     slug: 'why-adult-dolls-nz-stock-matters',
     title: 'Why Some Adult Dolls Are Available in New Zealand Stock (And Why It Matters)',
     description:
