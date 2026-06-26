@@ -25,7 +25,7 @@ const signals = [
   {
     icon: Phone,
     title: '24/7 Support',
-    subtitle: '028 8514 6884',
+    subtitle: 'Text 028 8514 6884',
   },
 ];
 

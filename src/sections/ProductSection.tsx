@@ -16,6 +16,11 @@ import {
 } from '@/data/products';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { buildTradeMeR18AdultSearchUrl } from '@/lib/trademe';
+import {
+  buildProductInquirySmsUrl,
+  buildStockInquirySmsUrl,
+  CONTACT_PHONE_DISPLAY,
+} from '@/lib/contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -434,10 +439,10 @@ function RealLifeMediaDialog({
                     Request {selected.category.label}
                   </a>
                   <a
-                    href="tel:02885146884"
+                    href={buildProductInquirySmsUrl(selected.product.name)}
                     className="inline-flex items-center justify-center border border-gold px-5 py-3 text-button text-gold transition-colors hover:bg-gold hover:text-noir-900"
                   >
-                    Call 028 8514 6884
+                    Text {CONTACT_PHONE_DISPLAY}
                   </a>
                 </div>
               </div>
@@ -621,7 +626,7 @@ export function ProductSection() {
             >
               View All Models
             </a>
-            <PrimaryButton href="tel:02885146884">Call to See Current Stock</PrimaryButton>
+            <PrimaryButton href={buildStockInquirySmsUrl()}>Text for Current Stock</PrimaryButton>
           </div>
         </div>
       </div>

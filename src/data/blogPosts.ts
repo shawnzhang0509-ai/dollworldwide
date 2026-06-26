@@ -18,6 +18,141 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'why-trademe-checkout-instead-of-website-payments',
+    title: 'Why We Choose Trade Me Checkout Instead of Taking Payments on Our Website',
+    description:
+      'Why Doll Worldwide directs buyers to Trade Me for checkout — customer trust, marketplace transparency, and why we absorb the extra fees.',
+    excerpt:
+      'Our website is the showroom; Trade Me is the checkout. Here is why we choose a trusted NZ marketplace over direct website payments.',
+    publishedAt: '2026-06-10',
+    category: 'Trust & Buying',
+    readingTimeMinutes: 5,
+    blocks: [
+      {
+        type: 'paragraph',
+        content:
+          'When shopping online for premium silicone dolls, trust matters just as much as product quality.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'You may have noticed that while Doll Worldwide showcases our full product range on our website, we currently ask customers to complete their purchases through our Trade Me listings rather than paying directly on our site.',
+      },
+      {
+        type: 'paragraph',
+        content: "This isn't because we can't accept online payments.",
+      },
+      {
+        type: 'paragraph',
+        content:
+          "It's because we believe it provides a safer and more reassuring buying experience for our customers.",
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Extra Confidence for Every Purchase',
+      },
+      {
+        type: 'paragraph',
+        content:
+          "Trade Me has been New Zealand's most recognised online marketplace for many years.",
+      },
+      {
+        type: 'paragraph',
+        content:
+          'By purchasing through Trade Me, customers benefit from a familiar platform with established buying processes, transparent seller profiles, and a trusted reputation.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'For many first-time buyers—especially when purchasing a premium product—this additional level of confidence is valuable.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'We Absorb the Extra Cost',
+      },
+      {
+        type: 'paragraph',
+        content: "Selling through Trade Me isn't free.",
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Every sale involves marketplace fees that we could avoid by processing payments directly on our own website.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          "However, we've chosen to absorb those additional costs because we believe customer trust is more important than saving on transaction fees.",
+      },
+      {
+        type: 'paragraph',
+        content:
+          'If using Trade Me helps customers feel more comfortable with their purchase, we consider that money well spent.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Transparency First',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Our website is designed to help you browse models, compare specifications, and learn more about our products.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          "When you're ready to buy, we simply direct you to the corresponding Trade Me listing, where you can complete your purchase with confidence.",
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'No hidden surprises.',
+          'No confusing payment process.',
+          "Just a straightforward experience backed by one of New Zealand's most trusted online marketplaces.",
+        ],
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Looking Ahead',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'As Doll Worldwide continues to grow, we may introduce direct online checkout in the future.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          "If we do, it will only be after we're confident we can provide the same level of security, transparency, and customer confidence that our buyers enjoy today.",
+      },
+      {
+        type: 'paragraph',
+        content:
+          "Until then, we're happy to pay the extra marketplace fees if it means giving our customers greater peace of mind.",
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Because earning your trust has always been worth more than saving a few dollars.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Our website is our showroom. Trade Me is currently our checkout. This way, you enjoy the convenience of browsing our full catalogue while purchasing through a platform that many New Zealanders already know and trust.',
+      },
+      {
+        type: 'cta',
+        content: 'Browse models on our website, then complete your purchase with confidence on Trade Me.',
+        href: '/models',
+        label: 'View All Models',
+      },
+    ],
+  },
+  {
     slug: 'tpe-body-silicone-head-hybrid-dolls-best-value-2026',
     title: "TPE Body + Silicone Head: Why DollWorldwide's Hybrid Dolls Are the Best Value in 2026",
     description:

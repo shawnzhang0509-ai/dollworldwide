@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { PrimaryButton } from '@/components/PrimaryButton';
 import { SecondaryButton } from '@/components/SecondaryButton';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { buildGeneralInquirySmsUrl, CONTACT_PHONE_DISPLAY } from '@/lib/contact';
 import { Truck, Package, DollarSign, ShieldCheck, BadgeCheck } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -228,7 +229,7 @@ export function HeroSection() {
           </p>
           <div ref={ctaRef} className="flex flex-wrap gap-3">
             <SecondaryButton href="#product">See Ready Stock</SecondaryButton>
-            <PrimaryButton href="tel:02885146884">Call 028 8514 6884</PrimaryButton>
+            <PrimaryButton href={buildGeneralInquirySmsUrl()}>Text {CONTACT_PHONE_DISPLAY}</PrimaryButton>
           </div>
         </div>
 

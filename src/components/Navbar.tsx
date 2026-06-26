@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router';
 import gsap from 'gsap';
 import { getHashFromHref, scrollToSection } from '@/lib/scrollToSection';
+import { buildGeneralInquirySmsUrl, CONTACT_PHONE_DISPLAY } from '@/lib/contact';
 
 const navLinks = [
   { label: 'Ready Stock', href: '/#product' },
@@ -9,7 +10,7 @@ const navLinks = [
   { label: 'Blog', href: '/blog' },
   { label: 'Proof', href: '/#proof' },
   { label: 'How It Works', href: '/#how-it-works' },
-  { label: 'Contact', href: 'tel:02885146884' },
+  { label: 'Contact', href: buildGeneralInquirySmsUrl() },
 ];
 
 export function Navbar() {
@@ -98,10 +99,10 @@ export function Navbar() {
           </div>
 
           <a
-            href="tel:02885146884"
+            href={buildGeneralInquirySmsUrl()}
             className="hidden lg:inline-block text-label text-gold border border-gold px-4 py-2 hover:bg-gold hover:text-noir-900 transition-all duration-300"
           >
-            028 8514 6884
+            Text {CONTACT_PHONE_DISPLAY}
           </a>
 
           <button onClick={() => setMobileOpen(!mobileOpen)} className="lg:hidden flex flex-col gap-1.5 p-2" aria-label="Toggle menu">
@@ -124,8 +125,8 @@ export function Navbar() {
               {link.label}
             </a>
           ))}
-          <a href="tel:02885146884" className="mobile-link text-label text-gold border border-gold px-6 py-3 mt-4">
-            028 8514 6884
+          <a href={buildGeneralInquirySmsUrl()} className="mobile-link text-label text-gold border border-gold px-6 py-3 mt-4">
+            Text {CONTACT_PHONE_DISPLAY}
           </a>
         </div>
       )}

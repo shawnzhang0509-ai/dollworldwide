@@ -4,6 +4,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { SecondaryButton } from '@/components/SecondaryButton';
 import { PrimaryButton } from '@/components/PrimaryButton';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
+import { buildGeneralInquirySmsUrl, CONTACT_PHONE_DISPLAY } from '@/lib/contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,8 +47,8 @@ export function ContactCTASection() {
         </p>
 
         <div className="cta-animate flex flex-wrap justify-center gap-4 mb-8">
-          <SecondaryButton href="tel:02885146884">
-            Call 028 8514 6884
+          <SecondaryButton href={buildGeneralInquirySmsUrl()}>
+            Text {CONTACT_PHONE_DISPLAY}
           </SecondaryButton>
           <PrimaryButton href="mailto:dollworldwide2023@gmail.com">
             Email Us
