@@ -44,7 +44,7 @@ export function Footer() {
                 { label: 'Blog', href: '/blog' },
                 { label: 'Trade Me Proof', href: '/#proof' },
                 { label: 'How It Works', href: '/#how-it-works' },
-                { label: 'Contact', href: '/#contact' },
+                { label: 'Contact', href: 'tel:02885146884' },
               ].map((link) => (
                 <a
                   key={link.href}
