@@ -18,6 +18,190 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'why-we-started-doll-worldwide',
+    title: 'Why We Started Doll Worldwide',
+    description:
+      'The story behind Doll Worldwide — moving to New Zealand, working directly with manufacturers, and building a business focused on value, trust, and local service.',
+    excerpt:
+      'Every business has a story. Ours started after moving to NZ — limited stock, high prices, and a question: could there be a better way?',
+    publishedAt: '2026-06-11',
+    category: 'Our Story',
+    readingTimeMinutes: 6,
+    blocks: [
+      {
+        type: 'paragraph',
+        content: 'Every business has a story.',
+      },
+      {
+        type: 'paragraph',
+        content: 'This is ours.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'It Started After We Moved to New Zealand',
+      },
+      {
+        type: 'paragraph',
+        content: 'When we first settled in New Zealand, we noticed something surprising.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Premium silicone dolls were often difficult to find, with limited local stock, long waiting times, and prices that were significantly higher than expected.',
+      },
+      {
+        type: 'paragraph',
+        content: "As consumers ourselves, we couldn't help but wonder:",
+      },
+      {
+        type: 'paragraph',
+        content: 'Could there be a better way?',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'We Already Knew the Manufacturers',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Before launching Doll Worldwide, we already had experience working directly with manufacturers in China.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'We understood how premium silicone dolls are designed, produced, and quality checked.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          "More importantly, we knew that many of the world's leading factories were capable of producing exceptional products—but New Zealand customers often had limited access to them.",
+      },
+      {
+        type: 'paragraph',
+        content: 'That gave us an idea.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Instead of adding multiple layers of middlemen, why not work directly with trusted manufacturers and bring those products to New Zealand ourselves?',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Better Value, Not Just Lower Prices',
+      },
+      {
+        type: 'paragraph',
+        content: 'Our goal has never been to sell the cheapest dolls.',
+      },
+      {
+        type: 'paragraph',
+        content: 'Our goal is to offer better value.',
+      },
+      {
+        type: 'paragraph',
+        content: 'That means:',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Premium-quality silicone dolls',
+          'Carefully selected manufacturers',
+          'Fair and transparent pricing',
+          'Local New Zealand stock whenever possible',
+          'Friendly, responsive customer service',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          "We believe customers deserve to know exactly what they're buying and why it's worth the price.",
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Building Trust First',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Buying a premium silicone doll is a personal decision, and often a significant investment.',
+      },
+      {
+        type: 'paragraph',
+        content: "We understand that trust doesn't happen overnight.",
+      },
+      {
+        type: 'paragraph',
+        content:
+          "That's why we've chosen to focus on transparency, honest communication, and reliable after-sales support.",
+      },
+      {
+        type: 'paragraph',
+        content:
+          "It's also why many of our purchases are completed through Trade Me, giving customers the confidence of buying through a platform they already know and trust.",
+      },
+      {
+        type: 'paragraph',
+        content:
+          'For us, earning your confidence is more important than making a quick sale.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Proudly Serving New Zealand',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Although our manufacturing partners are overseas, Doll Worldwide is built for New Zealand customers.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'We understand the expectations of local buyers—from fast communication and discreet delivery to reliable after-sales service.',
+      },
+      {
+        type: 'paragraph',
+        content: 'Our mission is simple:',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'To make premium silicone dolls more accessible, more transparent, and better value for people across New Zealand.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Looking Ahead',
+      },
+      {
+        type: 'paragraph',
+        content: "We're still a young business, but we're building for the long term.",
+      },
+      {
+        type: 'paragraph',
+        content: 'Every customer, every conversation, and every order helps us improve.',
+      },
+      {
+        type: 'paragraph',
+        content: 'Thank you for being part of our journey.',
+      },
+      {
+        type: 'paragraph',
+        content: 'We look forward to serving New Zealand for many years to come.',
+      },
+      {
+        type: 'cta',
+        content: 'Browse our NZ ready stock and see what we built this business for.',
+        href: '/models',
+        label: 'View All Models',
+      },
+    ],
+  },
+  {
     slug: 'why-trademe-checkout-instead-of-website-payments',
     title: 'Why We Choose Trade Me Checkout Instead of Taking Payments on Our Website',
     description:
