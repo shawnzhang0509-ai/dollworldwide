@@ -1,11 +1,18 @@
+import { useLocation } from 'react-router';
+import { getHashFromHref, scrollToSection } from '@/lib/scrollToSection';
+
 export function Footer() {
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (!href.startsWith('#')) return;
+  const location = useLocation();
+
+  const handleHashLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    const hash = getHashFromHref(href);
+    if (!hash) return;
+
+    if (location.pathname !== '/') return;
 
     e.preventDefault();
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
+    if (!scrollToSection(hash)) {
+      window.location.href = `/${hash}`;
     }
   };
 
@@ -16,7 +23,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
           {/* Brand */}
           <div>
-            <a href="#hero" onClick={(e) => handleNavClick(e, '#hero')} className="font-display text-2xl text-gold block mb-2">
+            <a
+              href="/"
+              className="font-display text-2xl text-gold block mb-2"
+            >
               DOLL WORLDWIDE
             </a>
             <p className="font-body text-sm text-cream-300">
@@ -29,17 +39,17 @@ export function Footer() {
             <h4 className="text-label text-cream-100 mb-4">Quick Links</h4>
             <div className="flex flex-col gap-2">
               {[
-                { label: 'Ready Stock', href: '#product' },
+                { label: 'Ready Stock', href: '/#product' },
                 { label: 'All Models', href: '/models' },
                 { label: 'Blog', href: '/blog' },
-                { label: 'Trade Me Proof', href: '#proof' },
-                { label: 'How It Works', href: '#how-it-works' },
-                { label: 'Contact', href: '#contact' },
+                { label: 'Trade Me Proof', href: '/#proof' },
+                { label: 'How It Works', href: '/#how-it-works' },
+                { label: 'Contact', href: '/#contact' },
               ].map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  onClick={(e) => handleNavClick(e, link.href)}
+                  onClick={(e) => handleHashLinkClick(e, link.href)}
                   className="font-body text-sm text-cream-300 hover:text-cream-100 transition-colors duration-300"
                 >
                   {link.label}

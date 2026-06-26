@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router';
 import gsap from 'gsap';
+import { getHashFromHref, scrollToSection } from '@/lib/scrollToSection';
 
 const navLinks = [
-  { label: 'Ready Stock', href: '#product' },
+  { label: 'Ready Stock', href: '/#product' },
   { label: 'All Models', href: '/models' },
   { label: 'Blog', href: '/blog' },
-  { label: 'Proof', href: '#proof' },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'Proof', href: '/#proof' },
+  { label: 'How It Works', href: '/#how-it-works' },
+  { label: 'Contact', href: '/#contact' },
 ];
 
 export function Navbar() {
@@ -49,15 +50,15 @@ export function Navbar() {
   }, [mobileOpen]);
 
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (!href.startsWith('#')) return;
+    const hash = getHashFromHref(href);
+    if (!hash) return;
+
+    if (location.pathname !== '/') return;
 
     e.preventDefault();
     setMobileOpen(false);
-    const target = document.querySelector(href);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      window.location.href = `/${href}`;
+    if (!scrollToSection(hash)) {
+      window.location.href = `/${hash}`;
     }
   };
 
@@ -88,7 +89,7 @@ export function Navbar() {
                 href={link.href}
                 onClick={(e) => handleNavClick(e, link.href)}
                 className={`text-nav transition-colors duration-300 ${
-                  activeSection === link.href ? 'text-gold' : 'text-cream-200 hover:text-gold'
+                  activeSection === getHashFromHref(link.href) ? 'text-gold' : 'text-cream-200 hover:text-gold'
                 }`}
               >
                 {link.label}
