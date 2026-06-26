@@ -9,8 +9,8 @@ gsap.registerPlugin(ScrollTrigger);
 const steps = [
   {
     icon: Phone,
-    title: 'Call or Message',
-    desc: 'Dial 028 8514 6884 or email us. Ask about current stock, view photos, or book an in-person inspection in Auckland.',
+    title: 'Text or Message',
+    desc: 'Text 028 8514 6884 or email us. Ask about current stock, view photos, or book an in-person inspection in Auckland.',
   },
   {
     icon: CheckCircle,
