@@ -22,7 +22,6 @@ import { SmsLink } from '@/components/SmsLink';
 import { useRegisterVisibleProduct } from '@/context/SmsProductContext';
 import {
   buildProductInquirySmsUrl,
-  buildProductPhotosSmsUrl,
   buildProductStockCheckSmsUrl,
   buildRealLifeMediaSmsUrl,
   buildStockInquirySmsUrl,
@@ -188,14 +187,16 @@ function ProductCardContent({
           <p className="text-label text-gold mb-2">FULL SILICONE SPECIAL EDITION</p>
         )}
         <h3 className="font-display text-display-h4 text-cream-100 mb-1">{product.name}</h3>
+        <p className="mb-2 font-body text-sm font-medium text-gold">
+          Silicone Head · TPE Body
+        </p>
         <ProductTrustBadges />
         {product.tradeMeSearchCode && (
           <p className="font-body text-xs text-gold mb-2">
             Trade Me SKU: <span className="font-medium tracking-wide">{product.tradeMeSearchCode}</span>
           </p>
         )}
-        <p className="font-body text-sm text-cream-300 mb-3">{product.specs}</p>
-        <div className="flex items-center justify-between">
+        <div className="mb-3 flex items-center justify-between">
           <span className={`font-display text-gold ${isFlagship ? 'text-4xl' : 'text-3xl'}`}>{product.price}</span>
           <span className="font-body text-xs text-cream-300">{isFlagship ? 'NZD · Flagship' : 'NZD'}</span>
         </div>
@@ -216,20 +217,12 @@ function ProductCardContent({
               Better protection for you
             </span>
           </a>
-          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
-            <SmsLink
-              href={buildProductPhotosSmsUrl(product.name)}
-              className="inline-flex w-full items-center justify-center bg-red-700 px-4 py-3 text-center text-button text-white transition-colors hover:bg-red-600"
-            >
-              Text for Real Photos
-            </SmsLink>
-            <SmsLink
-              href={buildProductStockCheckSmsUrl(product.tradeMeSearchCode ?? product.name)}
-              className="inline-flex w-full items-center justify-center border border-gold bg-noir-900/40 px-4 py-3 text-center text-button text-gold transition-colors hover:bg-gold hover:text-noir-900"
-            >
-              Check Live Stock
-            </SmsLink>
-          </div>
+          <SmsLink
+            href={buildProductStockCheckSmsUrl(product.tradeMeSearchCode ?? product.name)}
+            className="inline-flex w-full items-center justify-center border border-gold bg-noir-900/40 px-4 py-3 text-center text-button text-gold transition-colors hover:bg-gold hover:text-noir-900"
+          >
+            Check Live Stock
+          </SmsLink>
           <button
             type="button"
             onClick={onToggleRealLife}
