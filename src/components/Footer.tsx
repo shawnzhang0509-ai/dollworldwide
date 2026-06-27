@@ -18,7 +18,7 @@ export function Footer() {
   };
 
   return (
-    <footer className="bg-noir-800 border-t border-noir-500">
+    <footer className="bg-noir-800 border-t border-noir-500 pb-24 sm:pb-16">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10 pt-16 pb-6">
         {/* Row 1 */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
@@ -87,9 +87,14 @@ export function Footer() {
 
         {/* Row 2 - Bottom Bar */}
         <div className="border-t border-noir-500 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-          <p className="font-body text-xs text-cream-300">
-            © 2026 DollWorldwide.com. All rights reserved.
-          </p>
+          <div className="text-center sm:text-left">
+            <p className="font-body text-xs text-cream-300">
+              © 2026 DollWorldwide.com. All rights reserved.
+            </p>
+            <p className="mt-1 font-body text-xs italic text-cream-300/90">
+              We only reply via SMS. Discreet &amp; Fast.
+            </p>
+          </div>
           <p className="font-body text-xs text-cream-300">
             In NZ, for NZ
           </p>

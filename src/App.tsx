@@ -19,6 +19,8 @@ import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage';
 import { TermsAndConditionsPage } from '@/pages/TermsAndConditionsPage';
 import { VercelAnalytics } from '@/components/VercelAnalytics';
 import { HashScrollHandler } from '@/components/HashScrollHandler';
+import { SmsProductProvider } from '@/context/SmsProductContext';
+import { FloatingSmsButton } from '@/components/FloatingSmsButton';
 
 function HomePage() {
   return (
@@ -43,7 +45,7 @@ function App() {
   useLenis();
 
   return (
-    <>
+    <SmsProductProvider>
       <AgeVerificationGate />
       <HashScrollHandler />
       <Navbar />
@@ -57,8 +59,9 @@ function App() {
         <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
       </Routes>
       <Footer />
+      <FloatingSmsButton />
       <VercelAnalytics />
-    </>
+    </SmsProductProvider>
   );
 }
 
