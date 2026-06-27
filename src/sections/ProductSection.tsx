@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState, type RefObject } from 'react';
+import { useEffect, useRef, useState, type ReactNode, type RefObject } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ChevronLeft, ChevronRight, X, ZoomIn } from 'lucide-react';
@@ -16,33 +16,25 @@ import {
 } from '@/data/products';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { buildTradeMeR18AdultSearchUrl } from '@/lib/trademe';
+import { ProductTrustBadges } from '@/components/ProductTrustBadges';
+import { SmsExclusiveDeal } from '@/components/SmsExclusiveDeal';
+import { SmsLink } from '@/components/SmsLink';
+import { useRegisterVisibleProduct } from '@/context/SmsProductContext';
 import {
   buildProductInquirySmsUrl,
+  buildProductPhotosSmsUrl,
+  buildProductStockCheckSmsUrl,
+  buildRealLifeMediaSmsUrl,
   buildStockInquirySmsUrl,
+  buildTradeMeLinkSmsUrl,
   CONTACT_PHONE_DISPLAY,
 } from '@/lib/contact';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const CONTACT_EMAIL = 'dollworldwide2023@gmail.com';
-
 interface SelectedRealLifeMedia {
   product: Product;
   category: RealLifeMediaCategory;
-}
-
-function buildRealLifeRequestUrl(productName: string, categoryLabel: string) {
-  const subject = `${categoryLabel} for ${productName}`;
-  const body = `Hi Doll Worldwide,\n\nPlease send me the real-life media for ${productName}: ${categoryLabel}.\n\nThanks.`;
-
-  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-
-function buildTradeMeRequestUrl(productName: string) {
-  const subject = `Trade Me link for ${productName}`;
-  const body = `Hi Doll Worldwide,\n\nPlease send me the current Trade Me listing for ${productName}.\n\nThanks.`;
-
-  return `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
 interface ProductCardImageProps {
@@ -196,6 +188,7 @@ function ProductCardContent({
           <p className="text-label text-gold mb-2">FULL SILICONE SPECIAL EDITION</p>
         )}
         <h3 className="font-display text-display-h4 text-cream-100 mb-1">{product.name}</h3>
+        <ProductTrustBadges />
         {product.tradeMeSearchCode && (
           <p className="font-body text-xs text-gold mb-2">
             Trade Me SKU: <span className="font-medium tracking-wide">{product.tradeMeSearchCode}</span>
@@ -206,9 +199,10 @@ function ProductCardContent({
           <span className={`font-display text-gold ${isFlagship ? 'text-4xl' : 'text-3xl'}`}>{product.price}</span>
           <span className="font-body text-xs text-cream-300">{isFlagship ? 'NZD · Flagship' : 'NZD'}</span>
         </div>
+        <SmsExclusiveDeal />
         <div className="mt-5 grid grid-cols-1 gap-3">
           <a
-            href={tradeMeUrl ?? buildTradeMeRequestUrl(product.name)}
+            href={tradeMeUrl ?? buildTradeMeLinkSmsUrl(product.name)}
             target={tradeMeUrl ? '_blank' : undefined}
             rel={tradeMeUrl ? 'noopener noreferrer' : undefined}
             className={`inline-flex w-full flex-col items-center justify-center gap-1 px-5 py-3.5 text-center transition-all duration-300 ${
@@ -222,14 +216,28 @@ function ProductCardContent({
               Better protection for you
             </span>
           </a>
+          <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+            <SmsLink
+              href={buildProductPhotosSmsUrl(product.name)}
+              className="inline-flex w-full items-center justify-center bg-red-700 px-4 py-3 text-center text-button text-white transition-colors hover:bg-red-600"
+            >
+              Text for Real Photos
+            </SmsLink>
+            <SmsLink
+              href={buildProductStockCheckSmsUrl(product.tradeMeSearchCode ?? product.name)}
+              className="inline-flex w-full items-center justify-center border border-gold bg-noir-900/40 px-4 py-3 text-center text-button text-gold transition-colors hover:bg-gold hover:text-noir-900"
+            >
+              Check Live Stock
+            </SmsLink>
+          </div>
           <button
             type="button"
             onClick={onToggleRealLife}
             aria-expanded={realLifeOpen}
             className={`inline-flex w-full items-center justify-center border px-5 py-3 text-button transition-all duration-300 ${
               isFlagship
-                ? 'border-gold bg-gold/10 text-gold hover:bg-gold hover:text-noir-900'
-                : 'border-gold text-gold hover:bg-gold hover:text-noir-900'
+                ? 'border-cream-300/20 bg-transparent text-cream-300 hover:border-gold hover:text-gold'
+                : 'border-cream-300/20 text-cream-300 hover:border-gold hover:text-gold'
             }`}
           >
             See me in real life
@@ -432,18 +440,18 @@ function RealLifeMediaDialog({
                   Add files for this product and this popup will show them inside the website, without sending buyers to Google Drive or another app.
                 </p>
                 <div className="flex flex-col gap-3 sm:flex-row sm:justify-center">
-                  <a
-                    href={buildRealLifeRequestUrl(selected.product.name, selected.category.label)}
+                  <SmsLink
+                    href={buildRealLifeMediaSmsUrl(selected.product.name, selected.category.label)}
                     className="inline-flex items-center justify-center bg-gold px-5 py-3 text-button text-noir-900 transition-colors hover:bg-gold-light"
                   >
-                    Request {selected.category.label}
-                  </a>
-                  <a
+                    Text for {selected.category.label}
+                  </SmsLink>
+                  <SmsLink
                     href={buildProductInquirySmsUrl(selected.product.name)}
                     className="inline-flex items-center justify-center border border-gold px-5 py-3 text-button text-gold transition-colors hover:bg-gold hover:text-noir-900"
                   >
                     Text {CONTACT_PHONE_DISPLAY}
-                  </a>
+                  </SmsLink>
                 </div>
               </div>
             )}
@@ -461,6 +469,17 @@ function RealLifeMediaDialog({
       )}
     </>
   );
+}
+
+interface ProductCardWrapperProps {
+  productName: string;
+  children: ReactNode;
+}
+
+function ProductCardWrapper({ productName, children }: ProductCardWrapperProps) {
+  const visibilityRef = useRegisterVisibleProduct(productName);
+
+  return <div ref={visibilityRef}>{children}</div>;
 }
 
 interface ProductGridProps {
@@ -490,8 +509,8 @@ export function ProductGrid({
           const isFlagship = product.tier === 'flagship';
 
           return (
+            <ProductCardWrapper key={product.id} productName={product.name}>
             <div
-              key={product.id}
               className={`product-card relative overflow-hidden group will-change-transform ${
                 isFlagship
                   ? 'border border-gold/70 bg-[radial-gradient(circle_at_top_left,rgba(212,175,55,0.22),rgba(24,18,8,0.98)_38%,rgba(10,10,10,1)_100%)] shadow-[0_24px_80px_rgba(212,175,55,0.16)]'
@@ -510,6 +529,7 @@ export function ProductGrid({
                 onSelectRealLife={(category) => setSelectedRealLifeMedia({ product, category })}
               />
             </div>
+            </ProductCardWrapper>
           );
         })}
       </div>
@@ -615,7 +635,7 @@ export function ProductSection() {
 
         <div className="text-center mt-14">
           <p className="font-body text-sm text-cream-300 mb-6 max-w-xl mx-auto">
-            More models and real media are available on request. Call to see the latest photos, videos, and full catalogue.
+            More models and real media are available on request. Text us for the latest photos, videos, and full catalogue.
           </p>
           <div className="flex flex-col items-center gap-4">
             <a

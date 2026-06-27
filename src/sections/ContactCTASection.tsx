@@ -1,7 +1,6 @@
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { SecondaryButton } from '@/components/SecondaryButton';
 import { PrimaryButton } from '@/components/PrimaryButton';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { buildGeneralInquirySmsUrl, CONTACT_PHONE_DISPLAY } from '@/lib/contact';
@@ -47,14 +46,14 @@ export function ContactCTASection() {
         </p>
 
         <div className="cta-animate flex flex-wrap justify-center gap-4 mb-8">
-          <SecondaryButton href={buildGeneralInquirySmsUrl()}>
+          <PrimaryButton href={buildGeneralInquirySmsUrl()}>
             Text {CONTACT_PHONE_DISPLAY}
-          </SecondaryButton>
-          <PrimaryButton href="mailto:dollworldwide2023@gmail.com">
-            Email Us
           </PrimaryButton>
         </div>
 
+        <p className="cta-animate font-body text-sm text-cream-300 mb-2">
+          We only reply via SMS. Discreet &amp; fast.
+        </p>
         <p className="cta-animate font-body text-sm text-cream-300">
           Auckland pickup available · Nationwide discreet shipping · Trade Me verified seller
         </p>
