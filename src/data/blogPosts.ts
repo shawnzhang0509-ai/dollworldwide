@@ -1229,8 +1229,114 @@ export const blogPosts: BlogPost[] = [
       {
         type: 'cta',
         content: 'Browse silicone-head models with implanted hair in our current NZ stock.',
-        href: '/models',
+        href: '/dolls',
         label: 'View All Models',
+      },
+    ],
+  },
+  {
+    slug: 'discreet-sex-doll-delivery-nz-how-it-works',
+    title: 'Discreet Sex Doll Delivery in NZ — How It Works',
+    description:
+      'How DollWorldwide ships sex dolls discreetly across New Zealand — plain packaging, delivery times, privacy protection, and what to expect at delivery.',
+    excerpt:
+      'Plain box. No brand markings. Here is how discreet sex doll delivery works for NZ buyers from Auckland dispatch to nationwide freight.',
+    publishedAt: '2026-06-12',
+    category: 'Shipping',
+    readingTimeMinutes: 5,
+    blocks: [
+      {
+        type: 'paragraph',
+        content:
+          'Privacy matters when you order a sex doll in New Zealand. DollWorldwide ships every order in plain packaging with no brand markings on the outside of the box.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'What the Packaging Looks Like',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Plain outer carton with no DollWorldwide branding',
+          'Neutral shipping label details',
+          'No product photos or descriptions visible externally',
+          'Secure internal packing to protect the doll in transit',
+        ],
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'NZ Delivery Times',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Orders dispatch from Auckland. North Island delivery is typically next business day after dispatch. South Island delivery is usually 2–3 business days. Tracking is provided where available.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Auckland Pickup',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'If you prefer not to wait for freight, private Auckland pickup can be arranged by SMS. This is useful if you want to inspect the doll before taking it home.',
+      },
+      {
+        type: 'cta',
+        content: 'See current Auckland stock and text for delivery options.',
+        href: '/dolls',
+        label: 'Browse ready stock',
+      },
+    ],
+  },
+  {
+    slug: 'best-150cm-sex-dolls-compact-storage-nz',
+    title: 'Best Compact Sex Dolls for Easier Storage | DollWorldwide NZ',
+    description:
+      'Looking for a more compact sex doll in NZ? Compare why smaller-footprint models matter, storage tips, and which $999 hybrids are popular with local buyers.',
+    excerpt:
+      'Not every buyer wants the tallest model. Here is how to think about compact sex dolls, storage, and value when shopping in New Zealand.',
+    publishedAt: '2026-06-13',
+    category: 'Buying Guide',
+    readingTimeMinutes: 6,
+    blocks: [
+      {
+        type: 'paragraph',
+        content:
+          'Many New Zealand buyers ask about more compact sex dolls because wardrobe space, apartment living, and discreet storage all matter. While exact height varies by model, choosing a practical footprint is often more important than chasing the tallest specification on paper.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Why Compact Models Are Popular in NZ',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Easier to store discreetly in apartments and townhouses',
+          'Simpler to move during cleaning or room changes',
+          'Often better value when you prioritise realism over maximum height',
+          'Still compatible with silicone head and TPE body hybrid construction',
+        ],
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'What to Ask Before You Buy',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Text us for the latest real photos, current Auckland stock, and model-specific dimensions. We can help you compare which $999 hybrid is the best fit for your space and budget.',
+      },
+      {
+        type: 'cta',
+        content: 'Browse the full collection and text for model-specific details.',
+        href: '/dolls',
+        label: 'View sex dolls collection',
       },
     ],
   },

@@ -6,7 +6,7 @@ import { buildGeneralInquirySmsUrl, CONTACT_PHONE_DISPLAY } from '@/lib/contact'
 
 const navLinks = [
   { label: 'Ready Stock', href: '/#product' },
-  { label: 'All Models', href: '/models' },
+  { label: 'All Models', href: '/dolls' },
   { label: 'Blog', href: '/blog' },
   { label: 'Proof', href: '/#proof' },
   { label: 'How It Works', href: '/#how-it-works' },
