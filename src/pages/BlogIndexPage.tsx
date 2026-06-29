@@ -8,9 +8,10 @@ export function BlogIndexPage() {
   return (
     <main className="bg-noir-900 pt-[120px]">
       <PageMeta
-        title="Blog"
-        description="Guides, tips, and buying advice for sex doll customers in New Zealand. Expert insights from DollWorldwide."
+        title="Sex Doll Guides & Tips"
+        description="Expert guides on choosing, using, and maintaining your sex doll. TPE vs silicone comparison, cleaning tips, and NZ buyer's guides. Read now."
         path="/blog"
+        includeNzInTitle
       />
 
       <section className="relative overflow-hidden pb-[120px]">
@@ -21,7 +22,7 @@ export function BlogIndexPage() {
               ← Back to homepage
             </a>
             <span className="mb-4 mt-8 block text-label text-gold">BLOG</span>
-            <h1 className="mb-5 text-display-h2 text-cream-100">Guides &amp; buying advice for NZ buyers.</h1>
+            <h1 className="mb-5 text-display-h2 text-cream-100">Sex Doll Guides &amp; Tips for NZ Buyers</h1>
             <p className="text-body-large text-cream-200">
               Practical articles on materials, value, local stock, and what to look for before you purchase.
             </p>

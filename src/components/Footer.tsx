@@ -1,6 +1,5 @@
 import { useLocation } from 'react-router';
 import { getHashFromHref, scrollToSection } from '@/lib/scrollToSection';
-import { buildGeneralInquirySmsUrl } from '@/lib/contact';
 
 export function Footer() {
   const location = useLocation();
@@ -41,11 +40,12 @@ export function Footer() {
             <div className="flex flex-col gap-2">
               {[
                 { label: 'Ready Stock', href: '/#product' },
-                { label: 'All Models', href: '/models' },
+                { label: 'Sex Dolls', href: '/dolls' },
                 { label: 'Blog', href: '/blog' },
+                { label: 'FAQ', href: '/faq' },
+                { label: 'About', href: '/about' },
+                { label: 'Contact', href: '/contact' },
                 { label: 'Trade Me Proof', href: '/#proof' },
-                { label: 'How It Works', href: '/#how-it-works' },
-                { label: 'Contact', href: buildGeneralInquirySmsUrl() },
               ].map((link) => (
                 <a
                   key={link.href}

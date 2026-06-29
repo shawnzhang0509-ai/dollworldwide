@@ -1833,3 +1833,15 @@ const homepageFeaturedCodes = [
 export const homepageValueProducts = homepageFeaturedCodes
   .map((code) => products.find((product) => product.tradeMeSearchCode === code))
   .filter((product): product is Product => product !== undefined);
+
+export function getProductSlug(product: Product): string {
+  return `${product.id}-sex-doll-nz`;
+}
+
+export function findProductBySlug(slug: string): Product | undefined {
+  return products.find((product) => getProductSlug(product) === slug);
+}
+
+export function getRelatedProducts(product: Product, limit = 3): Product[] {
+  return products.filter((item) => item.id !== product.id).slice(0, limit);
+}

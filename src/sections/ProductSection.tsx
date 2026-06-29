@@ -16,6 +16,7 @@ import {
 } from '@/data/products';
 import { useReducedMotion } from '@/hooks/useReducedMotion';
 import { buildTradeMeR18AdultSearchUrl } from '@/lib/trademe';
+import { getProductImageAlt, getProductPath } from '@/lib/seo';
 import { ProductTrustBadges } from '@/components/ProductTrustBadges';
 import { SmsExclusiveDeal } from '@/components/SmsExclusiveDeal';
 import { SmsLink } from '@/components/SmsLink';
@@ -48,6 +49,7 @@ function ProductCardImage({ product, dualImagePreview, isFlagship = false }: Pro
   const preview = getProductPreviewPair(product);
   const hasDualPreview = Boolean(dualImagePreview && preview.secondary);
   const showingSecondary = hasDualPreview && (showSecondary || isHovered);
+  const imageAlt = getProductImageAlt(product);
 
   const togglePreview = () => {
     if (!hasDualPreview) return;
@@ -88,7 +90,8 @@ function ProductCardImage({ product, dualImagePreview, isFlagship = false }: Pro
     >
       <img
         src={preview.primary.src}
-        alt={preview.primary.alt}
+        alt={preview.primary.alt ?? imageAlt}
+        loading="lazy"
         className={`relative z-0 w-full h-full object-cover transition-all duration-500 ${
           hasDualPreview
             ? showingSecondary
@@ -100,7 +103,8 @@ function ProductCardImage({ product, dualImagePreview, isFlagship = false }: Pro
       {preview.secondary && (
         <img
           src={preview.secondary.src}
-          alt={preview.secondary.alt}
+          alt={preview.secondary.alt ?? imageAlt}
+          loading="lazy"
           className={`absolute inset-0 z-0 w-full h-full object-cover transition-all duration-500 ${
             showingSecondary ? 'opacity-100 scale-105' : 'opacity-0 scale-100'
           }`}
@@ -186,7 +190,11 @@ function ProductCardContent({
         {isFlagship && (
           <p className="text-label text-gold mb-2">FULL SILICONE SPECIAL EDITION</p>
         )}
-        <h3 className="font-display text-display-h4 text-cream-100 mb-1">{product.name}</h3>
+        <h3 className="font-display text-display-h4 text-cream-100 mb-1">
+          <a href={getProductPath(product)} className="transition-colors hover:text-gold">
+            {product.name}
+          </a>
+        </h3>
         <p className="mb-2 font-body text-sm font-medium text-gold">
           Silicone Head · TPE Body
         </p>
@@ -632,7 +640,7 @@ export function ProductSection() {
           </p>
           <div className="flex flex-col items-center gap-4">
             <a
-              href="/models"
+              href="/dolls"
               className={`inline-flex min-w-[min(100%,320px)] items-center justify-center px-12 py-4 bg-gold text-noir-900 font-semibold text-sm tracking-[0.12em] uppercase focus:outline-none focus:ring-2 focus:ring-gold focus:ring-offset-2 focus:ring-offset-noir-700 ${
                 reduced ? 'hover:bg-gold-light transition-colors duration-300' : 'animate-cta-flash'
               }`}

@@ -1,59 +1,10 @@
-import { useEffect } from 'react';
 import { useParams, Navigate } from 'react-router';
 import { format } from 'date-fns';
 import { BlogArticleBody } from '@/components/BlogArticleBody';
-import { PageMeta, SITE_NAME, SITE_URL } from '@/components/PageMeta';
+import { BreadcrumbJsonLd } from '@/components/BreadcrumbJsonLd';
+import { JsonLd } from '@/components/JsonLd';
+import { PageMeta, DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from '@/components/PageMeta';
 import { getBlogPost } from '@/data/blogPosts';
-
-function ArticleJsonLd({
-  title,
-  description,
-  slug,
-  publishedAt,
-}: {
-  title: string;
-  description: string;
-  slug: string;
-  publishedAt: string;
-}) {
-  useEffect(() => {
-    const scriptId = 'blog-article-jsonld';
-    const existing = document.getElementById(scriptId);
-    if (existing) existing.remove();
-
-    const script = document.createElement('script');
-    script.id = scriptId;
-    script.type = 'application/ld+json';
-    script.textContent = JSON.stringify({
-      '@context': 'https://schema.org',
-      '@type': 'Article',
-      headline: title,
-      description,
-      datePublished: publishedAt,
-      author: {
-        '@type': 'Organization',
-        name: SITE_NAME,
-        url: SITE_URL,
-      },
-      publisher: {
-        '@type': 'Organization',
-        name: SITE_NAME,
-        url: SITE_URL,
-      },
-      mainEntityOfPage: {
-        '@type': 'WebPage',
-        '@id': `${SITE_URL}/blog/${slug}`,
-      },
-    });
-    document.head.appendChild(script);
-
-    return () => {
-      document.getElementById(scriptId)?.remove();
-    };
-  }, [title, description, slug, publishedAt]);
-
-  return null;
-}
 
 export function BlogArticlePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -64,6 +15,39 @@ export function BlogArticlePage() {
   }
 
   const formattedDate = format(new Date(post.publishedAt), 'd MMMM yyyy');
+  const breadcrumbs = [
+    { name: 'Home', path: '/' },
+    { name: 'Blog', path: '/blog' },
+    { name: post.title, path: `/blog/${post.slug}` },
+  ];
+
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.description,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
+    image: [DEFAULT_OG_IMAGE],
+    author: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: SITE_NAME,
+      url: SITE_URL,
+      logo: {
+        '@type': 'ImageObject',
+        url: `${SITE_URL}/favicon.svg`,
+      },
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${SITE_URL}/blog/${post.slug}`,
+    },
+  };
 
   return (
     <main className="bg-noir-900 pt-[120px]">
@@ -74,12 +58,8 @@ export function BlogArticlePage() {
         type="article"
         publishedAt={post.publishedAt}
       />
-      <ArticleJsonLd
-        title={post.title}
-        description={post.description}
-        slug={post.slug}
-        publishedAt={post.publishedAt}
-      />
+      <BreadcrumbJsonLd items={breadcrumbs} />
+      <JsonLd id={`article-jsonld-${post.slug}`} data={articleSchema} />
 
       <section className="relative overflow-hidden pb-[120px]">
         <div className="pointer-events-none absolute inset-x-0 top-0 h-[360px] bg-[radial-gradient(ellipse_at_top,rgba(212,175,55,0.12),transparent_68%)]" />

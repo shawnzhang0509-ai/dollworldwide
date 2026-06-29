@@ -218,17 +218,17 @@ export function HeroSection() {
 
       <div className="relative z-10 w-full max-w-[1280px] mx-auto px-4 md:px-10">
         <div ref={headlineRef} className="mb-5 md:mb-7">
-          <h1 className="hero-scroll-fade font-display text-[clamp(2.5rem,8vw,4.5rem)] leading-none tracking-wide text-gold mb-4 md:mb-5">
-            DOLL WORLDWIDE
+          <h1 className="hero-scroll-fade font-display text-[clamp(2rem,6vw,3.5rem)] leading-tight tracking-wide text-cream-100 mb-4 md:mb-5">
+            Premium Realistic Sex Dolls — New Zealand&apos;s Trusted Store
           </h1>
-          <p className="hero-scroll-fade font-display text-[clamp(1.25rem,4vw,1.75rem)] leading-snug text-cream-100 mb-3 max-w-[640px]">
-            Global Brands. Local Trust. Since 2023.
+          <p className="hero-scroll-fade font-display text-[clamp(1.25rem,4vw,1.75rem)] leading-snug text-gold mb-3 max-w-[640px]">
+            DOLL WORLDWIDE
           </p>
           <p className="hero-scroll-fade text-body-large text-cream-200 mb-5 md:mb-6 max-w-[620px]">
             Serving New Zealand collectors with premium brands, local stock, and local support.
           </p>
           <div ref={ctaRef} className="flex flex-wrap gap-3">
-            <SecondaryButton href="#product">See Ready Stock</SecondaryButton>
+            <SecondaryButton href="/dolls">See Ready Stock</SecondaryButton>
             <PrimaryButton href={buildGeneralInquirySmsUrl()}>Text {CONTACT_PHONE_DISPLAY}</PrimaryButton>
           </div>
         </div>
