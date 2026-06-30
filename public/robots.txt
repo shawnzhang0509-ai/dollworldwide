@@ -5,5 +5,10 @@ Disallow: /checkout
 Disallow: /account
 Disallow: /admin
 Disallow: /api/
+Disallow: /product/
+Disallow: /product-category/
+Disallow: /product-tag/
+Disallow: /product_faq_post/
+Disallow: /wc-api/
 
 Sitemap: https://dollworldwide.com/sitemap.xml
