@@ -1,4 +1,21 @@
 {
+  "redirects": [
+    {
+      "source": "/product_faq_post/:path*",
+      "destination": "/faq",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-category/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/product-tag/:path*",
+      "destination": "/",
+      "statusCode": 301
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

@@ -22,6 +22,7 @@ import { BlogArticlePage } from '@/pages/BlogArticlePage';
 import { ShippingPolicyPage } from '@/pages/ShippingPolicyPage';
 import { PrivacyPolicyPage } from '@/pages/PrivacyPolicyPage';
 import { TermsAndConditionsPage } from '@/pages/TermsAndConditionsPage';
+import { NotFoundPage } from '@/pages/NotFoundPage';
 import { VercelAnalytics } from '@/components/VercelAnalytics';
 import { HashScrollHandler } from '@/components/HashScrollHandler';
 import { SmsProductProvider } from '@/context/SmsProductContext';
@@ -67,6 +68,7 @@ function App() {
         <Route path="/shipping-policy" element={<ShippingPolicyPage />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyPage />} />
         <Route path="/terms-and-conditions" element={<TermsAndConditionsPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <Footer />
       <FloatingSmsButton />
