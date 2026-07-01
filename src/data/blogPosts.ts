@@ -18,6 +18,86 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: 'nz-adult-doll-buyers-guide',
+    title: 'NZ Adult Dolls: What to Know Before You Buy in New Zealand',
+    description:
+      'Searching for an NZ adult doll? Compare local Auckland stock, silicone head and TPE body hybrids, discreet delivery, and what makes buying in New Zealand different.',
+    excerpt:
+      'If you searched "nz adult doll", you are probably looking for realistic models with local stock, honest photos, and discreet NZ delivery — here is what matters before you buy.',
+    publishedAt: '2026-06-14',
+    category: 'Buying Guide',
+    readingTimeMinutes: 7,
+    blocks: [
+      {
+        type: 'paragraph',
+        content:
+          'If you searched for an NZ adult doll, you are not alone. Many New Zealand buyers want realistic models, clear pricing, and proof of what they are actually buying before they commit.',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'The biggest difference is not just the doll itself — it is whether the seller has real Auckland stock, can send current photos by SMS, and ships discreetly across New Zealand.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Why NZ Adult Doll Buyers Care About Local Stock',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Faster delivery from Auckland instead of waiting weeks from overseas',
+          'Ability to text for real photos and videos of the exact unit available',
+          'Plain-box discreet shipping with no brand markings',
+          'Easier after-sales support in NZ time zones',
+          'Trade Me checkout option for added buyer protection',
+        ],
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'Silicone Head + TPE Body: The Best Value Hybrid',
+      },
+      {
+        type: 'paragraph',
+        content:
+          'Many adult dolls sold globally use the same manufacturing base. At DollWorldwide, our core $999 range combines a silicone head for facial realism with a TPE body for softer feel and stronger value than full silicone at the same price point.',
+      },
+      {
+        type: 'heading',
+        level: 2,
+        content: 'What to Ask Before You Buy an Adult Doll in NZ',
+      },
+      {
+        type: 'bullet-list',
+        items: [
+          'Is this model in Auckland stock right now?',
+          'Can you send unedited photos or a short video?',
+          'What is included in the box?',
+          'How is delivery packaged for privacy?',
+          'What payment options are available?',
+        ],
+      },
+      {
+        type: 'paragraph',
+        content:
+          'We reply by SMS only — fast, discreet, and practical for NZ buyers who want answers before ordering.',
+      },
+      {
+        type: 'cta',
+        content: 'Browse current NZ adult dolls in stock from $999.',
+        href: '/dolls',
+        label: 'View NZ adult dolls collection',
+      },
+      {
+        type: 'cta',
+        content: 'Read our full 2026 NZ buyer\'s guide for more detail.',
+        href: '/blog/best-value-sex-dolls-new-zealand-2026-buyers-guide',
+        label: 'NZ buyer\'s guide',
+      },
+    ],
+  },
+  {
     slug: 'why-we-started-doll-worldwide',
     title: 'Why We Started Doll Worldwide',
     description:

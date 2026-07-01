@@ -32,8 +32,8 @@ function HomePage() {
   return (
     <main>
       <PageMeta
-        title="Premium Sex Dolls NZ | Discreet Shipping"
-        description="Shop NZ's trusted collection of realistic sex dolls. Silicone head and TPE body hybrids from $999, Auckland stock, discreet NZ-wide delivery. Browse and text today."
+        title="Sex Dolls & Adult Dolls NZ | $999 Auckland Stock"
+        description="Shop realistic sex dolls and adult dolls in NZ from $999. Silicone head, TPE body, Auckland ready stock, discreet delivery. Text for photos today."
         path="/"
       />
       <SiteJsonLd />
