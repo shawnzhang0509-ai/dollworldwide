@@ -40,8 +40,8 @@ export function DollsListPage() {
   return (
     <main className="bg-noir-900 pt-[120px]">
       <PageMeta
-        title="Buy Realistic TPE & Silicone Sex Dolls"
-        description="Browse NZ's largest selection of lifelike sex dolls. Silicone head and TPE body hybrids, discreet packaging, Auckland stock from $999. Shop the collection now."
+        title="Buy Realistic Adult Dolls & Sex Dolls NZ"
+        description="Browse NZ adult dolls and sex dolls with silicone head and TPE body from $999. Auckland stock, discreet packaging, real photos by SMS. Shop the collection now."
         path="/dolls"
         includeNzInTitle
       />

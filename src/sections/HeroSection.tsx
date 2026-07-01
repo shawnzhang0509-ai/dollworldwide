@@ -225,7 +225,7 @@ export function HeroSection() {
             DOLL WORLDWIDE
           </p>
           <p className="hero-scroll-fade text-body-large text-cream-200 mb-5 md:mb-6 max-w-[620px]">
-            Serving New Zealand collectors with premium brands, local stock, and local support.
+            Realistic sex dolls and adult dolls with Auckland ready stock, discreet NZ delivery, and SMS support.
           </p>
           <div ref={ctaRef} className="flex flex-wrap gap-3">
             <SecondaryButton href="/dolls">See Ready Stock</SecondaryButton>
